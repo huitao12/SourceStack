@@ -7,5 +7,16 @@
 <body>
     <b>账号</b><br />
     <b>注册登录</b><br />
+    <!--<button type="submit">按钮</button>-->
+    <input type="submit" value="提交" />
+    <input type="reset" value="重置" />
+    <label>性别：</label>
+    <!-- 使用name属性进行分组 -->
+    <!-- 小技巧：用label包裹-->
+    <label><input type="radio" name="gender" value="male" disabled="disabled" checked /> 男</label>
+    <!-- radio和checkbox只能disabled不能readonly（实际上是bug） -->
+    <input type="radio" name="gender" value="female" readonly />女 <br />
+    <p style="background-color:darkslateblue">源栈欢迎您！</p><br />
+    <input type="radio" name="gender" value="female" readonly />记住我 <br />
 </body>
 </html>
