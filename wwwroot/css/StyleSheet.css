@@ -1,5 +1,8 @@
 ﻿body {
 }
-.corn {
-    color:chartreuse;
+
+*{
+    margin: 0px;
+    padding: 0px;
+    /*border: 1px solid;*/
 }

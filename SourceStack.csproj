@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\17bang\Account.html" />
+    <None Include="wwwroot\17bang\Article.html" />
+    <None Include="wwwroot\17bang\Credit.html" />
+    <None Include="wwwroot\17bang\FAQ.html" />
+    <None Include="wwwroot\17bang\float.html" />
+    <None Include="wwwroot\17bang\Register.html" />
+  </ItemGroup>
+
 </Project>
