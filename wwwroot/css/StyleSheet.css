@@ -1,8 +1,33 @@
-﻿body {
+﻿
+
+div.on {
+    background-color: gainsboro;
 }
 
-/**{
-    margin: 0px;
-    padding: 0px;*/
-    /*border: 1px solid;*/
-/*}*/
+div.con {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: burlywood;
+    background-color: beige;
+}
+
+div.coni {
+    border-width: 1px;
+    border-style: dashed;
+    border-color: burlywood;
+}
+
+div.cao {
+    border-width: 1px;
+    border-style: dashed;
+    background-color: aquamarine
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:active {
+    background-color: blue;
+}
+

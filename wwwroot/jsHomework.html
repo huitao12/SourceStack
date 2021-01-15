@@ -1,0 +1,274 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script type="text/javascript" src="/js/Homework.js"></script>
+</head>
+<body>
+    <script>
+        //分别用HTML页面内嵌和.js文件引用的方式，弹出你的入栈口号。
+
+        //声明一个变量sname，表示同学的姓名；通过更改变量值，弹出至少3个同学的姓名
+        //alert("活到老，学到老!");
+        //var smane = ("刘伟")
+        //alert(smane);
+        //smane = ("廖光赢");
+        //alert(smane);
+        //smane = ("李智博");
+        //alert(smane)
+        //smane = ("周丁浩");
+        //alert(smane);
+
+        //观察“一起帮”的求助，定义一个problem对象，其中包含title、body、reward、needRemote等属性
+        //var Problem = { Title: "小卜勒吉", Boby: "阿布垃圾", Reward: "一千", needRemote: "" }
+        //alert(Problem.Title);
+        //alert(Problem.Boby)
+        //alert(Problem.Reward)
+        //alert(Problem.needRemote)
+
+        //用代码和PPT演示：
+        //弱类型的特点
+        //值类型和引用类型的区别
+        //定义对象，属性
+        //弱类型特点
+        //var age = 12;
+        //alert(age);
+        //age = "龚廷义";
+        //alert(age);
+        ////值类型
+        //var a = 22;
+        //var b = a;
+        //b = 25;
+        //console.log(a);
+        ////引用类型
+        //var lzb = { stature: 177 };
+        //var zl = lzb;
+        //zl.stature = 166;
+        //console.log(lzb.stature);
+
+        //用JavaScript变量pBody存储这行Html代码：
+        //<a href='http://17bang.ren' target="_blank">源栈·一起帮</a>，助你实现 < span style = "font-size:16px;" > 编程</span > 梦想！
+        //var pBody = `<a href='http://17bang.ren' target="_blank">源栈·一起帮</a>，助你实现 < span style="font-size:16px;" > 编程</span >`+" 梦想！"; 
+
+        //用一个变量替换“编程”，以便输出更多内容。比如：助你实现{ 职业 } 梦想、助你实现{ 人生 } 梦想
+        //var a = "编程";
+        //console.log(`助你实现${a}梦想`);
+        //a = "人生";
+        //console.log(`助你实现${a}梦想`);
+
+        //设计一段代码，实现以下逻辑：
+        //某用户有一定数量的帮帮豆（sum）
+        //每点赞一次就会消耗若干帮帮豆（consume）
+        //现在用户点赞若干次（count）
+        //计算用户剩余了多少帮帮豆（banlance）并用bool值显示他是否还有帮帮豆（isAvailable）
+        //以上皆需设置变量（变量名见圆括号），并代入计算。
+
+        //var sum, consume, count, banlance, isAvailable;
+        //console.log(banlance = sum - consume * count);
+        //isAvailable = banlance > 0;
+        //console.log(isAvailable);
+
+        //第一题：写一段代码，能根据一起帮用户的帮帮点（bCredit）输出他对应的等级（可适度精简）
+
+        //var bCredit = 234;
+        //if (bCredit <= 30) {
+        //    console.log("入门");
+        //} else if (bCredit <= 100) {
+        //    console.log("聚气");
+        //} else if (bCredit <= 200) {
+        //    console.log("凝冰");
+        //} else if (bCredit <= 700) {
+        //    console.log("萌芽");
+        //} else if (bCredit <= 1500) {
+        //    console.log("单页");
+        //} else if (bCredit <= 3000) {
+        //    console.log("双叶");
+        //}
+
+        //第二题：一起帮用户被分为5种，每种都有一个整数代号：
+
+        //0：访客
+        //1：注册用户
+        //2：文章发布者
+        //3：管理员
+        //4：超级管理员
+        //写一段代码，用switch...case将代号转换成文字输出，但3和4都统称“管理员”即可
+        //var code = 7;
+        //switch (code) {
+        //    case 0:
+        //        console.log("访客")
+        //        break;
+        //    case 1:
+        //        console.log("注册用户")
+        //        break;
+        //    case 2:
+        //        console.log("文章发布者")
+        //        break;
+        //    case 3:
+        //    case 4:
+        //        console.log("管理员")
+        //        break;
+        //    default:
+        //        console.log("无效数字:" + code);
+        //        break;
+        //}
+
+        //声明一个数组odds，利用循环把100以内的奇数按从小到大的顺序存入其中
+        //var odds = [], index = 0, value = 1;
+        //do {
+        //    odds[index] = value;
+        //    value += 2;
+        //    index++;
+        //} while (value < 100)
+        //console.log(odds);
+
+        //计算从odds数组中所有元素的和
+        //var sum=0;
+        //for (var i = 1; i <100; i +=2 ) {
+        //    console.log(i);
+        //    sum = sum + i ;
+        //} console.log(sum);
+
+        //找到数组中的最小值
+        //var array = [35, 13, 45, 7, 34, 66, 23, 28]
+        //var min = array[0];
+        //for (var i = 1; i < array.length; i++) {
+        //    if (min > array[i]) {
+        //        min = array[i]
+        //    }
+        //} console.log(min);
+
+        //输出1000以内的所有“素数/质数”（只能被自己和1整除的数）
+
+        //for (var i = 2; i < 1000; i++) {
+        //    var isPrime = true;
+        //    for (var j = 2; j < i - 1; j++) {
+        //        if (i % j == 0) {
+        //            isPrime = false;
+        //            break;
+        //        }
+        //    } if (isPrime) {
+        //        console.log(i);
+        //    }
+        //}
+
+        //去除一个数组中重复的值（提示：仔细思考需求）
+        //var array = [2,5,11,7,21,11,28]
+        //输出用空格代替0的杨辉三角形
+        //var rows = 5,
+        //    columns = rows * 2 - 1;   //确定一共多少列
+        //var yh = [];
+        //for (var i = 0; i < rows; i++) {
+        //    yh[i] = [];             //避免undefined错误
+        //    var lines = '';         //为按行输出做准备
+        //    for (var j = 0; j < columns; j++) {
+        //        if (i == 0) {       //第一行只能手工做
+        //            yh[i][j] = (j == rows - 1) ? 1 : 0;
+        //        } else {
+        //            var preRow = i - 1,
+        //                //边界值替换
+        //                preColumn = j - 1 >= 0 ? yh[preRow][j - 1] : 0,
+        //                nextColumn = j + 1 < columns ? yh[preRow][j + 1] : 0;
+        //            yh[i][j] = preColumn + nextColumn;
+        //        }
+        //        lines += yh[i][j] + ' ';
+        //    }
+        //    console.log(lines);
+        //}
+
+        //完成冒泡排序（必做，参考：）
+        //var array = [14, 23, 31, 45, 28, 77, 20, 37, 16, 8, 51];
+        //for (var i = 1; i < array.length; i++) {
+        //    for (var j = 0; j < array.length-i; j++) {
+        //        if (array[j] > array[j + 1]) {
+        //            var temp = array[j];
+        //            array[j] = array[j + 1];
+        //            array[j + 1] = temp;
+        //        }
+        //     }
+        //}
+        //for (var i = 0; i < array.length; i++) {
+        //    console.log(array[i]);
+        //}
+
+        //完成：二分查找 / 快速排序（选做，参考：）
+        //var age = [3, 7, 11, 15, 19, 23, 28, 31, 37, 42, 55];
+        //var left = 0, rigth = age.length - 1, middle ;
+        //var target = 8;
+        //while (left <= rigth) { //=找到边界
+        //    middle = Math.floor((left + rigth) / 2);
+        //    if (age[middle] > target) {
+        //        rigth = middle - 1;
+        //    } else if (age[middle] < target) {
+        //        left = middle + 1;
+        //    } else {
+        //        target = age[middle];
+        //        console.log(middle);
+        //        break;
+        //    }
+        //}
+
+
+            //作业（一）
+            //开始使用伪单元测试，
+            //将每天 / 课的作业用不同的js文件分隔：
+
+            //构建一个函数has9(number) ，可以判断number中是否带有数字9；（19 / 98）
+        function has(number) {
+
+        }
+            //构建一个函数has8(number) ，可以判断number中是否带有数字8；
+        function has(number) {
+
+        }
+            //构建一个函数has6(number) ，可以判断number中是否带有数字6；
+        function has(number) {
+
+        }
+            //使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+            //让get986()通过调用has9() / has8() / has6() ，能找出number以内有多少个数字包含：9或者8或6。
+
+            //作业（二）
+            //将之前“找出素数”的代码封装成一个函数findPrime(max) ，可以打印出max以内的所有素数。
+            //自行设计参数，将之前“累加求和”的代码封装成一个函数Sum() ，可以计算任意起始位置、任意步长（如：1, 3, 5……或者0, 5, 10, 15……）的等差数列之和。
+            //封装一个函数，建立一个函数getMaxNumber() ，可以接受任意多各种类型（整数、小数、正数、负数、字符串、布尔值等）的参数，并找出里面最大的数（忽略其他类型）
+            //封装一个函数Swap(arr, i, j) ，可以交换数组arr里下标 i 和 j 的值
+            //利用上面的Swap()函数，将“冒泡排序”封装成函数bubbleSort()
+            //删除一个数组里面重复的元素
+            //创建一个函数getRandomArray(length, max) ，能返回一个长度不大于length，每个元素值不大于max的随机整数数组。
+            //不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'。
+            //统计出这段文字中有多少个单词：
+            //There are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings, the parameters to the literal notation
+            //do not use quotation marks while the parameters to the constructor function do use quotation - marks.So the following expressions create the
+            //same regular expression
+
+
+            //使用“模拟名称空间”技术，构建一个函数函数yz.fei.get(number) ；
+            //yz.fei.get(number)除number以外，还可以接受任意多个回调函数做参数
+            //这些回调函数能对number进行运算，并返回bool值的，比如has9() / has8() / has6()
+            //get()函数依次运行它的回调函数，只要回调函数运行结果为真，就累加计数
+            //最后返回累加值
+            //让yz.fei.get(number)调用has9() / has8() / has6() ，实现之前“统计含9 / 8 / 6数字个数”的作业
+
+
+            //使用JavaScript内置字符串函数，处理 “‘源栈’：飞哥小班教学，线下免费收看” ：将“飞哥”改成“大神”，“线下”改成“线上”。
+            //将数组['why', 'gIT', 'vs2019', 'community', 'VERSION']规范化，让所有元素：
+            //首字母大写开头，其他字母小写
+            //截去超过6个字符的部分，如'community'将变成'Commun'
+            //使用正则表达式判断某个字符串:
+            //是否是合格的Email格式
+            //是否是小数（正负小数都可以）
+            //将所有以zyf - 开头的属性去掉zyf - （尽可能多的制造测试用例，比如：<a lzyf-old=''， 或者：<span>zyf---+---fyz</span> ……）
+            //利用新学到的Array函数，重新完成之前的数组相关作业
+            //在上述数组头部加上小鱼老师，末尾加上大飞哥
+            //生成一个函数toChinese() ，可将传入的日期参数（如：new Date() ）转换成中文日期格式（如：2019年10月4日 16点54分）
+            //生成一个函数addDays(number) ，可在当前日期的基础上增加number天
+            //按自己的情况，生成一个JSON字符串，包括真实姓名、QQ昵称、年龄、性别、兴趣爱好、自我介绍……，上传到QQ群：一起帮·有意向（729600626）
+            //根据其他同学的JSON获得其个人资料，生成一个表格显示。
+
+
+            //分别使用setInterval()使用setTimeout()实现：每隔1秒钟依次显示：第n周，源栈同学random人。（n逐次递增，random随机）
+    </script>
+</body>
+</html>

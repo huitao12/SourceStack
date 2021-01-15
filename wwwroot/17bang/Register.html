@@ -6,6 +6,8 @@
     <meta name="keywords" content="源栈 一起帮 自由飞" />
     <title>注册·一起帮</title>
     <link rel="shortcut icon" type="image/ico" href="/Images/logo.ico" media="screen" />
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+
 </head>
 <body>
     <header>
@@ -49,28 +51,31 @@
                 </li>
             </ul>
         </nav>
-        <article>
-            <p style="font-size:40px">注册</p>
-            <span><a href="Register.html">为什么需要邀请</a></span><br />
-            <spam><b>邀请人：（*必填，没有邀请人）</b></spam><br />
-            <span><input id="inviter" placeholder="他的用户名，模糊查询只能从头开始名" /></span><br />
-            <spam><b>邀请码：（*必填）</b></spam><br />
-            <span><input id="Invitation" value="4位数字" /></span><br />
+        <article >
+            <p style="font-size:40px">R注册</p>
+            <hr />
+            <div class="con">
+                <span class="coni"><a href="Register.html">?为什么需要邀请</a></span><br />
+                <spam><b>邀请人：（*必填，没有邀请人）</b></spam><br />
+                <span><input id="inviter" placeholder="他的用户名，模糊查询只能从头开始名" /></span><br />
+                <spam><b>邀请码：（*必填）</b></spam><br />
+                <span><input id="Invitation" placeholder="4位数字" /></span><br />
+            </div>
             <spam><b>用户名：（*必填）</b></spam><br />
-            <span><input id="username" value="登录用户名，可修改，不饿能重复" /></span><br />
+            <span><input id="username" placeholder="登录用户名，可修改，不饿能重复" /></span><br />
             <spam><b>密码：（*必填）</b></spam><br />
-            <span><input id="password" value="不少于4个字符" /></span><br />
+            <span><input id="password" placeholder="不少于4个字符" /></span><br />
             <spam><b>验证密码：（*必填）</b></spam><br />
-            <span><input id="validate" value="和密码相同" /></span><br />
+            <span><input id="validate" placeholder="和密码相同" /></span><br />
             <spam><b>验证码：（*必填）</b></spam><br />
             <span><input value="" />点击输入框显示</span><br />
-            <input style="font-size:20px" type="submit" value="提交" />
+            <input type="submit" value="提交" />
             <button type="button">重置</button>
             <span><a href="Register.html">登录</a></span>
         </article>
         <aside>
             <div>
-                <span><b><a href="LogOn.html">说明</a></b></span>
+                <h4><a href="Register.html">说明</a></h4>
                 <ol>
                     <li><span>我们希望通过<a href="Article.html">一起帮</a>，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。</span></li>
                     <li> <span>现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？</span></li>
@@ -80,6 +85,7 @@
                     <li> <span><a href="Register.html">👉了解更多</a></span></li>
                 </ol>
             </div>
+            <hr />
         </aside>
     </header>
     <footer>
@@ -90,7 +96,7 @@
             </p>
         </div>
         <span>友情链接：</span><br />
-        <span><a href="Article.html">渝ICP备18007191号（备案）</a>© 2020 - 首顾科技</span>
+        <span style="float:right"><a href="Article.html">渝ICP备18007191号（备案）</a>© 2020 - 首顾科技</span>
     </footer>
 </body>
 </html>
