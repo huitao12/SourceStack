@@ -49,7 +49,7 @@
 
         //用JavaScript变量pBody存储这行Html代码：
         //<a href='http://17bang.ren' target="_blank">源栈·一起帮</a>，助你实现 < span style = "font-size:16px;" > 编程</span > 梦想！
-        //var pBody = `<a href='http://17bang.ren' target="_blank">源栈·一起帮</a>，助你实现 < span style="font-size:16px;" > 编程</span >`+" 梦想！"; 
+        //var pBody = `<a href='http://17bang.ren' target="_blank">源栈·一起帮</a>，助你实现 < span style="font-size:16px;" > 编程</span >`+" 梦想！";
 
         //用一个变量替换“编程”，以便输出更多内容。比如：助你实现{ 职业 } 梦想、助你实现{ 人生 } 梦想
         //var a = "编程";
@@ -154,9 +154,17 @@
         //}
 
         //去除一个数组中重复的值（提示：仔细思考需求）
-        //var array = [2,5,11,7,21,11,28]
+        var array = [2, 5, 11, 7, 21, 11, 28];
+        for (var i = 0; i < array.length; i++) {
+            var target = array[i];
+            for (var j = 0; j < i; j++) {
+                if (target == array[j]) {
+
+                }
+            }
+        }
         //输出用空格代替0的杨辉三角形
-        //var rows = 5,
+        //var rows = 10,
         //    columns = rows * 2 - 1;   //确定一共多少列
         //var yh = [];
         //for (var i = 0; i < rows; i++) {
@@ -164,13 +172,14 @@
         //    var lines = '';         //为按行输出做准备
         //    for (var j = 0; j < columns; j++) {
         //        if (i == 0) {       //第一行只能手工做
-        //            yh[i][j] = (j == rows - 1) ? 1 : 0;
+        //            yh[i][j] = (j == rows - 1) ? 1 : ' ';
         //        } else {
         //            var preRow = i - 1,
         //                //边界值替换
-        //                preColumn = j - 1 >= 0 ? yh[preRow][j - 1] : 0,
-        //                nextColumn = j + 1 < columns ? yh[preRow][j + 1] : 0;
-        //            yh[i][j] = preColumn + nextColumn;
+        //                preColumn = j - 1 >= 0 ? +yh[preRow][j - 1] : 0,
+        //                nextColumn = j + 1 < columns ? +yh[preRow][j + 1] : 0;
+        //            var current = preColumn + nextColumn;
+        //            yh[i][j] = current ? current : ' ';
         //        }
         //        lines += yh[i][j] + ' ';
         //    }
@@ -210,65 +219,152 @@
         //}
 
 
-            //作业（一）
-            //开始使用伪单元测试，
-            //将每天 / 课的作业用不同的js文件分隔：
+        //作业（一）
+        //开始使用伪单元测试，
+        //将每天 / 课的作业用不同的js文件分隔：
 
-            //构建一个函数has9(number) ，可以判断number中是否带有数字9；（19 / 98）
-        function has(number) {
+        //构建一个函数has9(number) ，可以判断number中是否带有数字9；（19 / 98）
+        function has9(number) {
+            var result = (number + "").indexOf('9');
+            return result == -1 ? -1 : '找到了且数字对应的下标为' + result;
+        }
+        //构建一个函数has8(number) ，可以判断number中是否带有数字8；
+        function has8(number) {
+            var result = (number + "").indexOf('8');
+            return (result == -1) ? -1 : '找到了且数字对应的下标为' + result;
+        }
+        //构建一个函数has6(number) ，可以判断number中是否带有数字6；
+        function has6(number) {
+            var result = (number + "").indexOf('6');
+            return (result == -1) ? -1 : '找到了且数字对应的下标为' + result;
+        }
+
+        //使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
+        function getCountNumber() {
+            for (var i = 1; i < 10000; i++) {
+                if (has9(i)) {
+                    console.log(i);
+                } else if (has8(i)) {
+                    console.log(i);
+                }
+                else if (has6(i)) {
+                    console.log(i);
+                }
+            }
+        }
+        //让get986()通过调用has9() / has8() / has6() ，能找出number以内有多少个数字包含：9或者8或6。
+        function get986( number)
+        {
+            for (var i = 1; i < number; i++) {
+                if (has9(i)) {
+                    console.log(i);
+                } else if (has8(i)) {
+                    console.log(i);
+                }
+                else if (has6(i)) {
+                    console.log(i]);
+                }
+            }
+        }
+        //作业（二）
+        //将之前“找出素数”的代码封装成一个函数findPrime(max) ，可以打印出max以内的所有素数。
+        function findPrime(max) {
+            for (var i = 2; i < max; i++) {
+                var isPrime = true;
+                for (var j = 2; j < i; j++) {
+                    if (i % j == 0) {
+                        isPrime = false;
+                    }//else
+                }
+                if (isPrime) {
+                    console.log(i);
+                }
+            }
+        }
+
+        //自行设计参数，将之前“累加求和”的代码封装成一个函数Sum() ，可以计算任意起始位置、任意步长（如：1, 3, 5……或者0, 5, 10, 15……）的等差数列之和。
+        function Sum(begin, steplength) {
+            var sum = 0;
+            for (var i = 0; i < odds.length; i++) {
+                sum += odds[i];
+            }
+            console.log(sum);
+        }
+
+        //封装一个函数，建立一个函数getMaxNumber() ，可以接受任意多各种类型（整数、小数、正数、负数、字符串、布尔值等）的参数，并找出里面最大的数（忽略其他类型）
+        function getMaxNumber(array) {
+            var max = 0;
+            for (var i = 0; i < array.length; i++) {
+                if (max < array[i]) {
+                    max = array[i];
+                }//else
+            }
+            return max;
+        }
+
+        //封装一个函数Swap(arr, i, j) ，可以交换数组arr里下标 i 和 j 的值
+        function Swap(arr, i, j) {
+            var temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+            return arr;
+        }
+
+        //利用上面的Swap()函数，将“冒泡排序”封装成函数bubbleSort()
+        function bubbleSort(arr) {
+            for (var i = 1; i < arr.length; i++) {
+                for (var j = 0; j < arr.length - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        swap(arr, j, j + 1)
+                    }
+                }
+            }
+            return array;
 
         }
-            //构建一个函数has8(number) ，可以判断number中是否带有数字8；
-        function has(number) {
 
-        }
-            //构建一个函数has6(number) ，可以判断number中是否带有数字6；
-        function has(number) {
+                    //删除一个数组里面重复的元素
 
-        }
-            //使用上述函数，找出10000以内有多少个数字包含：9或者8或者6。
-            //让get986()通过调用has9() / has8() / has6() ，能找出number以内有多少个数字包含：9或者8或6。
+        //创建一个函数getRandomArray(length, max) ，能返回一个长度不大于length，每个元素值不大于max的随机整数数组。
+        functiongetRandomArray(length, max) 
 
-            //作业（二）
-            //将之前“找出素数”的代码封装成一个函数findPrime(max) ，可以打印出max以内的所有素数。
-            //自行设计参数，将之前“累加求和”的代码封装成一个函数Sum() ，可以计算任意起始位置、任意步长（如：1, 3, 5……或者0, 5, 10, 15……）的等差数列之和。
-            //封装一个函数，建立一个函数getMaxNumber() ，可以接受任意多各种类型（整数、小数、正数、负数、字符串、布尔值等）的参数，并找出里面最大的数（忽略其他类型）
-            //封装一个函数Swap(arr, i, j) ，可以交换数组arr里下标 i 和 j 的值
-            //利用上面的Swap()函数，将“冒泡排序”封装成函数bubbleSort()
-            //删除一个数组里面重复的元素
-            //创建一个函数getRandomArray(length, max) ，能返回一个长度不大于length，每个元素值不大于max的随机整数数组。
-            //不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'。
-            //统计出这段文字中有多少个单词：
-            //There are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings, the parameters to the literal notation
-            //do not use quotation marks while the parameters to the constructor function do use quotation - marks.So the following expressions create the
-            //same regular expression
+                    //不使用JavaScript内置函数，将一个字符串顺序颠倒，比如：'hello,yuanzhan' 变成 'nahznauy,olleh'。
+
+                    //统计出这段文字中有多少个单词：
+                    //There are two ways to create a RegExp object: a literal notation and a constructor.To indicate strings, the parameters to the literal notation
+                    //do not use quotation marks while the parameters to the constructor function do use quotation - marks.So the following expressions create the
+                    //same regular expression
 
 
-            //使用“模拟名称空间”技术，构建一个函数函数yz.fei.get(number) ；
-            //yz.fei.get(number)除number以外，还可以接受任意多个回调函数做参数
-            //这些回调函数能对number进行运算，并返回bool值的，比如has9() / has8() / has6()
-            //get()函数依次运行它的回调函数，只要回调函数运行结果为真，就累加计数
-            //最后返回累加值
-            //让yz.fei.get(number)调用has9() / has8() / has6() ，实现之前“统计含9 / 8 / 6数字个数”的作业
+                    //使用“模拟名称空间”技术，构建一个函数函数yz.fei.get(number) ；
+                    //yz.fei.get(number)除number以外，还可以接受任意多个回调函数做参数
+                    //这些回调函数能对number进行运算，并返回bool值的，比如has9() / has8() / has6()
+                    //get()函数依次运行它的回调函数，只要回调函数运行结果为真，就累加计数
+                    //最后返回累加值
+                    //让yz.fei.get(number)调用has9() / has8() / has6() ，实现之前“统计含9 / 8 / 6数字个数”的作业
 
 
-            //使用JavaScript内置字符串函数，处理 “‘源栈’：飞哥小班教学，线下免费收看” ：将“飞哥”改成“大神”，“线下”改成“线上”。
-            //将数组['why', 'gIT', 'vs2019', 'community', 'VERSION']规范化，让所有元素：
-            //首字母大写开头，其他字母小写
-            //截去超过6个字符的部分，如'community'将变成'Commun'
-            //使用正则表达式判断某个字符串:
-            //是否是合格的Email格式
-            //是否是小数（正负小数都可以）
-            //将所有以zyf - 开头的属性去掉zyf - （尽可能多的制造测试用例，比如：<a lzyf-old=''， 或者：<span>zyf---+---fyz</span> ……）
-            //利用新学到的Array函数，重新完成之前的数组相关作业
-            //在上述数组头部加上小鱼老师，末尾加上大飞哥
-            //生成一个函数toChinese() ，可将传入的日期参数（如：new Date() ）转换成中文日期格式（如：2019年10月4日 16点54分）
-            //生成一个函数addDays(number) ，可在当前日期的基础上增加number天
-            //按自己的情况，生成一个JSON字符串，包括真实姓名、QQ昵称、年龄、性别、兴趣爱好、自我介绍……，上传到QQ群：一起帮·有意向（729600626）
-            //根据其他同学的JSON获得其个人资料，生成一个表格显示。
+                    //使用JavaScript内置字符串函数，处理 “‘源栈’：飞哥小班教学，线下免费收看” ：将“飞哥”改成“大神”，“线下”改成“线上”。
+
+                    //将数组['why', 'gIT', 'vs2019', 'community', 'VERSION']规范化，让所有元素：
+                    //首字母大写开头，其他字母小写
+                    //截去超过6个字符的部分，如'community'将变成'Commun'
+                    //使用正则表达式判断某个字符串:
+                    //是否是合格的Email格式
+                    //是否是小数（正负小数都可以）
+                    //将所有以zyf - 开头的属性去掉zyf - （尽可能多的制造测试用例，比如：<a lzyf-old=''， 或者：<span>zyf---+---fyz</span> ……）
+                    //利用新学到的Array函数，重新完成之前的数组相关作业
+                    //在上述数组头部加上小鱼老师，末尾加上大飞哥
+                    //生成一个函数toChinese() ，可将传入的日期参数（如：new Date() ）转换成中文日期格式（如：2019年10月4日 16点54分）
+                    //生成一个函数addDays(number) ，可在当前日期的基础上增加number天
+                    //按自己的情况，生成一个JSON字符串，包括真实姓名、QQ昵称、年龄、性别、兴趣爱好、自我介绍……，上传到QQ群：一起帮·有意向（729600626）
+                    //根据其他同学的JSON获得其个人资料，生成一个表格显示。
 
 
-            //分别使用setInterval()使用setTimeout()实现：每隔1秒钟依次显示：第n周，源栈同学random人。（n逐次递增，random随机）
+                    //分别使用setInterval()使用setTimeout()实现：每隔1秒钟依次显示：第n周，源栈同学random人。（n逐次递增，random随机）
+
+
+        
     </script>
 </body>
 </html>

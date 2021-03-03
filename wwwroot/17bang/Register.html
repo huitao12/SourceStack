@@ -7,73 +7,127 @@
     <title>注册·一起帮</title>
     <link rel="shortcut icon" type="image/ico" href="/Images/logo.ico" media="screen" />
     <link rel="stylesheet" href="/css/StyleSheet.css">
-
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        input {
+            width: 300px
+        }
+    </style>
 </head>
-<body>
+<body class="container">
     <header>
-        <img src="http://17bang.ren/Images/logo-big.ico" alt="一起帮lago" />
-        <span><b>一起帮·</b>网咯互助平台</span>
-        <nav>
-            <ul>
-                <li>
-                    <a href="Article.html">？求助</a>
-                    <ul>
-                        <li><a href="Article.html">督导班</a></li>
-                        <li><a href="Article.html">列表</a></li>
-                        <li><a href="Article.html">疑问发布</a></li>
-                        <li><a href="Article.html">疑问列表</a></li>
-                        <li><a href="Article.html">列表</a></li>
-                        <li><a href="Article.html">发布</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="Article.html">督导</a>
-                    <ul>
-                        <li><a href="Article.html">求督促</a></li>
-                        <li><a href="Article.html">督促别人</a></li>
-                        <li><a href="Article.html">我的目标</a></li>
-                        <li><a href="Article.html">我的督促</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="Article.html">文章</a>
-                    <ul>
-                        <li><a href="Article.html">列表</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="Article.html">未登录</a>
-                    <ul>
-                        <li><a href="Article.html">登录</a></li>
-                        <li><a href="Article.html">注册</a></li>
-                        <li><a href="Article.html">忘记密码</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-        <article >
-            <p style="font-size:40px">R注册</p>
-            <hr />
-            <div class="con">
-                <span class="coni"><a href="Register.html">?为什么需要邀请</a></span><br />
-                <spam><b>邀请人：（*必填，没有邀请人）</b></spam><br />
-                <span><input id="inviter" placeholder="他的用户名，模糊查询只能从头开始名" /></span><br />
-                <spam><b>邀请码：（*必填）</b></spam><br />
-                <span><input id="Invitation" placeholder="4位数字" /></span><br />
+        <div>
+            <div>
+                <img src="http://17bang.ren/Images/logo-big.ico" alt="一起帮lago" />
+                <b>一起帮·</b>网咯互助平台
             </div>
-            <spam><b>用户名：（*必填）</b></spam><br />
-            <span><input id="username" placeholder="登录用户名，可修改，不饿能重复" /></span><br />
+            <div class="dropdown nav justify-content-end">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
+                    求助
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">督导班</a>
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">疑问发布</a>
+                    <a class="dropdown-item" href="#">疑问列表</a><hr />
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">发布</a>
+                </div>
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
+                    监督
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">督导班</a>
+                    <a class="dropdown-item" href="#">求监督</a>
+                    <a class="dropdown-item" href="#">监督别人</a>
+                    <a class="dropdown-item" href="#">我的目标</a><hr />
+                    <a class="dropdown-item" href="#">我的督促</a>
+                    <a class="dropdown-item" href="#">未交作业</a>
+                </div>
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
+                    文章
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">开通</a>
+                </div>
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
+                    uao
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">新手任务</a>
+                    <a class="dropdown-item" href="#">我的主页</a>
+                    <a class="dropdown-item" href="#">疑问发布</a>
+                    <p> <a class="dropdown-item" href="#">帮帮豆</a>:2颗</p>
+                    <p> <a class="dropdown-item" href="#">帮帮点</a>:10点</p>
+                    <p> <a class="dropdown-item" href="#">帮帮币</a>:0枚</p>
+                    <p>修改</p>
+                    <a class="dropdown-item" href="#">我的秘密</a>
+                    <a class="dropdown-item" href="#">联系方式</a>
+                    <a class="dropdown-item" href="#">个人资料</a>
+                    <a class="dropdown-item" href="#">退出登录</a>
+                </div>
+                <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    后台
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="#">邀请注册</a>
+                    <a class="dropdown-item" href="#">我的消息</a>
+                    <a class="dropdown-item" href="#">我的草稿</a>
+                    <p>广告推广</p>
+                    <a class="dropdown-item" href="#">联系方式</a>
+                    <a class="dropdown-item" href="#">侧边栏</a>
+                    <p>帮帮币</p>
+                    <a class="dropdown-item" href="#">购买</a>
+                    <a class="dropdown-item" href="#">出售</a>
+                    <a class="dropdown-item" href="#">已购买</a>
+                    <a class="dropdown-item" href="#">已出售</a>
+                </div>
+            </div>
+        </div>
+    </header><hr />
+    <nav>
+        <div>
+            文章的评论.NET Core的绘图功能需要在NuGet包里额...被标识为  精选，获得帮帮点 奖励10点
+            <a href="#" style="float:right">全部消息</a>
+        </div>
+    </nav>
+    <p style="font-size:40px"><i class="fa fa-registered" aria-hidden="true"></i>注册</p>
+    <hr />
+    <div class="row">
+        <article class="col-md-4">
+            <div class="award">
+                <p class="coni"><a href="Register.html" style="float:right">?为什么需要邀请</a></p>
+                <spam><b>邀请人：（*必填，没有邀请人）</b></spam>
+                <p><input id="inviter" placeholder="他的用户名，模糊查询只能从头开始名" /></p>
+                <spam><b>邀请码：（*必填）</b></spam><br />
+                <p><input id="Invitation" placeholder="4位数字" /></p>
+            </div>
+            <spam><b>用户名：（*必填）</b></spam>
+            <p><input id="username" placeholder="登录用户名，可修改，不饿能重复" /></p>
             <spam><b>密码：（*必填）</b></spam><br />
-            <span><input id="password" placeholder="不少于4个字符" /></span><br />
+            <p><input id="password" placeholder="不少于4个字符" /></p>
             <spam><b>验证密码：（*必填）</b></spam><br />
-            <span><input id="validate" placeholder="和密码相同" /></span><br />
+            <p><input id="validate" placeholder="和密码相同" /></p>
             <spam><b>验证码：（*必填）</b></spam><br />
-            <span><input value="" />点击输入框显示</span><br />
-            <input type="submit" value="提交" />
-            <button type="button">重置</button>
-            <span><a href="Register.html">登录</a></span>
+            <span><input value="" style="width:200px" />点击输入框显示</span><br />
+            <div style="margin-top:15px">
+                <!--<input type="submit" value="提交" />-->
+                <button type="button">提交</button>
+                <!--<input type="submit" value="重置" />-->
+                <button type="button">重置</button>
+                <span style="float:right"><a href="Register.html">登录</a></span>
+            </div>
         </article>
-        <aside>
+        <div>
+            <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:270px;">
+                <a href="#">①<br />帮助</a>
+            </div>
+            <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:270px;">
+                <a href="#">②<br />反馈</a>
+            </div>
+        </div>
+        <aside class="col-md-6  offset-1 ">
             <div>
                 <h4><a href="Register.html">说明</a></h4>
                 <ol>
@@ -85,9 +139,8 @@
                     <li> <span><a href="Register.html">👉了解更多</a></span></li>
                 </ol>
             </div>
-            <hr />
         </aside>
-    </header>
+    </div><hr />
     <footer>
         <div>
             <p>
@@ -95,8 +148,7 @@
                 <a href="Article.html">历史通知</a>|<a href="Article.html" style="color:deepskyblue">友情提示</a>|<a href="Article.html">诚邀合伙人</a>
             </p>
         </div>
-        <span>友情链接：</span><br />
-        <span style="float:right"><a href="Article.html">渝ICP备18007191号（备案）</a>© 2020 - 首顾科技</span>
+        <span style="float:right"><a href="Article.html">渝ICP备18007191号（备案）</a>© 2020 - 自由<img src="https://17bang.ren/Images/freeflying.ico"/></span>
     </footer>
 </body>
 </html>
