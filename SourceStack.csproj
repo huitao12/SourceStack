@@ -5,19 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\17bang\FAQ\Credit.html" />
-    <Content Remove="wwwroot\17bang\FAQ\FAQ.html" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\17bang\Account.html" />
     <None Include="wwwroot\17bang\Article.html" />
     <None Include="wwwroot\17bang\Credit.html" />
     <None Include="wwwroot\17bang\FAQ.html" />
-    <None Include="wwwroot\17bang\FAQ\Credit.html" />
-    <None Include="wwwroot\17bang\FAQ\FAQ.html" />
     <None Include="wwwroot\17bang\float.html" />
     <None Include="wwwroot\17bang\Register.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
   </ItemGroup>
 
 </Project>

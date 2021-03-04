@@ -7,92 +7,115 @@
     <link rel="shortcut icon" type="image/ico" href="/Images/logo.ico" media="screen" />
     <link rel="stylesheet" href="/css/StyleSheet.css">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet"href="/css/font-awesome.css" />
     <style>
         input {
             width: 400px
         }
     </style>
 </head>
-<body class="container">
+<body >
     <header>
-        <div>
-            <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container ">
                 <img src="http://17bang.ren/Images/logo-big.ico" alt="一起帮lago" />
                 <b>一起帮·</b>网咯互助平台
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse  nav justify-content-end " id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-question-circle"></span>
+                                求助
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">督导班</a>
+                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="#">疑问发布</a>
+                                <a class="dropdown-item" href="#">疑问列表</a><hr />
+                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="#">发布</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-eye"></span>
+                                监督
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">督导班</a>
+                                <a class="dropdown-item" href="#">求监督</a>
+                                <a class="dropdown-item" href="#">监督别人</a>
+                                <a class="dropdown-item" href="#">我的目标</a><hr />
+                                <a class="dropdown-item" href="#">我的督促</a>
+                                <a class="dropdown-item" href="#">未交作业</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-clipboard"></span>
+                                文章
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="#">开通</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-user-circle-o"></span>
+                                uao
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">新手任务</a>
+                                <a class="dropdown-item" href="#">我的主页</a>
+                                <a class="dropdown-item" href="#">疑问发布</a>
+                                <p> <a class="dropdown-item" href="#">帮帮豆</a>:2颗</p>
+                                <p> <a class="dropdown-item" href="#">帮帮点</a>:10点</p>
+                                <p> <a class="dropdown-item" href="#">帮帮币</a>:0枚</p>
+                                <p>修改</p>
+                                <a class="dropdown-item" href="#">我的秘密</a>
+                                <a class="dropdown-item" href="#">联系方式</a>
+                                <a class="dropdown-item" href="#">个人资料</a>
+                                <a class="dropdown-item" href="#">退出登录</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-dashboard"></span>
+                                后台
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">邀请注册</a>
+                                <a class="dropdown-item" href="#">我的消息</a>
+                                <a class="dropdown-item" href="#">我的草稿</a>
+                                <p>广告推广</p>
+                                <a class="dropdown-item" href="#">联系方式</a>
+                                <a class="dropdown-item" href="#">侧边栏</a>
+                                <p>帮帮币</p>
+                                <a class="dropdown-item" href="#">购买</a>
+                                <a class="dropdown-item" href="#">出售</a>
+                                <a class="dropdown-item" href="#">已购买</a>
+                                <a class="dropdown-item" href="#">已出售</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="dropdown nav justify-content-end">
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
-                    求助
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">督导班</a>
-                    <a class="dropdown-item" href="#">列表</a>
-                    <a class="dropdown-item" href="#">疑问发布</a>
-                    <a class="dropdown-item" href="#">疑问列表</a><hr />
-                    <a class="dropdown-item" href="#">列表</a>
-                    <a class="dropdown-item" href="#">发布</a>
-                </div>
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
-                    监督
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">督导班</a>
-                    <a class="dropdown-item" href="#">求监督</a>
-                    <a class="dropdown-item" href="#">监督别人</a>
-                    <a class="dropdown-item" href="#">我的目标</a><hr />
-                    <a class="dropdown-item" href="#">我的督促</a>
-                    <a class="dropdown-item" href="#">未交作业</a>
-                </div>
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
-                    文章
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                    <a class="dropdown-item" href="#">列表</a>
-                    <a class="dropdown-item" href="#">开通</a>
-                </div>
-                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="margin-right:20px">
-                    uao
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">新手任务</a>
-                    <a class="dropdown-item" href="#">我的主页</a>
-                    <a class="dropdown-item" href="#">疑问发布</a>
-                    <p> <a class="dropdown-item" href="#">帮帮豆</a>:2颗</p>
-                    <p> <a class="dropdown-item" href="#">帮帮点</a>:10点</p>
-                    <p> <a class="dropdown-item" href="#">帮帮币</a>:0枚</p>
-                    <p>修改</p>
-                    <a class="dropdown-item" href="#">我的秘密</a>
-                    <a class="dropdown-item" href="#">联系方式</a>
-                    <a class="dropdown-item" href="#">个人资料</a>
-                    <a class="dropdown-item" href="#">退出登录</a>
-                </div>
-                <a class=" dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    后台
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="#">邀请注册</a>
-                    <a class="dropdown-item" href="#">我的消息</a>
-                    <a class="dropdown-item" href="#">我的草稿</a>
-                    <p>广告推广</p>
-                    <a class="dropdown-item" href="#">联系方式</a>
-                    <a class="dropdown-item" href="#">侧边栏</a>
-                    <p>帮帮币</p>
-                    <a class="dropdown-item" href="#">购买</a>
-                    <a class="dropdown-item" href="#">出售</a>
-                    <a class="dropdown-item" href="#">已购买</a>
-                    <a class="dropdown-item" href="#">已出售</a>
-                </div>
-            </div>
-        </div>
-    </header><hr />
-    <main>
+        </nav>
+    </header>
+    <main class="container">
         <nav>
             文章的评论.NET Core的绘图功能需要在NuGet包里额...被叶飞赞，获得帮帮点 奖励2点
             <a style="float:right" href="#">全部消息</a>
         </nav>
         <article class="col-md-8">
-            <div style="text-align:center">
-            <a href="page.html">更多历史</a>
+            <div style="text-align:center;margin-top:20px">
+                <a href="page.html">更多历史<span class="fa fa-angle-double-up"></span></a>
             </div>
 
             <p>
@@ -129,8 +152,13 @@
                 <button>@TA<br />回复</button>
                 <span>2020/10/13  14：19：14<a href="page.html">阿斯各②</a></span>
             <p>给我讲一下冒泡排序</p>
-            <p>
-                <input type="text" placeholder="我来说两句" />
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="我来说两句"  aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                    <span class="input-group-text" id="basic-addon2">发送</span>
+                </div>
+            </div>
+
         </article>
         <aside style="float:right;position:fixed;top:200px;left:1100px">
             <h4>“源栈”Web开发培训班</h4>
@@ -141,7 +169,7 @@
             <img src="http://17bang.ren/Images/qq-group.png" alt="http://17bang.ren/Images/qq-group.png" />
         </aside><hr />
     </main>
-    <footer>
+    <footer class="container">
         <div>
             <a href="#">关于我们</a>|<a href="#">常见问题</a>|<a href="Suggest.html">意见建议</a>|
             <a href="#">历史通知</a>|<a href="#" style="color:deepskyblue">友情提示</a>|<a href="#">诚邀合伙人</a>
