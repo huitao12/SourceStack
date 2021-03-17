@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/font-awesome.css">
 </head>
 <body style="margin-bottom:100px">
-    <header>
+    <header style="position:fixed;z-index:999;top:0px; width:100%">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container ">
                 <img src="http://17bang.ren/Images/logo-big.ico" alt="一起帮lago">
@@ -61,7 +61,7 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle"style="color:cornflowerblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="fa fa-user-circle-o"></span>
                                 uao
                             </a>
@@ -103,22 +103,22 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main style="margin-top:70px">
+        <div id="notification" class="container">
+            <span class="fa fa-calendar"></span>
+            小黑出售给小黄1的帮帮币已打包（）交易单号：78，内含  帮帮币 50枚，请按约定及时（24小时以内）支付人民币11元后要求卖方开箱。如有任何问题，可查看查看帮助或联系我们
+            <a href="723.html" style="float:right"><span class=" fa fa-hand-o-right "></span>全部消息</a>
+        </div>
         <div class="container">
-            <div id="notification">
-                <span class="fa fa-calendar"></span>
-                小黑出售给小黄1的帮帮币已打包（）交易单号：78，内含  帮帮币 50枚，请按约定及时（24小时以内）支付人民币11元后要求卖方开箱。如有任何问题，可查看查看帮助或联系我们
-                <a href="723.html" style="float:right"><span class=" fa fa-hand-o-right "></span>全部消息</a>
-            </div>
             <div class="row" style="margin-top:40px">
                 <article class="col-md-8">
                     <img src="http://17bang.ren/Images/%e6%ba%90%e6%a0%88%e4%b8%8a%e8%af%be%e5%95%a6.jpg" class="img-fluid" alt="...">
                     <h1 style="color:#337ab7;padding:10px"><span class="iconfont icon-article"></span>知乎，这一次是真的离开</h1><hr>
                     <div style="display:table-row">
-                        <div style="display:table-cell">2020年12月06日23点06分</div>
-                        <div style="display:table-cell"><b><span>作者：<a href="Article.html">叶飞</a></span></b></div>
+                        <div style="display:table-cell;width:88%">2020年12月06日23点06分</div>
+                        <div class="pull-right"><b><span>作者：<a href="Article.html"style="color:#337ab7">叶飞</a></span></b></div>
                     </div>
-                    <div style="clear:both">
+                    <div style="clear:both;margin-top:15px">
                         <p>查了一下，从2015年7月知乎首答：</p>
                         <img src="http://17bang.ren/Images/Attachment/2020/12/6/01bfae97-8084-4037-a4a7-9f3fc54e4bb8.png">
                         <p>5年多的时间，9万+的关注，8万+的收藏，15万+的赞同，勉勉强强算一个小V吧：</p>
@@ -230,11 +230,13 @@
                         <span class="badge  badge-secondary rounded-pill">推广</span>
                     </div>
                     <div class="praise pull-right">
-                        <span style="margin-right:14px"><a href="723.html"><span style="margin-right:4px" class="fa fa-thumbs-o-up"></span>赞:<span style="margin-left:15px">1</span></a></span>
-                        <span><a href="723.html"><span style="margin-right:4px" class="fa fa-thumbs-o-down"></span>赞:<span style="margin-left:15px">0</span></a></span>
+                        <span style="margin-right:14px;"><a href="723.html"style="color: #3c673d">
+                            <span style="margin-right:4px" class="fa fa-thumbs-o-up"></span>
+                            赞:<span style="margin-left:15px">1</span></a></span>
+                        <span><a href="723.html"style="color: #3c673d"><span style="margin-right:4px" class="fa fa-thumbs-o-down"></span>赞:<span style="margin-left:15px">0</span></a></span>
                     </div>
                     <div id="reward" style="text-align:center;width:75px;height:75px;margin-left:auto;margin-right:auto;clear:both">
-                        <span class="iconfont icon-money credit fa-2x"></span><br />打赏
+                        <span class="fa fa-usd fa-2x"style="margin-top:10px"></span><br />打赏
                     </div>
                     <div id="advertising">
                         <p>已收到打赏的<a href="723.html"><span style="color:gold">帮帮币</span></a>:</p>
@@ -248,12 +250,12 @@
                         <a href="723.html"><span title="这是什么？">投稿人推广：</span>学编程，来"源站"！飞哥精品小班等着你......</a>
                     </div>
                     <div style="margin-top:15px">
-                        <button class="btn btn-primary">提交</button>
+                        <button class="btn btn-primary"style="background-color:#337ab7">提交</button>
                         <button type="button" class="btn btn-outline-info">重置</button>
                     </div>
                     <div style="margin-top:20px">
                         <span>
-                            <input style="margin-right:10px" type="checkbox" />在系列<a href="#">
+                            <input style="margin-right:10px; color:#337ab7" type="checkbox" />在系列<a href="#">
                                 <span class="fa fa-folder "></span>一锅大杂烩
                             </a>中的：
                         </span>
@@ -261,7 +263,7 @@
                             <span class="iconfont icon-pages"></span>全系列阅读
                         </button>
                         <div class="easel" style="clear:both;margin-top:20px">
-                            <p> <span class="fa fa-arrow-up"></span>上一篇：<a href="#">情商低的人如何提高情商？</a></p>
+                            <p class="fa fa-arrow-up"></p>上一篇：<a href="#"style="color:#337ab7">情商低的人如何提高情商？</a>
                             <span class="fa fa-arrow-down"></span>下一篇：已经是最后一篇了......
                         </div>
                         <span style="font-size:25px">
@@ -294,10 +296,10 @@
                     </div>
                 </article>
                 <div>
-                    <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:264px;">
+                    <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:264px;z-index: 999">
                         <a href="#"><span class="fa fa-question-circle"></span><br>帮助</a>
                     </div>
-                    <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:264px;">
+                    <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:264px;z-index: 999">
                         <a href="#"><span class=" fa fa-comments-o"></span><br>反馈</a>
                     </div>
                 </div>
@@ -359,8 +361,8 @@
                             </div>
                             <hr>
                             <div class="input-group mb-3">
-                                <input type="text" placeholder="直接输入关键字查找" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                                <div class="input-group-append">
+                                <input type="text" style="width:50%" placeholder="直接输入关键字查找" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                <div class="input-group-append" style="margin-right:25px">
                                     <span class="input-group-text" id="basic-addon2"><span class="fa fa-search"></span></span>
                                 </div>
                                 <div>
@@ -383,7 +385,7 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">1</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: black">1</span></h4></td>
                                         <td>
                                             <span><a href="#">unkownn</a></span>
                                             <span style="margin-right:120px"><a href="#" title="中级学徒">②</a></span>
@@ -391,7 +393,7 @@
                                         <td>44</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">2</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #696969">2</span></h4></td>
                                         <td>
                                             <span><a href="#" style="color:#dcb962">叶飞</a></span>
                                             <span style="margin-right:120px"><a href="#" title="大宗师">⑩</a></span>
@@ -399,7 +401,7 @@
                                         <td>38</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">3</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: gray">3</span></h4></td>
                                         <td>
                                             <span><a href="#">Edwin521</a></span>
                                             <span style="margin-right:120px"><a href="#" title="初级学徒">①</a></span>
@@ -407,7 +409,7 @@
                                         <td>30</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">4</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">4</span></h4></td>
                                         <td>
                                             <span><a href="#" style="color:#dcb962">dk</a></span>
                                             <span style="margin-right:120px"><a href="#" title="初级宗师">④</a></span>
@@ -415,7 +417,7 @@
                                         <td>23</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">5</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">5</span></h4></td>
                                         <td>
                                             <span><a href="#">Gabriel</a></span>
                                             <span style="margin-right:120px"><a href="#" title="初级学徒">①</a></span>
@@ -423,7 +425,7 @@
                                         <td>11</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">6</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">6</span></h4></td>
                                         <td>
                                             <span><a href="#">忠哲</a></span>
                                             <span style="margin-right:120px"><a href="#" title="初级学徒">①</a></span>
@@ -431,7 +433,7 @@
                                         <td>10</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">7</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">7</span></h4></td>
                                         <td>
                                             <span><a href="#">和光同尘</a></span>
                                             <span style="margin-right:120px"><a href="#" title="中级学徒">②</a></span>
@@ -439,7 +441,7 @@
                                         <td>8</td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">8</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">8</span></h4></td>
                                         <td>
                                             <span><a href="#">知名跳伞体验家</a></span>
                                             <span style="margin-right:110px"><a href="#" title="中级学徒">②</a></span>
@@ -456,27 +458,27 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">1</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: black">1</span></h4></td>
                                         <td><a href="Article.html">学编程，来“源站”！飞哥精品小班等着你......</a></td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">2</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #696969">2</span></h4></td>
                                         <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">3</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: gray">3</span></h4></td>
                                         <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">4</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">4</span></h4></td>
                                         <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">5</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">5</span></h4></td>
                                         <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
                                     </tr>
                                     <tr>
-                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary">6</span></h4></td>
+                                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">6</span></h4></td>
                                         <td>本站本机由<a href="Article.html">西部数码</a>提供</td>
                                     </tr>
                                 </tbody>
@@ -491,10 +493,10 @@
     <footer class=" container">
         <hr>
         <div>
-            <a href="#">关于我们</a>|<a href="#">常见问题</a>|<a href="Suggest.html">意见建议</a>|
-            <a href="#">历史通知</a>|<a href="#" style="color:deepskyblue">友情提示</a>|<a href="#">诚邀合伙人</a>
+            <a href="#"style="margin:5px;color: #337ab7">关于我们</a>|<a href="#"style="margin:5px;color: #337ab7">常见问题</a>|<a href="Suggest.html"style="margin:5px;color: #337ab7">意见建议</a>|
+            <a href="#"style="margin:5px;color: #337ab7">历史通知</a>|<a href="#" style="color:#3c763d;margin:5px">友情提示</a>|<a href="#"style="margin:5px;color: #337ab7">诚邀合伙人</a>
         </div>
-        <span style="float:right"><a href="Article.html">渝ICP备18007191号（备案）</a>© 2020 - 自由<img src="https://17bang.ren/Images/freeflying.ico"></span>
+        <span style="float:right"><a href="Article.html"style="color: #337ab7">渝ICP备18007191号（备案）</a>© 2020 - 自由<img src="https://17bang.ren/Images/freeflying.ico"></span>
     </footer>
 </body>
 </html>

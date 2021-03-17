@@ -100,3 +100,53 @@ select Age,avg(Score)
 from Student
 group by Age
 having avg(Score)>90
+
+--视图
+
+--创建
+GO
+
+CREATE VIEW V_Student -- V_Student是新创建View的名称 
+AS SELECT Id, [Name], 
+YEAR(Enroll) YearEnroll, -- 新增的计算列 
+Month(Enroll) MonthEnroll, -- 必须指定列名 
+Day(Enroll) DayEnroll, -- 列名不能重复 
+Age, Score FROM Student -- 还可以添加其他的WHERE/GROUP/HAVING等子句
+
+GO--另外一种创建视图
+CREATE VIEW V_Student([No],[Year],[Month],[Day],Age,Score) -- V_Student是新创建View的名称 
+AS SELECT Id, [Name], 
+YEAR(Enroll) , -- 新增的计算列 
+Month(Enroll) , -- 必须指定列名 
+Day(Enroll) , -- 列名不能重复 
+Age, Score FROM Student -- 还可以添加其他的WHERE/GROUP/HAVING等子句
+
+GO--修改列名（修改要全部写一遍与新建视图差不多）
+alter VIEW V_Student([No],[Name],[Year],[Month],[Day],Age,Score) -- V_Student是新创建View的名称 
+AS SELECT Id, [Name], 
+YEAR(Enroll) , -- 新增的计算列 
+Month(Enroll) , -- 必须指定列名 
+Day(Enroll) , -- 列名不能重复 
+Age, Score FROM Student -- 还可以添加其他的WHERE/GROUP/HAVING等子句
+
+GO
+select * from V_Student
+
+alter table Student drop column score --删除score列
+
+go
+drop view V_Student -- 删除试图，可删除多个
+
+GO  --绑定了架构的视图
+CREATE VIEW V_Student_Schema 
+WITH SCHEMABINDING -- 指明Schema Bind 
+AS SELECT Id, [Name], Score 
+FROM dbo.Student -- 必须使用dbo.Student
+
+GO
+alter table Student drop column score --删除score列（视图绑定的是删除不掉的）
+
+GO --视图加密（视图的具体创建的内容看不见）
+CREATE VIEW V_Student_Encrypt 
+WITH ENCRYPTION 
+AS SELECT * FROM Student
