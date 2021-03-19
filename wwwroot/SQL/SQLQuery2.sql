@@ -150,3 +150,4 @@ GO --视图加密（视图的具体创建的内容看不见）
 CREATE VIEW V_Student_Encrypt 
 WITH ENCRYPTION 
 AS SELECT * FROM Student
+
