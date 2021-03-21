@@ -120,29 +120,39 @@
             <a href="723.html" style="float:right; color:#337ab7"><span class=" fa fa-hand-o-right "></span>全部消息</a>
         </div>
         <div style="font-size:35px;margin:25px 0 15px 0">
-            <span>(｡ŏ_ŏ) 忘了</span><hr />
-        </div>
+            <span>(｡ŏ_ŏ) 忘了</span>
+        </div><hr />
         <div class="row" style="margin:30px 0px">
             <article class="col-md-4">
-                <div class="widget">
+                <div class="widget"style="border-bottom-color: #fff">
                     <ul class="nav nav-pill nav-fill">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#" style="margin-top: -15px"> <span class="fa  fa-eye"></span>每日督促</a>
+                            <a class="nav-link " aria-current="page" href="#" style="margin-top: -15px;margin-left: -15px"> <span class="fa  fa-eye"></span>密码</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" style="color:red;margin-top: -15px" href="#"><span class="fa  fa-heart"></span>排行榜</a>
+                            <a class="nav-link active" style="color:red;margin-top: -15px" href="#"><span class="fa  fa-heart"></span>用户名</a>
                         </li>
                     </ul>
                 </div>
-                <div style="margin-top:20px">
-                    <button class="btn btn-primary" style=" background-color: #337ab7">提交</button>
-                    <div class="form-check form-check-inline" style="margin-left:15px">
-                        <input class="form-check-input" type="checkbox" checked id="inlineCheckbox1" value="option1">
-                        <label class="form-check-label" for="inlineCheckbox1">记住我</label>
-                    </div>
-                    <div class="pull-right">
-                        <a href="#">(｡ŏ_ŏ) 忘了</a>
-                        <a href="#" style="margin-left:10px"><span class="fa fa-registered"></span>注册</a>
+                <div style=" border: 1px solid #ddd; margin-top: -30px;border-top-color: #fff">
+                    <div style="margin:30px 10px">
+                        <b>Email：（* 必填）</b>
+                        <div class="form-floating mb-3">
+                            <input type="email" class="form-control" id="floatingInput" placeholder="注册时填写的Email地址">
+                        </div>
+                        <b>通过用户名查找Email：</b>
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" placeholder="必须全称，且不要忘记了点 搜索 按钮" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                        </div>
+                        <b>验证码：（* 必填）</b>
+                        <div>
+                            <input type="password" class="form-control pull-left" id="exampleInputPassword1" style="width:30%">
+                            <a href="#" class="pull-left" style="margin-top:8px">看不清</a>
+                        </div>
+                        <div style="clear:both">
+                            <button class="btn btn-primary" style=" background-color: #337ab7;margin-top:10px">发送邮件</button>
+                            <button type="button" class="btn btn-light" style="margin-top: 10px">重置</button>
+                        </div>
                     </div>
                 </div>
             </article>
