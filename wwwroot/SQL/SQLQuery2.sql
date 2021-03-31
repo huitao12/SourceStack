@@ -313,19 +313,41 @@ JOIN City C
 ON C.ID=S.FroMCityId
 
 
-SELECT S.id,S.[Name],S.Age,T.[Name] AS Teachername,C.[NAME],G FROM Student S 
+SELECT S.id,S.[Name],S.Age,T.[Name] AS Teachername,C.[NAME] FROM Student S 
 JOIN Teacher T
 ON T.Id=S.TeacherId
 JOIN City C
 ON C.ID=S.FroMCityId
 
 SELECT * FROM Student S
-JOIN City C
+left JOIN City C
 ON C.ID=S.FroMCityId
 
+--自联接
+SELECT * FROM Teacher
+SELECT * FROM Student
+SELECT [Name],Age,00 FROM Teacher 
+union 
+SELECT [Name],Age,Score FROM  Student 
+ORDER BY [Name]
 
+--row_number 排名函数
+SELECT ROW_NUMBER()
+OVER(PARTITION BY Age ORDER BY Score desc) AS GID,
+Age,[Name],Score FROM Student
+--WHERE GID<3 ？怎么取前三
 
+--聚合函数
+SELECT MAX(Score) OVER(PARTITION BY Age) AS BEST,
+Age,[Name],Score
+--MAX(Score) OVER(PARTITION BY Age)-Score
+FROM Student
 
+--按age分支，找到score最大值 ，每个age段最高成绩与自己的成绩差
+SELECT MAX(Score) OVER(PARTITION BY Age) AS BEST,
+Age,[Name],Score,
+MAX(Score) OVER(PARTITION BY Age)-Score
+FROM Student
 
 
 

@@ -821,16 +821,16 @@ WITH SCHEMABINDING
 AS
 SELECT  P.ID,P.Title,P.Reward,COUNT_BIG(*)
 FROM dbo.Keyword2Problem KP
-JOIN dbo.Problem P ON P.Id=KP.
+JOIN dbo.Problem P ON P.Id=KP.id
 
-GO
-CREATE UNIQUE CLUSTERED INDEX IX_ProblemId ON VProblemKeyword(ProblemId)
-CREATE UNIQUE INDEX IX_ProblemReward ON VProblemKeyword(ProblemReward)
+--GO
+--CREATE UNIQUE CLUSTERED INDEX IX_ProblemId ON VProblemKeyword(ProblemId)
+--CREATE UNIQUE INDEX IX_ProblemReward ON VProblemKeyword(ProblemReward)
 
-DROP TABLE VProblemKeyword
+--DROP TABLE VProblemKeyword
 
-SELECT * FROM Problem
-SELECT * FROM VProblemKeyword
+--SELECT * FROM Problem
+--SELECT * FROM VProblemKeyword
 
 --6.在基表中插入/删除数据，观察VProblemKeyword是否相应的发生变化
 
