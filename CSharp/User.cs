@@ -15,7 +15,7 @@ namespace CSharp
         //帮帮币版块，定义一个类HelpMoney，表示一行帮帮币交易数据，包含你认为应该包含的字段和方法
         //为这些类的字段和方法设置合适的访问修饰符。
         #endregion
-        private User Invitedby { get; set; }
+        public User Invitedby { get; set; }
 
         public void Register()
         {
@@ -32,6 +32,7 @@ namespace CSharp
         internal string Password
         {
             set { _Password = value; }
+            //private get { }
         }
         //  如果user.Name为“admin”，输入时修改为“系统管理员”
         private string _name;

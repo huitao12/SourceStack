@@ -4,6 +4,7 @@ namespace CSharp
 {
     class Program
     {
+        private const int V = 1;
 
         static void Main(string[] args)
         {
@@ -424,12 +425,12 @@ namespace CSharp
             //作业：
             //将之前User / Problem / HelpMoney类的字段封装成属性，其中：
             //  user.Password在类的外部只能改不能读
-            User lxx = new User();
-            lxx.Password = "q12";
+            //User lxx = new User();
+            //lxx.Password = "q12";
             //Console.WriteLine(lxx.Password); //不能读
             //  如果user.Name为“admin”，输入时修改为“系统管理员”
-            lxx.name = "admin";
-            Console.WriteLine(lxx.name);
+            //lxx.name = "admin";
+            //Console.WriteLine(lxx.name);
             //  problem.Reward不能为负数
             //Problem lx = new Problem();
             //lx.Reward = 1;
@@ -442,83 +443,84 @@ namespace CSharp
             Problem key = new Problem(10);
             key[1] = "sql";
             key[2] = "c#";
-        //Console.WriteLine(lxx.setPsaaword());
+            //Console.WriteLine(lxx.setPsaaword());
 
 
+            #endregion
+            #region 静态和实例
+            //https://17bang.ren/Article/710
+            //作业：
+            //定义一个仓库（Repoistory）类，用于存取对象，其中包含：
+            //一个int类型的常量version
+            //一个静态只读的字符串connection，以后可用于连接数据库
+            //思考Respoitory应该是static类还是实例类更好
+            //考虑求助（Problem）的以下方法 / 属性，哪些适合实例，哪些适合静态，然后添加到类中：
+            //Publish()：发布一篇求助，并将其保存到数据库
+            //Load(int Id)：根据Id从数据库获取一条求助
+            //Delete(int Id)：根据Id删除某个求助
+            //repoistory：可用于在底层实现上述方法和数据库的连接操作等
+            //设计一个类FactoryContext，保证整个程序运行过程中，无论如何，外部只能获得它的唯一的一个实例化对象。（提示：设计模式之单例）
+            //想一想，为什么Publish()方法不是放置在User类中呢？用户（user）发布（Publish）一篇文章（article），不正好是user.Publish(article)么？
+            //自己实现一个模拟栈（MimicStack）类，入栈出栈数据均为int类型，包含如下功能：
+            //出栈Pop()，弹出栈顶数据
+            //入栈Push()，可以一次性压入多个数据
+            //出 / 入栈检查，
+            //如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
+            //如果已弹出所有数据，提示“栈已空”
+            MimicStack arr = new MimicStack(10);
         #endregion
-        #region 静态和实例
-        //https://17bang.ren/Article/710
-        //作业：
-        //定义一个仓库（Repoistory）类，用于存取对象，其中包含：
-        //一个int类型的常量version
-        //一个静态只读的字符串connection，以后可用于连接数据库
-        //思考Respoitory应该是static类还是实例类更好
-        //考虑求助（Problem）的以下方法 / 属性，哪些适合实例，哪些适合静态，然后添加到类中：
-        //Publish()：发布一篇求助，并将其保存到数据库
-        //Load(int Id)：根据Id从数据库获取一条求助
-        //Delete(int Id)：根据Id删除某个求助
-        //repoistory：可用于在底层实现上述方法和数据库的连接操作等
-        //设计一个类FactoryContext，保证整个程序运行过程中，无论如何，外部只能获得它的唯一的一个实例化对象。（提示：设计模式之单例）
-        //想一想，为什么Publish()方法不是放置在User类中呢？用户（user）发布（Publish）一篇文章（article），不正好是user.Publish(article)么？
-        //自己实现一个模拟栈（MimicStack）类，入栈出栈数据均为int类型，包含如下功能：
-        //出栈Pop()，弹出栈顶数据
-        //入栈Push()，可以一次性压入多个数据
-        //出 / 入栈检查，
-        //如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
-        //如果已弹出所有数据，提示“栈已空”
-        #endregion
-        #region 继承
-        //https://17bang.ren/Article/711
-        //作业：
-        //让User类无法被继承
-        //观察一起帮的求助（Problem）、文章（Article）和意见建议（Suggest），根据他们的特点，抽象出一个父类：内容（Content）
-        //  Content中有一个字段：kind，记录内容的种类（problem / article / suggest等），只能被子类使用
-        //  确保每个Content对象都有kind的非空值
-        //  Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
-        //  其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
-        //实例化文章和意见建议，调用他们：
-        //  继承自父类的属性和方法
-        //  自己的属性和方法
-        //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
-        #endregion
+            #region 继承
+            //https://17bang.ren/Article/711
+            //作业：
+            //让User类无法被继承
+            //观察一起帮的求助（Problem）、文章（Article）和意见建议（Suggest），根据他们的特点，抽象出一个父类：内容（Content）
+            //  Content中有一个字段：kind，记录内容的种类（problem / article / suggest等），只能被子类使用
+            //  确保每个Content对象都有kind的非空值
+            //  Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
+            //  其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
+            //实例化文章和意见建议，调用他们：
+            //  继承自父类的属性和方法
+            //  自己的属性和方法
+            //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
+            #endregion
 
-        //登录调用
-        //Console.WriteLine(LogIn("q121", "青蛙", "1212"));
-        //输出学生
-        //array(new string[] { "陈国栋", "夏康平", "周丁浩", "胡涛", "韩家宝", "龚廷义" });
-        //循环
-        //getArray(1, 5);
-        //getArray(1, 9);
-        //奇数和
-        //Console.WriteLine (summation(100));
-        //找到最大最小值
-        //Console.WriteLine(find(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 }));
-        //找到质数100以内的
-        //find(100);
-        //排序
-        //rank(new int[] { 32, 43, 12, 3, 46, 87, 54, 89, 14, 22, 999 });
-        //计算平均成绩
-        //double[] Average = { 32.3, 54.6, 76.7, 26.7, 98.01, 23.79, 14.1, 11.91 };
-        //Console.WriteLine(Math.Round(GetAverage(Average), 2));
-        //Console.WriteLine(GetAverage(Average));
-        //GuessMe();
-        //调换位置
-        //int location = 111, locations = 222;
-        //Swap(ref location, ref locations);
-        //Console.WriteLine(location);
-        //Console.WriteLine(locations);
-        //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
-        //if (LogOn("青蛙", "1212", "q121", out string reason))
-        //{
-        //    Console.WriteLine(reason);
-        //}
-        //else
-        //{
-        //    Console.WriteLine(reason);
-        //}
-        //实现二分查找
-        //Console.WriteLine(BinarySeek(new int[] { 12, 16, 25, 27, 33, 39, 44, 49, 55 }));
-    }
+            //登录调用
+            //Console.WriteLine(LogIn("q121", "青蛙", "1212"));
+            //输出学生
+            //array(new string[] { "陈国栋", "夏康平", "周丁浩", "胡涛", "韩家宝", "龚廷义" });
+            //循环
+            //getArray(1, 5);
+            //getArray(1, 9);
+            //奇数和
+            //Console.WriteLine (summation(100));
+            //找到最大最小值
+            //Console.WriteLine(find(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 }));
+            //找到质数100以内的
+            //find(100);
+            //排序
+            //rank(new int[] { 32, 43, 12, 3, 46, 87, 54, 89, 14, 22, 999 });
+            //计算平均成绩
+            //double[] Average = { 32.3, 54.6, 76.7, 26.7, 98.01, 23.79, 14.1, 11.91 };
+            //Console.WriteLine(Math.Round(GetAverage(Average), 2));
+            //Console.WriteLine(GetAverage(Average));
+            //GuessMe();
+            //调换位置
+            //int location = 111, locations = 222;
+            //Swap(ref location, ref locations);
+            //Console.WriteLine(location);
+            //Console.WriteLine(locations);
+            //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
+            //if (LogOn("青蛙", "1212", "q121", out string reason))
+            //{
+            //    Console.WriteLine(reason);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(reason);
+            //}
+            //实现二分查找
+            //Console.WriteLine(BinarySeek(new int[] { 12, 16, 25, 27, 33, 39, 44, 49, 55 }));
+        }
 
 
     #region 声明/调用/返回值

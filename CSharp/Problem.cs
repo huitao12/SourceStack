@@ -7,12 +7,21 @@ namespace CSharp
     class Problem
     {
         //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
-        private string Title { get; set; }
-        private string _Body { get; set; }
+        public string Title { get; set; }
+        public string _Body { get; set; }
         private int _Reward;
-        private DateTime PublishDateTime { get; set; }
-        private User Author { get; set; }
+        public DateTime PublishDateTime { get; set; }
+        public User Author { get; set; }
+        private string repoistory;
         public void Publish()
+        {
+
+        }
+        public void Load(int id)
+        {
+
+        }
+        public void Delete(int id)
         {
 
         }
