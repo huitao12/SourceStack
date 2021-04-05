@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    class User
+    public sealed class User
     {
         #region 类和对象
         //https://17bang.ren/Article/305

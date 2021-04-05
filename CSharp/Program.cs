@@ -4,8 +4,6 @@ namespace CSharp
 {
     class Program
     {
-        private const int V = 1;
-
         static void Main(string[] args)
         {
             #region 运算符和表达式作业
@@ -467,8 +465,20 @@ namespace CSharp
             //出 / 入栈检查，
             //如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
             //如果已弹出所有数据，提示“栈已空”
-            MimicStack arr = new MimicStack(10);
-        #endregion
+            MimicStack arr = new MimicStack(5);
+            arr.Push(1);
+            arr.Push(2);
+            arr.Push(3);
+            arr.Push(4);
+            arr.Push(5);
+            arr.Push(6);
+            arr.Pop();
+            arr.Pop();
+            arr.Pop();
+            arr.Pop();
+            arr.Pop();
+            arr.Pop();
+            #endregion
             #region 继承
             //https://17bang.ren/Article/711
             //作业：
@@ -522,299 +532,298 @@ namespace CSharp
             //Console.WriteLine(BinarySeek(new int[] { 12, 16, 25, 27, 33, 39, 44, 49, 55 }));
         }
 
+        #region 声明/调用/返回值
+        //https://17bang.ren/Article/299
+        //作业
+        //1将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
+        /// <summary>
+        /// 登录
+        /// </summary>
+        /// <param name="code">验证码</param>
+        /// <param name="name">用户名</param>
+        /// <param name="password">用户登录密码</param>
+        /// <returns>登录成功/用户名或密码错误</returns>
+        //static string LogIn(string code, string name, string password)
+        //{
+        //    if (code != "q121")
+        //    {
+        //        return "验证码错误";
+        //    }//else continue
+        //    if (name != "青蛙")
+        //    {
+        //        return "用户名不存在";
+        //    }//else continue
+        //    if (password != "1212")
+        //    {
+        //        return "用户名或密码错误";
+        //    }//else contnue
+        //    return "恭喜！登录成功！";
+        //}
+        /// <summary>
+        /// 输出同学的姓名
+        /// </summary>
+        /// <param name="name">学生姓名</param>
+        //static void array(string[] name)
+        //{
+        //    string[] array = name;
+        //    for (int i = 0; i < array.Length; i++)
+        //    {
+        //        Console.WriteLine(array[i]);
+        //    }
+        //}
+        /// <summary>
+        /// 循环输出1到5
+        /// </summary>
+        /// <param name="begin">起始值</param>
+        /// <param name="end">结束值</param>
+        //static void getArray(int begin, int end)
+        //{
+        //    for (int i = begin; i <= end; i++)
+        //    {
+        //        Console.WriteLine(i);
+        //    }
+        //    int i = begin;
+        //    while (i <= end)
+        //    {
+        //        Console.WriteLine(i);
+        //        i += 1;
+        //    }
+        //}
+        /// <summary>
+        /// 循环输出10以内的奇数
+        /// </summary>
+        /// <param name="begin">起始值</param>
+        /// <param name="end">结束值</param>
+        //static void getArray(int begin, int end) {
+        //    //for (int i = begin; i <= end; i+=2)
+        //    //{
+        //    //    Console.WriteLine(i);
+        //    //}
+        //    int i = begin;
+        //    while (i<=end)
+        //    {
+        //        Console.WriteLine(i);
+        //        i += 2;
+        //    }
 
-    #region 声明/调用/返回值
-    //https://17bang.ren/Article/299
-    //作业
-    //1将之前作业封装成方法（自行思考参数和返回值），并调用执行。且以后作业，如无特别声明，皆需使用方法封装。
-    /// <summary>
-    /// 登录
-    /// </summary>
-    /// <param name="code">验证码</param>
-    /// <param name="name">用户名</param>
-    /// <param name="password">用户登录密码</param>
-    /// <returns>登录成功/用户名或密码错误</returns>
-    //static string LogIn(string code, string name, string password)
-    //{
-    //    if (code != "q121")
-    //    {
-    //        return "验证码错误";
-    //    }//else continue
-    //    if (name != "青蛙")
-    //    {
-    //        return "用户名不存在";
-    //    }//else continue
-    //    if (password != "1212")
-    //    {
-    //        return "用户名或密码错误";
-    //    }//else contnue
-    //    return "恭喜！登录成功！";
-    //}
-    /// <summary>
-    /// 输出同学的姓名
-    /// </summary>
-    /// <param name="name">学生姓名</param>
-    //static void array(string[] name)
-    //{
-    //    string[] array = name;
-    //    for (int i = 0; i < array.Length; i++)
-    //    {
-    //        Console.WriteLine(array[i]);
-    //    }
-    //}
-    /// <summary>
-    /// 循环输出1到5
-    /// </summary>
-    /// <param name="begin">起始值</param>
-    /// <param name="end">结束值</param>
-    //static void getArray(int begin, int end)
-    //{
-    //    for (int i = begin; i <= end; i++)
-    //    {
-    //        Console.WriteLine(i);
-    //    }
-    //    int i = begin;
-    //    while (i <= end)
-    //    {
-    //        Console.WriteLine(i);
-    //        i += 1;
-    //    }
-    //}
-    /// <summary>
-    /// 循环输出10以内的奇数
-    /// </summary>
-    /// <param name="begin">起始值</param>
-    /// <param name="end">结束值</param>
-    //static void getArray(int begin, int end) {
-    //    //for (int i = begin; i <= end; i+=2)
-    //    //{
-    //    //    Console.WriteLine(i);
-    //    //}
-    //    int i = begin;
-    //    while (i<=end)
-    //    {
-    //        Console.WriteLine(i);
-    //        i += 2;
-    //    }
+        //}
+        ///// <summary>
+        /// 100以内奇数和
+        /// </summary>
+        /// <param name="number">最大数值</param>
+        /// <returns></returns>
+        //static int summation(int number)
+        //{
 
-    //}
-    ///// <summary>
-    /// 100以内奇数和
-    /// </summary>
-    /// <param name="number">最大数值</param>
-    /// <returns></returns>
-    //static int summation(int number)
-    //{
+        //    int sum = 0;
+        //    for (int i = 1; i < number; i += 2)
+        //    {
+        //        sum += i;
+        //    }
+        //    return sum;
+        //}
+        /// <summary>
+        /// 找到最大/小值
+        /// </summary>
+        /// <param name="grade">成绩</param>
+        /// <returns>最大/小值</returns>
+        //static double find(double[] grade)
+        //{
+        //    //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
+        //    double max = grade[0];//min = grade[0];
+        //    for (int i = 0; i < grade.Length; i++)
+        //    {
+        //        if (grade[i] > max)
+        //        {
+        //            max = grade[i];
+        //        }//else contiune
+        //        //if (grade[i] < min)
+        //        //{
+        //        //    min = grade[i];
+        //        //}//else contiune
+        //    }
+        //    return max;
+        //    //return min;
+        //}
+        /// <summary>
+        /// 输出100以内的质数
+        /// </summary>
+        /// <param name="number">最大值</param>
+        //static void  find(int number)
+        //{
+        //for (int i = 2; i < number; i++)
+        //    {
+        //        bool isprime = true;//isprime是质数还是不是质数
+        //        for (int j = 2; j < i - 1; j++) //判断当前判断的数字是不是质数
+        //        {
+        //            if (i % j == 0) //说明不是质数
+        //            {
+        //                isprime = false;//不是质数
+        //                break;
+        //            }
+        //        }
+        //        if (isprime)//是质数
+        //        {
+        //            Console.WriteLine(i);
+        //        }
+        //    }
+        //}
+        /// <summary>
+        /// 数组排序
+        /// </summary>
+        /// <param name="array">无序数组</param>
+        //static void rank(int[] array)
+        //{
+        //    for (int i = 1; i < array.Length; i++)
+        //    {
+        //        for (int j = 0; j < array.Length - i; j++)
+        //        {
+        //            if (array[j] > array[j + 1])
+        //            {
+        //                int temp = array[j];
+        //                array[j] = array[j + 1];
+        //                array[j + 1] = temp;
+        //            }
+        //        }
+        //    }
+        //    for (int i = 0; i < array.Length; i++)
+        //    {
+        //        Console.WriteLine(array[i]);
+        //    }
+        //}
+        /// <summary>
+        /// 求平均成绩（精确到两位小数）
+        /// </summary>
+        /// <param name="grade">学生成绩</param>
+        /// <returns>全部学生平均值</returns>
+        ///2计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
+        //static double GetAverage(double[] grade)
+        //{
+        //    double sum = 0;
+        //    for (int i = 0; i < grade.Length; i++)
+        //    {
+        //        sum = sum + grade[i];
+        //    }
+        //    double Average = sum / grade.Length;//声明一个存平均值的变量
+        //    return Average;
+        //}
+        /// <summary>
+        /// 猜数字游戏
+        /// </summary>
+        ///3完成“猜数字”游戏，方法名GuessMe()：
+        ///   随机生成一个大于0小于1000的整数
+        ///   用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
+        ///   没猜中可以继续猜，但最多不能超过10次
+        ///      如果5次之内猜中，输出：你真牛逼！
+        ///      如果8次之内猜中，输出：不错嘛！
+        ///      10次还没猜中，输出：(～￣(OO)￣)ブ
+        //static void GuessMe()
+        //{
+        //    Random r = new Random();
+        //    var num = r.Next(1, 1000);
+        //    Console.WriteLine("hello world！");
+        //    Console.Write("请输入一个不超过1000的自然数：");
+        //    Console.WriteLine();
+        //    for (int i = 9; i >= 0; i--)
+        //    {
+        //        int j = int.Parse(Console.ReadLine());
 
-    //    int sum = 0;
-    //    for (int i = 1; i < number; i += 2)
-    //    {
-    //        sum += i;
-    //    }
-    //    return sum;
-    //}
-    /// <summary>
-    /// 找到最大/小值
-    /// </summary>
-    /// <param name="grade">成绩</param>
-    /// <returns>最大/小值</returns>
-    //static double find(double[] grade)
-    //{
-    //    //将源栈同学的成绩存入一个double数组中，用循环找到最高分和最低分
-    //    double max = grade[0];//min = grade[0];
-    //    for (int i = 0; i < grade.Length; i++)
-    //    {
-    //        if (grade[i] > max)
-    //        {
-    //            max = grade[i];
-    //        }//else contiune
-    //        //if (grade[i] < min)
-    //        //{
-    //        //    min = grade[i];
-    //        //}//else contiune
-    //    }
-    //    return max;
-    //    //return min;
-    //}
-    /// <summary>
-    /// 输出100以内的质数
-    /// </summary>
-    /// <param name="number">最大值</param>
-    //static void  find(int number)
-    //{
-    //for (int i = 2; i < number; i++)
-    //    {
-    //        bool isprime = true;//isprime是质数还是不是质数
-    //        for (int j = 2; j < i - 1; j++) //判断当前判断的数字是不是质数
-    //        {
-    //            if (i % j == 0) //说明不是质数
-    //            {
-    //                isprime = false;//不是质数
-    //                break;
-    //            }
-    //        }
-    //        if (isprime)//是质数
-    //        {
-    //            Console.WriteLine(i);
-    //        }
-    //    }
-    //}
-    /// <summary>
-    /// 数组排序
-    /// </summary>
-    /// <param name="array">无序数组</param>
-    //static void rank(int[] array)
-    //{
-    //    for (int i = 1; i < array.Length; i++)
-    //    {
-    //        for (int j = 0; j < array.Length - i; j++)
-    //        {
-    //            if (array[j] > array[j + 1])
-    //            {
-    //                int temp = array[j];
-    //                array[j] = array[j + 1];
-    //                array[j + 1] = temp;
-    //            }
-    //        }
-    //    }
-    //    for (int i = 0; i < array.Length; i++)
-    //    {
-    //        Console.WriteLine(array[i]);
-    //    }
-    //}
-    /// <summary>
-    /// 求平均成绩（精确到两位小数）
-    /// </summary>
-    /// <param name="grade">学生成绩</param>
-    /// <returns>全部学生平均值</returns>
-    ///2计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
-    //static double GetAverage(double[] grade)
-    //{
-    //    double sum = 0;
-    //    for (int i = 0; i < grade.Length; i++)
-    //    {
-    //        sum = sum + grade[i];
-    //    }
-    //    double Average = sum / grade.Length;//声明一个存平均值的变量
-    //    return Average;
-    //}
-    /// <summary>
-    /// 猜数字游戏
-    /// </summary>
-    ///3完成“猜数字”游戏，方法名GuessMe()：
-    ///   随机生成一个大于0小于1000的整数
-    ///   用户输入一个猜测值，系统进行判断，告知用户猜测的数是“大了”，还是“小了”
-    ///   没猜中可以继续猜，但最多不能超过10次
-    ///      如果5次之内猜中，输出：你真牛逼！
-    ///      如果8次之内猜中，输出：不错嘛！
-    ///      10次还没猜中，输出：(～￣(OO)￣)ブ
-    //static void GuessMe()
-    //{
-    //    Random r = new Random();
-    //    var num = r.Next(1, 1000);
-    //    Console.WriteLine("hello world！");
-    //    Console.Write("请输入一个不超过1000的自然数：");
-    //    Console.WriteLine();
-    //    for (int i = 9; i >= 0; i--)
-    //    {
-    //        int j = int.Parse(Console.ReadLine());
+        //        if (j < 0 || j > 1000)
+        //        {
+        //            Console.WriteLine("输入的数不在范围");
+        //            return;
+        //        }
+        //        if (j == num)
+        //        {
+        //            if (i < 5)
+        //            {
+        //                Console.WriteLine($"恭喜您，答对了！只用了{10 - i} 次呢,你真牛逼！");
+        //                break;
+        //            }//else continue
+        //            if (i < 8)
+        //            {
+        //                Console.WriteLine($"恭喜您，答对了！只用了{10 - i} 次呢,不错嘛！");
+        //                break;
+        //            }//else continue
+        //        }
+        //        else if (j > num)
+        //        {
+        //            Console.WriteLine($"太大了呢！(还剩{i}次)");
+        //        }
+        //        else if (j < num)
+        //        {
+        //            Console.WriteLine($"太小了呢！(还剩{i}次)");
+        //        }//else continue
+        //        if (i == 0)
+        //        {
+        //            Console.WriteLine("(～￣(OO)￣)ブ");
+        //        }//else continue
+        //    }
 
-    //        if (j < 0 || j > 1000)
-    //        {
-    //            Console.WriteLine("输入的数不在范围");
-    //            return;
-    //        }
-    //        if (j == num)
-    //        {
-    //            if (i < 5)
-    //            {
-    //                Console.WriteLine($"恭喜您，答对了！只用了{10 - i} 次呢,你真牛逼！");
-    //                break;
-    //            }//else continue
-    //            if (i < 8)
-    //            {
-    //                Console.WriteLine($"恭喜您，答对了！只用了{10 - i} 次呢,不错嘛！");
-    //                break;
-    //            }//else continue
-    //        }
-    //        else if (j > num)
-    //        {
-    //            Console.WriteLine($"太大了呢！(还剩{i}次)");
-    //        }
-    //        else if (j < num)
-    //        {
-    //            Console.WriteLine($"太小了呢！(还剩{i}次)");
-    //        }//else continue
-    //        if (i == 0)
-    //        {
-    //            Console.WriteLine("(～￣(OO)￣)ブ");
-    //        }//else continue
-    //    }
-    //}
-    #endregion
-    #region 方法进阶：值/引用传递
-    //https://17bang.ren/Article/303
-    //作业
-    //利用ref调用Swap()方法交换两个同学的床位号
-    //static void Swap(ref int location, ref int locations)
-    //{
-    //    int temp = location;
-    //    location = locations;
-    //    locations = temp;
-    //}
-
-
-    //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
-    //true / false，表示登陆是否成功
-    //string，表示登陆失败的原因
-    //static bool LogOn(string name, string password, string code, out string reason)
-    //{
-    //    // name = "青蛙"; password = "1212";code = "q121";
-    //    Console.WriteLine("输入用户名:");
-    //    if (name == Console.ReadLine())
-    //    {
-    //        Console.WriteLine("输入密码:");
-    //        if (password == Console.ReadLine())
-    //        {
-    //            Console.WriteLine("输入验证码:");
-    //            if (code == Console.ReadLine())
-    //            {
-    //                reason = "恭喜！登录成功 ";
-    //                return true;
-    //            }
-    //            else
-    //            {
-    //                reason = "验证码错误";
-    //                return false;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            reason = "密码输入错误";
-    //            return false;
-    //        }
-    //    }
-    //    else
-    //    {
-    //        reason = "用户名错误";
-    //        return false;
-    //    }
-    //}
-    #endregion
-    //static void Agree(User article)
-    //{
-    //    article.agreeCount++;
-    //}
-    //static User /*void*/ Stature(/*ref*/ User user)//ref引用传递
-    //{
-    //    user = new User();////new了一个新的对象，改变的也是新的对象，不影响原来的对象，加ref他就是引入了zlz的值，但是新new了一个对象就为0
-    //    user.age++;
-    //    return user;
-    //}
+            #endregion
+            #region 方法进阶：值/引用传递
+            //https://17bang.ren/Article/303
+            //作业
+            //利用ref调用Swap()方法交换两个同学的床位号
+            //static void Swap(ref int location, ref int locations)
+            //{
+            //    int temp = location;
+            //    location = locations;
+            //    locations = temp;
+            //}
 
 
+            //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
+            //true / false，表示登陆是否成功
+            //string，表示登陆失败的原因
+            //static bool LogOn(string name, string password, string code, out string reason)
+            //{
+            //    // name = "青蛙"; password = "1212";code = "q121";
+            //    Console.WriteLine("输入用户名:");
+            //    if (name == Console.ReadLine())
+            //    {
+            //        Console.WriteLine("输入密码:");
+            //        if (password == Console.ReadLine())
+            //        {
+            //            Console.WriteLine("输入验证码:");
+            //            if (code == Console.ReadLine())
+            //            {
+            //                reason = "恭喜！登录成功 ";
+            //                return true;
+            //            }
+            //            else
+            //            {
+            //                reason = "验证码错误";
+            //                return false;
+            //            }
+            //        }
+            //        else
+            //        {
+            //            reason = "密码输入错误";
+            //            return false;
+            //        }
+            //    }
+            //    else
+            //    {
+            //        reason = "用户名错误";
+            //        return false;
+            //    }
+            //}
+            #endregion
+            //static void Agree(User article)
+            //{
+            //    article.agreeCount++;
+            //}
+            //static User /*void*/ Stature(/*ref*/ User user)//ref引用传递
+            //{
+            //    user = new User();////new了一个新的对象，改变的也是新的对象，不影响原来的对象，加ref他就是引入了zlz的值，但是新new了一个对象就为0
+            //    user.age++;
+            //    return user;
+            //}
 
 
-}
+  
+
+    }
 
 }

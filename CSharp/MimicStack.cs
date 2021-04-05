@@ -20,19 +20,16 @@ namespace CSharp
         {
             array = new int[length];
         }
-        public void Push(int[] element)
+        public void Push(int element)
         {
-            for (int i = 0; i < element.Length - 1; i++)
+            if (top <= array.Length - 1)
             {
-                if (top <= array.Length - 1)
-                {
-                    element[i] = array[top];
-                    top++;
-                }
-                else
-                {
-                    Console.WriteLine("栈溢出");
-                }
+                element = array[top];
+                top++;
+            }
+            else
+            {
+                Console.WriteLine("栈溢出");
             }
         }
 
