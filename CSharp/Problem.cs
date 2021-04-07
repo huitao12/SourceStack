@@ -69,5 +69,23 @@ namespace CSharp
                 keyword[index - 1] = value;
             }
         }
+        public Problem()
+        {
+
+        }
+        public override void consume()
+        {
+            Console.WriteLine("需要消耗其设置悬赏数量的帮帮币");
+        }
+
+        public override void Agree()
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void Disagree()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

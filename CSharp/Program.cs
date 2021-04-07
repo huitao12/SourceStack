@@ -6,6 +6,7 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
+
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -438,9 +439,9 @@ namespace CSharp
             //设计一种方式，保证：
             //  每一个Problem对象一定有Body赋值
             //  每一个User对象一定有Name和Password赋值
-            Problem key = new Problem(10);
-            key[1] = "sql";
-            key[2] = "c#";
+            //Problem key = new Problem(10);
+            //key[1] = "sql";
+            //key[2] = "c#";
             //Console.WriteLine(lxx.setPsaaword());
 
 
@@ -465,19 +466,19 @@ namespace CSharp
             //出 / 入栈检查，
             //如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
             //如果已弹出所有数据，提示“栈已空”
-            MimicStack arr = new MimicStack(5);
-            arr.Push(1);
-            arr.Push(2);
-            arr.Push(3);
-            arr.Push(4);
-            arr.Push(5);
-            arr.Push(6);
-            arr.Pop();
-            arr.Pop();
-            arr.Pop();
-            arr.Pop();
-            arr.Pop();
-            arr.Pop();
+            //MimicStack arr = new MimicStack(5);
+            //arr.Push(1);
+            //arr.Push(2);
+            //arr.Push(3);
+            //arr.Push(4);
+            //arr.Push(5);
+            //arr.Push(6);
+            //arr.Pop();
+            //arr.Pop();
+            //arr.Pop();
+            //arr.Pop();
+            //arr.Pop();
+            //arr.Pop();
             #endregion
             #region 继承
             //https://17bang.ren/Article/711
@@ -491,8 +492,54 @@ namespace CSharp
             //实例化文章和意见建议，调用他们：
             //  继承自父类的属性和方法
             //  自己的属性和方法
+            //Article LX = new Article();
+            //LX.Search("121");
+
             //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
             #endregion
+
+            //多态作业
+            {
+                //作业：
+                //添加一个新类ContentService，其中有一个发布（Publish()）方法：
+                //如果发布Article，需要消耗一个帮帮币
+                //如果发布Problem，需要消耗其设置悬赏数量的帮帮币
+                //如果发布Suggest，不需要消耗帮帮币
+                //最后将内容存到数据库中，三个类存数据库的方法是完全一样的，现在用Console.WriteLine()代替。根据我们学习的继承和多态知识，实现上述功能。
+                Content lx = new Article();
+                new ContentService().Publish(lx);
+                //lx.consume();
+
+                Content lxx = new Problem();
+                new ContentService().Publish(lxx);
+                //lxx.consume();
+
+                Content llx = new Suggest();
+                new ContentService().Publish(llx);
+                llx.consume();
+            }
+            //C#-面向对象：抽象类和接口作业：
+            {
+                //思考之前的Content类，该将其抽象成抽象类还是接口？为什么？并按你的想法实现。
+                //一起帮里的求助总结、文章和意见建议，以及他们的评论，都有一个点赞（Agree）/ 踩（Disagree）的功能，赞和踩都会增减作者及评价者的帮帮点。能不能对其进行抽象？如何实现？
+                //引入两个子类EmailMessage和DBMessage，和他们继承的接口ISendMessage（含Send()方法声明），用Console.WriteLine()实现Send()。
+                //一起帮还可以在好友间发私信，所有又有了IChat接口，其中也有一个Send()方法声明。假设User类同时继承了ISendMessage和IChat，如何处理？
+                //ISendMessage ll = new DBMessage();
+                //ll.Send();
+                //ISendMessage li = new EmailMessage();
+                //li.Send(); 
+
+                //IChat ic = new User();
+                //ic.Send();
+                //ISendMessage im = new User();
+                //im.Send();
+                //User im = new User();
+                //im.Send();
+            }
+
+
+
+
 
             //登录调用
             //Console.WriteLine(LogIn("q121", "青蛙", "1212"));
@@ -760,69 +807,69 @@ namespace CSharp
         //        }//else continue
         //    }
 
-            #endregion
-            #region 方法进阶：值/引用传递
-            //https://17bang.ren/Article/303
-            //作业
-            //利用ref调用Swap()方法交换两个同学的床位号
-            //static void Swap(ref int location, ref int locations)
-            //{
-            //    int temp = location;
-            //    location = locations;
-            //    locations = temp;
-            //}
+        #endregion
+        #region 方法进阶：值/引用传递
+        //https://17bang.ren/Article/303
+        //作业
+        //利用ref调用Swap()方法交换两个同学的床位号
+        //static void Swap(ref int location, ref int locations)
+        //{
+        //    int temp = location;
+        //    location = locations;
+        //    locations = temp;
+        //}
 
 
-            //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
-            //true / false，表示登陆是否成功
-            //string，表示登陆失败的原因
-            //static bool LogOn(string name, string password, string code, out string reason)
-            //{
-            //    // name = "青蛙"; password = "1212";code = "q121";
-            //    Console.WriteLine("输入用户名:");
-            //    if (name == Console.ReadLine())
-            //    {
-            //        Console.WriteLine("输入密码:");
-            //        if (password == Console.ReadLine())
-            //        {
-            //            Console.WriteLine("输入验证码:");
-            //            if (code == Console.ReadLine())
-            //            {
-            //                reason = "恭喜！登录成功 ";
-            //                return true;
-            //            }
-            //            else
-            //            {
-            //                reason = "验证码错误";
-            //                return false;
-            //            }
-            //        }
-            //        else
-            //        {
-            //            reason = "密码输入错误";
-            //            return false;
-            //        }
-            //    }
-            //    else
-            //    {
-            //        reason = "用户名错误";
-            //        return false;
-            //    }
-            //}
-            #endregion
-            //static void Agree(User article)
-            //{
-            //    article.agreeCount++;
-            //}
-            //static User /*void*/ Stature(/*ref*/ User user)//ref引用传递
-            //{
-            //    user = new User();////new了一个新的对象，改变的也是新的对象，不影响原来的对象，加ref他就是引入了zlz的值，但是新new了一个对象就为0
-            //    user.age++;
-            //    return user;
-            //}
+        //将登陆的过程封装成一个方法LogOn()，调用之后能够获得：
+        //true / false，表示登陆是否成功
+        //string，表示登陆失败的原因
+        //static bool LogOn(string name, string password, string code, out string reason)
+        //{
+        //    // name = "青蛙"; password = "1212";code = "q121";
+        //    Console.WriteLine("输入用户名:");
+        //    if (name == Console.ReadLine())
+        //    {
+        //        Console.WriteLine("输入密码:");
+        //        if (password == Console.ReadLine())
+        //        {
+        //            Console.WriteLine("输入验证码:");
+        //            if (code == Console.ReadLine())
+        //            {
+        //                reason = "恭喜！登录成功 ";
+        //                return true;
+        //            }
+        //            else
+        //            {
+        //                reason = "验证码错误";
+        //                return false;
+        //            }
+        //        }
+        //        else
+        //        {
+        //            reason = "密码输入错误";
+        //            return false;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        reason = "用户名错误";
+        //        return false;
+        //    }
+        //}
+        #endregion
+        //static void Agree(User article)
+        //{
+        //    article.agreeCount++;
+        //}
+        //static User /*void*/ Stature(/*ref*/ User user)//ref引用传递
+        //{
+        //    user = new User();////new了一个新的对象，改变的也是新的对象，不影响原来的对象，加ref他就是引入了zlz的值，但是新new了一个对象就为0
+        //    user.age++;
+        //    return user;
+        //}
 
 
-  
+
 
     }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public sealed class User
+    public /*sealed*/ class User :ISendMessage,IChat //让USer无法被继承
     {
         #region 类和对象
         //https://17bang.ren/Article/305
@@ -26,6 +26,29 @@ namespace CSharp
         {
 
         }
+        public User()
+        {
+
+        }
+        void ISendMessage.Send()
+        {
+            Console.WriteLine("ISendMessage");
+        }
+
+        public void Send()
+        {
+            Console.WriteLine("IChat");
+        }
+
+        //void IChat.Send()
+        //{
+        //    Console.WriteLine("IChat");
+        //}
+
+
+
+
+
         //将之前User / Problem / HelpMoney类的字段封装成属性，其中：
         //  user.Password在类的外部只能改不能读
         private string _Password;
