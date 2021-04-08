@@ -86,8 +86,8 @@ namespace CSharp
             Password = _Password;
         }
 
-
-
+        //User类中添加一个Tokens属性，类型为TokenManager
+        public TokenManager Tokens { get; set; }
 
 
 

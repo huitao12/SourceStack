@@ -167,6 +167,8 @@ BEGIN TRAN
 DELETE Keywords WHERE Used%2=1
 ROLLBACK
 
+
+
 --https://17bang.ren/Article/445
 --作业
 --1.在User表上的基础上：
@@ -176,15 +178,18 @@ SELECT * FROM [USER]
 ALTER TABLE [User]
 ADD Id INT NOT NULL IDENTITY(1,1) PRIMARY KEY --IDENTITY（自增）
 
+
 --添加约束，让UserName不能重复
 ALTER TABLE [User]
 ADD CONSTRAINT UQ_UserName UNIQUE(UserName)
+
+
 
 INSERT [User] VALUES(N'17bang',1)--测试约束是否创建
 
 --2.在Problem表的基础上：
 --为NeedRemoteHelp添加NOT NULL约束，再删除NeedRemoteHelp上NOT NULL的约束
-SELECT * FROM Problem
+SELECT * FROM Problem 
 --添加
 ALTER TABLE Problem
 ALTER COLUMN  NeedRemoteHelp BIT NOT NULL
@@ -218,6 +223,7 @@ INSERT Keyword VALUES(N'CSS')
 INSERT Keyword VALUES(N'HTML')
 INSERT Keyword VALUES(N'SQL')
 INSERT Keyword VALUES(N'.NET')
+
 
 --2.将User表中Id列修改为可存储GUID的类型，并存入若干条包含GUID值的数据
 SELECT * FROM [User]
@@ -259,6 +265,7 @@ WHERE Author = N'飞哥' ORDER BY Reward DESC
 SELECT Author,Reward
 FROM Problem
 ORDER BY Author , Reward DESC
+
 
 --  查找并统计出每个作者的：求助数量、悬赏总金额和平均值
 SELECT * FROM Problem

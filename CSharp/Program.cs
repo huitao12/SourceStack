@@ -506,17 +506,17 @@ namespace CSharp
                 //如果发布Problem，需要消耗其设置悬赏数量的帮帮币
                 //如果发布Suggest，不需要消耗帮帮币
                 //最后将内容存到数据库中，三个类存数据库的方法是完全一样的，现在用Console.WriteLine()代替。根据我们学习的继承和多态知识，实现上述功能。
-                Content lx = new Article();
-                new ContentService().Publish(lx);
-                //lx.consume();
+                //Content lx = new Article();
+                //new ContentService().Publish(lx);
+                ////lx.consume();
 
-                Content lxx = new Problem();
-                new ContentService().Publish(lxx);
-                //lxx.consume();
+                //Content lxx = new Problem();
+                //new ContentService().Publish(lxx);
+                ////lxx.consume();
 
-                Content llx = new Suggest();
-                new ContentService().Publish(llx);
-                llx.consume();
+                //Content llx = new Suggest();
+                //new ContentService().Publish(llx);
+                //llx.consume();
             }
             //C#-面向对象：抽象类和接口作业：
             {
@@ -536,8 +536,37 @@ namespace CSharp
                 //User im = new User();
                 //im.Send();
             }
+            //结构和日期 作业
+            {
+                //作业：
+                //用代码证明struct定义的类型是值类型
+                //Bed bed /*= new Bed()*/;//new Bed()实际上给所有struct成员赋了默认值
+                //bed._number = 12; //值类型不会报错  是他有一个无参构造函数
+                //Console.WriteLine(bed._number);
 
+                ////Beds beds = new Beds();//引用类型有无参构造函数是不会报错的
+                //Beds beds /*= new Bed()*/;
+                //beds._number = 12;//报错：使用了未赋值的变量  //Bed1引用类型
+                //Console.WriteLine(beds._number);
 
+                //源栈的学费是按周计费的，所以请实现这两个功能：
+                //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期、
+                //GetDate(5, 10, 8);
+                //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
+
+                //注意：先写测试用例，确保所有测试用例通过
+
+            }
+
+            //枚举作业
+            {
+                //作业：
+                //声明一个令牌（Token）枚举，包含值：SuperAdmin、Admin、Blogger、Newbie、Registered。
+                //声明一个令牌管理（TokenManager）类：
+                //使用私有的Token枚举_tokens存储所具有的权限
+                //暴露Add(Token)、Remove(Token)和Has(Token)方法，可以添加、删除和判断其有无某个权限
+                //User类中添加一个Tokens属性，类型为TokenManager
+            }
 
 
 
@@ -577,6 +606,9 @@ namespace CSharp
             //}
             //实现二分查找
             //Console.WriteLine(BinarySeek(new int[] { 12, 16, 25, 27, 33, 39, 44, 49, 55 }));
+            GetDate();
+            User lx = new User();
+            Console.WriteLine(lx.Tokens);
         }
 
         #region 声明/调用/返回值
@@ -869,7 +901,24 @@ namespace CSharp
         //}
 
 
+        //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
+        //static void  GetDate(int day,int week,int month)
+        //{
+        //    Console.WriteLine(DateTime.Now.AddDays(day));
+        //    Console.WriteLine(DateTime.Now.AddDays(week*7));
+        //    Console.WriteLine(DateTime.Now.AddMonths(month));
+        //}
+        //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
+        static void GetDate()
+        {
 
+
+            //for (int i = 0; i < length; i++)//循环一次为一周（一周七天）
+            //{
+            Console.WriteLine($"第三周：{DateTime.Now.AddYears(0).ToString("yyyy年1月1日")}——{DateTime.Now.AddDays(6).ToString("yyyy年mm月dd日")}");
+            Console.WriteLine();
+            //}
+        }
 
     }
 
