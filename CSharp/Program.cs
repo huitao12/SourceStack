@@ -553,7 +553,7 @@ namespace CSharp
                 //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期、
                 //GetDate(5, 10, 8);
                 //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-
+                GetDate(2021);
                 //注意：先写测试用例，确保所有测试用例通过
 
             }
@@ -606,9 +606,10 @@ namespace CSharp
             //}
             //实现二分查找
             //Console.WriteLine(BinarySeek(new int[] { 12, 16, 25, 27, 33, 39, 44, 49, 55 }));
-            GetDate();
-            User lx = new User();
-            Console.WriteLine(lx.Tokens);
+            
+          
+            //User lx = new User();
+            //Console.WriteLine(lx.Tokens);
         }
 
         #region 声明/调用/返回值
@@ -902,22 +903,32 @@ namespace CSharp
 
 
         //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
-        //static void  GetDate(int day,int week,int month)
+        //static void GetDate(int day, int week, int month)
         //{
         //    Console.WriteLine(DateTime.Now.AddDays(day));
-        //    Console.WriteLine(DateTime.Now.AddDays(week*7));
+        //    Console.WriteLine(DateTime.Now.AddDays(week * 7));
         //    Console.WriteLine(DateTime.Now.AddMonths(month));
         //}
         //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-        static void GetDate()
+
+
+        public static void GetDate(int year)
         {
-
-
-            //for (int i = 0; i < length; i++)//循环一次为一周（一周七天）
-            //{
-            Console.WriteLine($"第三周：{DateTime.Now.AddYears(0).ToString("yyyy年1月1日")}——{DateTime.Now.AddDays(6).ToString("yyyy年mm月dd日")}");
-            Console.WriteLine();
-            //}
+            DateTime Dt = new DateTime(year, 1, 1);
+            while (Dt.DayOfWeek != DayOfWeek.Monday)
+            {
+                Dt = Dt.AddDays(+1);
+            }
+            //Console.WriteLine(Dt);//2021,1,4
+            int i = 1;
+            int years = Dt.Year;
+            while (Dt.Year == years)
+            {
+                Console.WriteLine($"第{i}周：{Dt.ToString("yyyy年MM月dd日")} — {Dt.AddDays(6).ToString("yyyy年MM月dd日")}");
+                Dt = Dt.AddDays(7);
+                Console.WriteLine();
+                i++;
+            }
         }
 
     }
