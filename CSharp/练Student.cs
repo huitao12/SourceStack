@@ -6,12 +6,10 @@ namespace CSharp
 {
     class 练Student:练Person
     {
-        public void Exam()
+        public void Greet(string name)
         {
-            if (Age>30)
-            {
 
-            }
+            Console.WriteLine($"傻子{name}");
         }
     }
 }

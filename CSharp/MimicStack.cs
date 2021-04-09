@@ -15,16 +15,14 @@ namespace CSharp
 
         private int top;
         private int buttom;
-        private int[] array;
-        public MimicStack(int length)
+        private object[] arr=new object[5];
+     
+
+        public void Push(Object element)
         {
-            array = new int[length];
-        }
-        public void Push(int element)
-        {
-            if (top <= array.Length - 1)
+            if (top <= arr.Length - 1)
             {
-                element = array[top];
+                element = arr[top];
                 top++;
             }
             else
@@ -39,7 +37,7 @@ namespace CSharp
             if (top != buttom)
             {
                 top--;
-                Console.WriteLine(array[top]);
+                Console.WriteLine(arr[top]);
             }
             else
             {

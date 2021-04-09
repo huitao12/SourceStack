@@ -6,6 +6,8 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
+         
+
 
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
@@ -466,11 +468,11 @@ namespace CSharp
             //出 / 入栈检查，
             //如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
             //如果已弹出所有数据，提示“栈已空”
-            //MimicStack arr = new MimicStack(5);
+            //MimicStack arr = new MimicStack();
             //arr.Push(1);
-            //arr.Push(2);
-            //arr.Push(3);
-            //arr.Push(4);
+            //arr.Push("哈哈");
+            //arr.Push(true );
+            //arr.Push(4.1);
             //arr.Push(5);
             //arr.Push(6);
             //arr.Pop();
@@ -553,7 +555,7 @@ namespace CSharp
                 //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期、
                 //GetDate(5, 10, 8);
                 //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-                GetDate(2021);
+                //GetDate(2021);
                 //注意：先写测试用例，确保所有测试用例通过
 
             }
@@ -568,7 +570,36 @@ namespace CSharp
                 //User类中添加一个Tokens属性，类型为TokenManager
             }
 
+            //Object和拆箱
+            {
+                //作业：
+                //在https://source.dot.net/中找到 Console.WriteLine(new Student()); 输出Student类名的源代码
+                //思考dynamic和var的区别，并用代码予以演示
+                //var i = "1";//未赋值会报错  在声明的时候就要给他赋值一个类型
+                //Console.WriteLine(i-2);//不能进行string类型跟int类型计算  ，编译时会报错
 
+                //dynamic j=2;//未赋值不会报错
+                //j = new User();
+                //Console.WriteLine(j+3);// 不会进行类型检查，编译时不会报错，运行时会报错 
+
+
+                //构造一个能装任何数据的数组，并完成数据的读写
+                //object[] arr = new object[]{ "大傻", 1, true, 1.1 };
+
+                //for (int i = 0; i < arr.Length; i++)
+                //{
+                //    Console.WriteLine(arr[i]);
+                //}
+
+                //使用object改造数据结构栈（MimicStack），并在出栈时获得出栈元素
+
+
+
+            }
+            //Content lx = new Article();
+            //Console.WriteLine(lx);
+            //Console.WriteLine(lx.ToString());
+            //Console.WriteLine(new Student());
 
             //登录调用
             //Console.WriteLine(LogIn("q121", "青蛙", "1212"));
@@ -606,10 +637,28 @@ namespace CSharp
             //}
             //实现二分查找
             //Console.WriteLine(BinarySeek(new int[] { 12, 16, 25, 27, 33, 39, 44, 49, 55 }));
-            
-          
+
+
             //User lx = new User();
             //Console.WriteLine(lx.Tokens);
+
+
+            //练Student lx = new 练Student();//练习反射调用方法
+            //typeof(练Student)
+            //.GetMethod("Greet")//取方法
+            //.Invoke(lx, new object[] { "理想" });   //调用方法
+            //typeof(练Student).GetMethod("Greet").Invoke(lx, new object[] { "阿斯蒂芬结婚后" });
+
+            //练Teacher ll = new 练Teacher();
+            //typeof(练Teacher).GetMethod("arr").Invoke(ll, new object[] { "煞笔" });
+            //typeof(练Teacher).GetMethod("arr").Invoke(ll, new object[] { "爱护环境啊" });
+
+
+            //练Person kk = new 练Person();
+            //typeof(练Person).GetMethod("ok").Invoke(kk, new object[] { "可怜" });
+
+            //typeof(练Person).GetMethod("ok").Invoke(kk, new object[] { "敖德萨就" });
+
         }
 
         #region 声明/调用/返回值
@@ -901,7 +950,7 @@ namespace CSharp
         //    return user;
         //}
 
-
+        #region 结构日期作业
         //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
         //static void GetDate(int day, int week, int month)
         //{
@@ -910,27 +959,25 @@ namespace CSharp
         //    Console.WriteLine(DateTime.Now.AddMonths(month));
         //}
         //给定任意一个年份，就能按周排列显示每周的起始日期，如下图所示：
-
-
-        public static void GetDate(int year)
-        {
-            DateTime Dt = new DateTime(year, 1, 1);
-            while (Dt.DayOfWeek != DayOfWeek.Monday)
-            {
-                Dt = Dt.AddDays(+1);
-            }
-            //Console.WriteLine(Dt);//2021,1,4
-            int i = 1;
-            int years = Dt.Year;
-            while (Dt.Year == years)
-            {
-                Console.WriteLine($"第{i}周：{Dt.ToString("yyyy年MM月dd日")} — {Dt.AddDays(6).ToString("yyyy年MM月dd日")}");
-                Dt = Dt.AddDays(7);
-                Console.WriteLine();
-                i++;
-            }
-        }
-
+        //public static void GetDate(int year)
+        //{
+        //    DateTime Dt = new DateTime(year, 1, 1);
+        //    while (Dt.DayOfWeek != DayOfWeek.Monday)
+        //    {
+        //        Dt = Dt.AddDays(1);
+        //    }
+        //    //Console.WriteLine(Dt);//2021,1,4
+        //    int i = 1;
+        //    int years = Dt.Year;
+        //    while (Dt.Year == years)
+        //    {
+        //        Console.WriteLine($"第{i}周：{Dt.ToString("yyyy年MM月dd日")} — {Dt.AddDays(6).ToString("yyyy年MM月dd日")}");
+        //        Dt = Dt.AddDays(7);
+        //        Console.WriteLine();
+        //        i++;
+        //    }
+        //}
+        #endregion
     }
 
 }

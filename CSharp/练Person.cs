@@ -6,6 +6,11 @@ namespace CSharp
 {
     class 练Person
     {
+
+        public void ok(string name)
+        {
+            Console.WriteLine($"想不开{name}");
+        }
         public 练Person()
         {
 
@@ -13,9 +18,9 @@ namespace CSharp
         protected internal int Age { get; set; }
         public 练Person(string name)
         {
-            Name = name;  
+            Name = name;
         }
-        public 练Person(int  age)
+        public 练Person(int age)
         {
             Age = age;
         }
