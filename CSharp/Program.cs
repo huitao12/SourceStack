@@ -1,14 +1,25 @@
 ﻿using System;
+using System.Text;
 
 namespace CSharp
 {
-    class Program
+    public class p
     {
+        public int? a { get; set; }
+    }
+    public class Program
+    {
+
         static void Main(string[] args)
         {
-         
+            p l = new p();
+            l.a = 10;
+            Console.WriteLine(l.a.Value+2);
+            Console.WriteLine(l.a);
+            Console.WriteLine("……");
 
-
+            int? li = new Nullable<int>(22);
+            Console.WriteLine(li);
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -25,8 +36,10 @@ namespace CSharp
             //Console.WriteLine(a / b);
 
             //2.电脑计算并输出：[(23 + 7)x12-8]÷6的小数值（挑战：精确到小数点以后2位）
-            //double grade = (double)((23 + 7) * 12 - 8) / 6;
-            //Console.WriteLine(grade);
+            //需求？？？怎么精确小数？？
+            //double grade = (float)((23 + 7) * 12 - 8) / 6;
+            //string i = grade.ToString("0.00");
+            //Console.WriteLine(i);
 
             //3.想一想以下语句输出的结果：
             //int i = 15;
@@ -350,6 +363,24 @@ namespace CSharp
             // 元素个数length（默认为10个）
 
 
+            //static int[] GetArray(int min = 1, int gap = 5, int length = 10)
+            //{
+            //    int[] array = new int[length];
+            //    Random random = new Random();
+            //    //array[0] = random.Next(10, 100);
+            //    for (int i = min; i < array.Length; i++)
+            //    {
+            //        //array[i] += gap;
+            //        //array = GetArray(min);
+
+            //        array[i] = random.Next(gap) + array[i - 1];
+            //        Console.WriteLine(array[i]);
+            //        //array[i] += gap;
+
+            //    }
+            //    //Console.WriteLine(array);
+            //    return array;
+            //}
             //4实现二分查找，方法名BinarySeek(int[] numbers, int target)：
             //  传入一个有序（从大到小 / 从小到大）数组和数组中要查找的元素
             //  如果找到，返回该元素所在的下标；否则，返回 - 1
@@ -499,7 +530,13 @@ namespace CSharp
 
             //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
             #endregion
-
+            //Console.WriteLine(
+            //    string
+            //    .Join('$', 12, 32)
+            //    .Split('^',StringSplitOptions.RemoveEmptyEntries)
+            //    );
+            Stringbuilder.MimicJoin(" - ", new string[] { "a", "b", "c", "d" });
+            //User.GetCount("qwtargetwewtargetsdftarget", "target");
             //多态作业
             {
                 //作业：
@@ -568,6 +605,12 @@ namespace CSharp
                 //使用私有的Token枚举_tokens存储所具有的权限
                 //暴露Add(Token)、Remove(Token)和Has(Token)方法，可以添加、删除和判断其有无某个权限
                 //User类中添加一个Tokens属性，类型为TokenManager
+                //User lx = new User();
+                ////lx.Tokens.ADD(Token.Newbie);//空引用
+                //lx.Tokens = new TokenManager();
+                //lx.Tokens.ADD(Token.Newbie);
+                //lx.Tokens.ADD(Token.Newbie);
+
             }
 
             //Object和拆箱
@@ -592,15 +635,32 @@ namespace CSharp
                 //}
 
                 //使用object改造数据结构栈（MimicStack），并在出栈时获得出栈元素
-
-
-
             }
+            #region  C#-面向对象-反射和特性
+
+            //作业：
+            //之前的Content类，其中的CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，想一想他们应该在哪里赋值比较好，并完成相应代码
+            //在Content之外封装一个方法，可以修改Content的CreateTime和PublishTime
+
+            //自定义一个特性HelpMoneyChanged（帮帮币变化）：
+            //该特性只能用于方法
+            //有一个构造函数，可以接受一个int类型的参数amount，表示帮帮币变化的数量
+            //有一个string类型的Message属性，记录帮帮币变化的原因
+            //将HelpMoneyChanged应用于Publish()方法
+            //用反射获取Publish()上的特性实例，输出其中包含的信息
+            //Attribute attribute = HelpMoneyChangedAttribute.GetCustomAttribute(
+            //    typeof(ContentService).GetMethod("Publish"),               //ContentService类上的
+            //    typeof(HelpMoneyChangedAttribute));   //HelpMoneyChangedAttribute特性
+            //Console.WriteLine(((HelpMoneyChangedAttribute)attribute).Amount); ////将基类的Attribute对象强转为子类
+
+
+
+            #endregion
+
             //Content lx = new Article();
             //Console.WriteLine(lx);
             //Console.WriteLine(lx.ToString());
             //Console.WriteLine(new Student());
-
             //登录调用
             //Console.WriteLine(LogIn("q121", "青蛙", "1212"));
             //输出学生
@@ -614,6 +674,8 @@ namespace CSharp
             //Console.WriteLine(find(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 }));
             //找到质数100以内的
             //find(100);
+            //重构
+            //GetArray();
             //排序
             //rank(new int[] { 32, 43, 12, 3, 46, 87, 54, 89, 14, 22, 999 });
             //计算平均成绩
@@ -658,7 +720,9 @@ namespace CSharp
             //typeof(练Person).GetMethod("ok").Invoke(kk, new object[] { "可怜" });
 
             //typeof(练Person).GetMethod("ok").Invoke(kk, new object[] { "敖德萨就" });
-
+            //User lx = new User();
+            ////lx.Name = "admin";
+            //lx.Password = "1234121";
         }
 
         #region 声明/调用/返回值
@@ -978,6 +1042,7 @@ namespace CSharp
         //    }
         //}
         #endregion
+
     }
 
 }

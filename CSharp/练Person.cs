@@ -7,6 +7,12 @@ namespace CSharp
     class 练Person
     {
 
+
+        static bool IsRest(DayOfWeek dayofWork)
+        {
+            return dayofWork == DayOfWeek.Wednesday
+                || dayofWork == DayOfWeek.Saturday;
+        }
         public void ok(string name)
         {
             Console.WriteLine($"想不开{name}");
