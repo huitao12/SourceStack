@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public abstract class Content
+    public abstract class Content: Entity<string>
     {
         //Content中有一个字段：kind，记录内容的种类（problem/article/suggest等），只能被子类使用
         //确保每个Content对象都有kind的非空值
@@ -23,10 +23,10 @@ namespace CSharp
         public User Author { get; set; }
         public int Reward { get; set; }
         public string Comment { get; set; }
-        //public Content(string kind)
-        //{
-        //    this.kind = kind;
-        //}
+        public Content(string kind)
+        {
+            this.kind = kind;
+        }
         public virtual void consume()
         {
 

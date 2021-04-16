@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public sealed class User : Entity, ISendMessage, IChat //让USer无法被继承
+    public sealed class User: Entity<int>, ISendMessage, IChat //让USer无法被继承
     {
         #region 类和对象
         //https://17bang.ren/Article/305

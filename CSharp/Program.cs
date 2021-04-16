@@ -1,25 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace CSharp
 {
-    public class p
-    {
-        public int? a { get; set; }
-    }
+
     public class Program
     {
-
         static void Main(string[] args)
         {
-            p l = new p();
-            l.a = 10;
-            Console.WriteLine(l.a.Value+2);
-            Console.WriteLine(l.a);
-            Console.WriteLine("……");
 
-            int? li = new Nullable<int>(22);
-            Console.WriteLine(li);
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -408,7 +398,6 @@ namespace CSharp
 
 
             #endregion
-
             #region 类和对象
             //https://17bang.ren/Article/305
             //作业
@@ -502,7 +491,7 @@ namespace CSharp
             //MimicStack arr = new MimicStack();
             //arr.Push(1);
             //arr.Push("哈哈");
-            //arr.Push(true );
+            //arr.Push(true);
             //arr.Push(4.1);
             //arr.Push(5);
             //arr.Push(6);
@@ -530,13 +519,7 @@ namespace CSharp
 
             //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
             #endregion
-            //Console.WriteLine(
-            //    string
-            //    .Join('$', 12, 32)
-            //    .Split('^',StringSplitOptions.RemoveEmptyEntries)
-            //    );
-            Stringbuilder.MimicJoin(" - ", new string[] { "a", "b", "c", "d" });
-            //User.GetCount("qwtargetwewtargetsdftarget", "target");
+
             //多态作业
             {
                 //作业：
@@ -596,7 +579,6 @@ namespace CSharp
                 //注意：先写测试用例，确保所有测试用例通过
 
             }
-
             //枚举作业
             {
                 //作业：
@@ -612,7 +594,6 @@ namespace CSharp
                 //lx.Tokens.ADD(Token.Newbie);
 
             }
-
             //Object和拆箱
             {
                 //作业：
@@ -656,6 +637,27 @@ namespace CSharp
 
 
             #endregion
+            #region  泛型：声明/使用/约束/继承
+            //作业：
+            //改造Entity类，让其Id可以为任意类型
+            //用泛型改造二分查找、堆栈和双向链表
+            Generic<int> generic = new Generic<int>();
+            generic.Dchotomy(new int[] { 2, 6, 9, 12, 16, 23, 44, 49, 55, 66 }, 6);
+
+            //用泛型改造“取数组中最大值”（提示：IComparable）
+            Generic<double> generic1 = new Generic<double>();
+            generic1.GetMax(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 },0);
+
+            //用代码演示泛型接口的协变/逆变
+            #endregion
+
+            //Console.WriteLine(
+            //    string
+            //    .Join('$', 12, 32)
+            //    .Split('^',StringSplitOptions.RemoveEmptyEntries)
+            //    );
+            //Stringbuilder.MimicJoin(" - ", new string[] { "a", "b", "c", "d" });
+            //User.GetCount("qwtargetwewtargetsdftarget", "target");
 
             //Content lx = new Article();
             //Console.WriteLine(lx);
@@ -703,26 +705,6 @@ namespace CSharp
 
             //User lx = new User();
             //Console.WriteLine(lx.Tokens);
-
-
-            //练Student lx = new 练Student();//练习反射调用方法
-            //typeof(练Student)
-            //.GetMethod("Greet")//取方法
-            //.Invoke(lx, new object[] { "理想" });   //调用方法
-            //typeof(练Student).GetMethod("Greet").Invoke(lx, new object[] { "阿斯蒂芬结婚后" });
-
-            //练Teacher ll = new 练Teacher();
-            //typeof(练Teacher).GetMethod("arr").Invoke(ll, new object[] { "煞笔" });
-            //typeof(练Teacher).GetMethod("arr").Invoke(ll, new object[] { "爱护环境啊" });
-
-
-            //练Person kk = new 练Person();
-            //typeof(练Person).GetMethod("ok").Invoke(kk, new object[] { "可怜" });
-
-            //typeof(练Person).GetMethod("ok").Invoke(kk, new object[] { "敖德萨就" });
-            //User lx = new User();
-            ////lx.Name = "admin";
-            //lx.Password = "1234121";
         }
 
         #region 声明/调用/返回值
@@ -1003,17 +985,6 @@ namespace CSharp
         //    }
         //}
         #endregion
-        //static void Agree(User article)
-        //{
-        //    article.agreeCount++;
-        //}
-        //static User /*void*/ Stature(/*ref*/ User user)//ref引用传递
-        //{
-        //    user = new User();////new了一个新的对象，改变的也是新的对象，不影响原来的对象，加ref他就是引入了zlz的值，但是新new了一个对象就为0
-        //    user.age++;
-        //    return user;
-        //}
-
         #region 结构日期作业
         //函数GetDate()，能计算一个日期若干（日 / 周 / 月）后的日期
         //static void GetDate(int day, int week, int month)
@@ -1042,6 +1013,7 @@ namespace CSharp
         //    }
         //}
         #endregion
+
 
     }
 
