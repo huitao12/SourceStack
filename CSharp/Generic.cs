@@ -46,19 +46,31 @@ namespace CSharp
         }
 
         //用泛型改造“取数组中最大值”（提示：IComparable）
-        public void GetMax(T[] grade,T max) {
+        public void GetMax(T[] grade, T max)
+        {
             //double[] grade = { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 };
             //double max = T[0];
-            for (int i = 0; i<grade.Length; i++)
-        {
-            if (grade[i].CompareTo(max)>0)
+            for (int i = 0; i < grade.Length; i++)
             {
-                max = grade[i];
-            }//else contiune
+                if (grade[i].CompareTo(max) > 0)
+                {
+                    max = grade[i];
+                }//else contiune
+            }
+            Console.WriteLine(max);
         }
-        Console.WriteLine(max);
-        }
-        //用代码演示泛型接口的协变/逆变
+
+    }
+
+    //用代码演示泛型接口的协变/逆变
+    //如果某个返回的类型可以由其派生类型替换，那么这个类型就是支持协变的
+    //如果某个参数类型可以由其基类替换，那么这个类型就是支持逆变的。
+    public class BaseClass
+    {
+
+    }
+    public class DerivedClass : BaseClass
+    {
 
     }
 }

@@ -646,7 +646,7 @@ namespace CSharp
 
             //用泛型改造“取数组中最大值”（提示：IComparable）
             Generic<double> generic1 = new Generic<double>();
-            generic1.GetMax(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 },0);
+            generic1.GetMax(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 }, 0);
 
             //用代码演示泛型接口的协变/逆变
             #endregion
@@ -895,14 +895,14 @@ namespace CSharp
         //static void GuessMe()
         //{
         //    Random r = new Random();
-        //    var num = r.Next(1, 1000);
+        //    int num = r.Next(1, 1000);
         //    Console.WriteLine("hello world！");
         //    Console.Write("请输入一个不超过1000的自然数：");
         //    Console.WriteLine();
-        //    for (int i = 9; i >= 0; i--)
+        //    for (int i = 0; i < 10; i++)
         //    {
+        //        Console.WriteLine(num);
         //        int j = int.Parse(Console.ReadLine());
-
         //        if (j < 0 || j > 1000)
         //        {
         //            Console.WriteLine("输入的数不在范围");
@@ -910,26 +910,32 @@ namespace CSharp
         //        }
         //        if (j == num)
         //        {
-        //            if (i < 5)
+        //            if (i <= 5)
         //            {
-        //                Console.WriteLine($"恭喜您，答对了！只用了{10 - i} 次呢,你真牛逼！");
+        //                Console.WriteLine($"恭喜您，答对了！只用了{i + 1} 次呢,你真牛逼！");
         //                break;
         //            }//else continue
-        //            if (i < 8)
+        //            if (i <= 8)
         //            {
-        //                Console.WriteLine($"恭喜您，答对了！只用了{10 - i} 次呢,不错嘛！");
+        //                Console.WriteLine($"恭喜您，答对了！只用了{i + 1} 次呢,不错嘛！");
+        //                break;
+        //            }//else continue
+        //            if (i <= 9)
+        //            {
+        //                Console.WriteLine($"恭喜您，答对了！只用了{i + 1} 次呢,有点撇" +
+        //                    $"！");
         //                break;
         //            }//else continue
         //        }
         //        else if (j > num)
         //        {
-        //            Console.WriteLine($"太大了呢！(还剩{i}次)");
+        //            Console.WriteLine($"太大了呢！(还剩{9 - i}次)");
         //        }
         //        else if (j < num)
         //        {
-        //            Console.WriteLine($"太小了呢！(还剩{i}次)");
+        //            Console.WriteLine($"太小了呢！(还剩{9 - i}次)");
         //        }//else continue
-        //        if (i == 0)
+        //        if (i == 9)
         //        {
         //            Console.WriteLine("(～￣(OO)￣)ブ");
         //        }//else continue
@@ -1016,5 +1022,5 @@ namespace CSharp
 
 
     }
-
+}
 }
