@@ -4,8 +4,9 @@ using System.Text;
 
 namespace CSharp
 {
-    class Comment//评论
+    public class Comment//评论
     {
-
+        //一个评论必须有一个它所评论的文章
+        public Article Article { get; set; }
     }
 }

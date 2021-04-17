@@ -650,6 +650,18 @@ namespace CSharp
 
             //用代码演示泛型接口的协变/逆变
             #endregion
+            #region 集合：List / Dictionary / ER模型 ……
+            //作业：
+            //在现有作业的基础上，观察一起帮的文章板块，以此为蓝本，补充（如果还没有的话）声明：
+            //评论（Comment）类
+            //评价（Appraise）类：包括“赞（Agree）”和“踩（Disagree）”
+            //关键字（Keyword）类
+            //并构建以下关系：
+            //一篇文章可以有多个评论
+            //一个评论必须有一个它所评论的文章
+            //每个文章和评论都有一个评价
+            //一篇文章可以有多个关键字，一个关键字可以对应多篇文章
+            #endregion
 
             //Console.WriteLine(
             //    string
@@ -684,6 +696,7 @@ namespace CSharp
             //double[] Average = { 32.3, 54.6, 76.7, 26.7, 98.01, 23.79, 14.1, 11.91 };
             //Console.WriteLine(Math.Round(GetAverage(Average), 2));
             //Console.WriteLine(GetAverage(Average));
+            //猜数组
             //GuessMe();
             //调换位置
             //int location = 111, locations = 222;
@@ -1023,4 +1036,4 @@ namespace CSharp
 
     }
 }
-}
+
