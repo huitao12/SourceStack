@@ -6,6 +6,8 @@ namespace CSharp
 {    //文章 
     public class Article : Content 
     {
+        internal string name;
+
         public Article()
         {
         }

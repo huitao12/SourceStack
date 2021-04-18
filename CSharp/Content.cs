@@ -22,7 +22,7 @@ namespace CSharp
         }
         public User Author { get; set; }
         public int Reward { get; set; }
-        public string Comment { get; set; }
+        //public string Comment { get; set; }
         public Content(string kind)
         {
             this.kind = kind;

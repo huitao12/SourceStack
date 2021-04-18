@@ -6,6 +6,8 @@ namespace CSharp
 {
     public class Comment//评论
     {
+        internal string name;
+
         //一个评论必须有一个它所评论的文章
         public Article Article { get; set; }
     }

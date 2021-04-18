@@ -596,7 +596,7 @@ namespace CSharp
                 //lx.Tokens.ADD(Token.Newbie);
                 //lx.Tokens.ADD(Token.Newbie);
 
-            }
+            } 
             //Object和拆箱
             {
                 //作业：
@@ -660,10 +660,43 @@ namespace CSharp
             //评价（Appraise）类：包括“赞（Agree）”和“踩（Disagree）”
             //关键字（Keyword）类
             //并构建以下关系：
+
+            //关键字
+            Keyword csharp = new Keyword { name = "Csharp" };
+            Keyword js = new Keyword { name = "JavaScript" };
+            Keyword sql = new Keyword { name = "SQL" };
+
+            //文章 wz，lx
+            Article wz = new Article { name = "文章" };
+            Article lx = new Article { name = "类型" };
+            //评论
+            Comment pl = new Comment { name = "好" };
+            Comment PL = new Comment { name = "不错" };
+            //评价
+            Appraise Agree = new Appraise { name = "赞" };
+            Appraise Disagree = new Appraise { name = "踩" };
+
             //一篇文章可以有多个评论
+            lx.Comment = new List<Comment> { pl,PL };
+
+
             //一个评论必须有一个它所评论的文章
+            pl.Article = wz;
+            wz.Comment = new List<Comment> { pl };
             //每个文章和评论都有一个评价
+            lx.Comment = new List<Comment> { pl };
+            pl.Article = lx;
+
             //一篇文章可以有多个关键字，一个关键字可以对应多篇文章
+
+            wz.keyword = new List<Keyword> { csharp, js };
+            lx.keyword = new List<Keyword> {js, sql };
+
+            csharp.Article = new List<Article> { wz };
+            js.Article = new List<Article> { wz,lx };
+            sql.Article = new List<Article> { lx };
+            js.Article = new List<Article> { lx,wz };
+
             #endregion
             #region  C#进阶：集合：foreach背后
             //作业
