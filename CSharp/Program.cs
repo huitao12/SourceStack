@@ -4,12 +4,14 @@ using System.Text;
 
 namespace CSharp
 {
-
+    public class Student
+    {
+        public string Name { get; set; }
+    }
     public class Program
     {
         static void Main(string[] args)
         {
-
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -374,9 +376,10 @@ namespace CSharp
             //4实现二分查找，方法名BinarySeek(int[] numbers, int target)：
             //  传入一个有序（从大到小 / 从小到大）数组和数组中要查找的元素
             //  如果找到，返回该元素所在的下标；否则，返回 - 1
-            //static int BinarySeek(int[] numbers, int target = 91)
+            //static int BinarySeek(int[] numbers)
             //{
-            //    int left = 0, right = numbers.Length-1, middle;
+            //    int left = 0, right = numbers.Length - 1, middle;
+            //    int target = 55;
             //    while (left <= right)
             //    {
             //        middle = (left + right) / 2;
@@ -641,12 +644,12 @@ namespace CSharp
             //作业：
             //改造Entity类，让其Id可以为任意类型
             //用泛型改造二分查找、堆栈和双向链表
-            Generic<int> generic = new Generic<int>();
-            generic.Dchotomy(new int[] { 2, 6, 9, 12, 16, 23, 44, 49, 55, 66 }, 6);
+            //Generic<int> generic = new Generic<int>();
+            //generic.Dchotomy(new int[] { 2, 6, 9, 12, 16, 23, 44, 49, 55, 66 }, 6);
 
-            //用泛型改造“取数组中最大值”（提示：IComparable）
-            Generic<double> generic1 = new Generic<double>();
-            generic1.GetMax(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 }, 0);
+            ////用泛型改造“取数组中最大值”（提示：IComparable）
+            //Generic<double> generic1 = new Generic<double>();
+            //generic1.GetMax(new double[] { 32.3, 54.6, 76.7, 26.7, 98.01, 23.7, 14.1, 111 }, 0);
 
             //用代码演示泛型接口的协变/逆变
             #endregion
@@ -661,6 +664,31 @@ namespace CSharp
             //一个评论必须有一个它所评论的文章
             //每个文章和评论都有一个评价
             //一篇文章可以有多个关键字，一个关键字可以对应多篇文章
+            #endregion
+            #region  C#进阶：集合：foreach背后
+            //作业
+            //让之前的双向链表，能够：被foreach迭代
+
+            Dictionary<string, DLinkNodeTests> DLinkNodeTest = new Dictionary<string, DLinkNodeTests>
+            {
+                {"lx",new DLinkNodeTests() },
+                {"ll",new DLinkNodeTests() },
+                {"xx",new DLinkNodeTests() },
+
+            };
+            foreach (var item in DLinkNodeTest)
+            {
+                Console.WriteLine(item.Key);
+            }
+
+            Console.WriteLine(typeof(DLinkNode<int>)==new DLinkNode<int>().GetType());
+            #endregion
+
+            #region 扩展（extension）方法
+            //作业
+            //调用扩展方法Max()：能够返回之前双向链表中存贮着最大值的节点
+
+
             #endregion
 
             //Console.WriteLine(

@@ -4,14 +4,13 @@ using System.Text;
 
 namespace CSharp
 {
-    public class DLinkNode
+    public class DLinkNode<T>
     {
-        public int value;
+        public DLinkNode<T> Previous { get; set; } //前面一个节点
+        public DLinkNode<T> Next { get; set; }  //后面一个节点
+        public int value { get; set; }
 
-        public DLinkNode Previous { get; set; } //前面一个节点
-        public DLinkNode Next { get; set; }  //后面一个节点
-
-        public void AddAfter(DLinkNode node) //添加在……之后节点
+        public void AddAfter(DLinkNode<T> node) //添加在……之后节点
         {
             //if (this.Next==null)
             //{
@@ -49,7 +48,7 @@ namespace CSharp
 
 
 
-        public void AddBefore(DLinkNode node)//添加在……之前节点
+        public void AddBefore(DLinkNode<T> node)//添加在……之前节点
         {
             if (this.Previous != null)
             {
@@ -75,13 +74,13 @@ namespace CSharp
             this.Previous = null;
         }
 
-        public void Swap(DLinkNode node) //交换节点  
+        public void Swap(DLinkNode<T> node) //交换节点  
         {
             // 1  2  3  4  5
             // 1 [4] 3 [2] 5
             //node2.Swap(node4);
-            DLinkNode preThis = this.Previous; //当前的前一个1
-            DLinkNode NextThis = this.Next;    //当前的后一个3;
+            DLinkNode<T> preThis = this.Previous; //当前的前一个1
+            DLinkNode<T> NextThis = this.Next;    //当前的后一个3;
             if (node.Next != this)             //5!=2
             {
                 this.Delete();                 //1345

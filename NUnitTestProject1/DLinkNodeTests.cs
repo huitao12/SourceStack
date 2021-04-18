@@ -9,16 +9,16 @@ namespace NUnitTestProject1
     //测试双向链表
     public class DLinkNodeTests
     {
-        private DLinkNode node1, node2, node3, node4, node5;
+        private DLinkNode<int> node1, node2, node3, node4, node5;
 
         [SetUp]
         public void SetUp()
         {
-            node1 = new DLinkNode() { value = 1 };//赋值
-            node2 = new DLinkNode() { value = 2 };
-            node3 = new DLinkNode() { value = 3 };
-            node4 = new DLinkNode() { value = 4 };
-            node5 = new DLinkNode() { value = 5 };
+            node1 = new DLinkNode<int>() { value = 1 };//赋值
+            node2 = new DLinkNode<int>() { value = 2 };
+            node3 = new DLinkNode<int>() { value = 3 };
+            node4 = new DLinkNode<int>() { value = 4 };
+            node5 = new DLinkNode<int>() { value = 5 };
 
             node1.Next = node2;
             node2.Previous = node1;
@@ -55,7 +55,7 @@ namespace NUnitTestProject1
             //Assert.IsNull(node3.Next);   //判断node3的后面是不是null
 
             // 1  2  [6] 3  4 5
-            DLinkNode node6 = new DLinkNode() { value = 6 };
+            DLinkNode<int> node6 = new DLinkNode<int>() { value = 6 };
             node2.AddAfter(node6);//把node6+在node2后面
 
             Assert.AreEqual(node2, node6.Previous);
@@ -67,10 +67,10 @@ namespace NUnitTestProject1
 
         }
         [Test]
-        public void AddBefore()//添加在……之前节点
+        public void AddBeforeTest()//添加在……之前节点
         {
             //  [11] 1 2 3 4 5
-            DLinkNode node11 = new DLinkNode() { value = 11 };
+            DLinkNode<int> node11 = new DLinkNode<int>() { value = 11 };
             node1.AddBefore(node11);
 
             Assert.AreEqual(node11, node1.Previous);
@@ -171,5 +171,12 @@ namespace NUnitTestProject1
 
         }
 
+    }
+    public static class Extension
+    {
+        public static int Max(this DLinkNodeTests dLinkNodeTests)
+        {
+           return dLinkNodeTests.Max();
+        }
     }
 }
