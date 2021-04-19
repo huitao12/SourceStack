@@ -1,17 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static CSharp.Person;
 
 namespace CSharp
 {
-    public class Student
-    {
-        public string Name { get; set; }
-    }
     public class Program
     {
         static void Main(string[] args)
         {
+
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -596,7 +594,7 @@ namespace CSharp
                 //lx.Tokens.ADD(Token.Newbie);
                 //lx.Tokens.ADD(Token.Newbie);
 
-            } 
+            }
             //Object和拆箱
             {
                 //作业：
@@ -661,66 +659,84 @@ namespace CSharp
             //关键字（Keyword）类
             //并构建以下关系：
 
-            //关键字
-            Keyword csharp = new Keyword { name = "Csharp" };
-            Keyword js = new Keyword { name = "JavaScript" };
-            Keyword sql = new Keyword { name = "SQL" };
+            ////关键字
+            //Keyword csharp = new Keyword { name = "Csharp" };
+            //Keyword js = new Keyword { name = "JavaScript" };
+            //Keyword sql = new Keyword { name = "SQL" };
 
-            //文章 wz，lx
-            Article wz = new Article { name = "文章" };
-            Article lx = new Article { name = "类型" };
-            //评论
-            Comment pl = new Comment { name = "好" };
-            Comment PL = new Comment { name = "不错" };
-            //评价
-            Appraise Agree = new Appraise { name = "赞" };
-            Appraise Disagree = new Appraise { name = "踩" };
+            ////文章 wz，lx
+            //Article wz = new Article { name = "文章" };
+            //Article lx = new Article { name = "类型" };
+            ////评论
+            //Comment pl = new Comment { name = "好" };
+            //Comment PL = new Comment { name = "不错" };
+            ////评价
+            //Appraise Agree = new Appraise { name = "赞" };
+            //Appraise Disagree = new Appraise { name = "踩" };
 
-            //一篇文章可以有多个评论
-            lx.Comment = new List<Comment> { pl,PL };
+            ////一篇文章可以有多个评论
+            //lx.Comment = new List<Comment> { pl,PL };
 
 
-            //一个评论必须有一个它所评论的文章
-            pl.Article = wz;
-            wz.Comment = new List<Comment> { pl };
-            //每个文章和评论都有一个评价
-            lx.Comment = new List<Comment> { pl };
-            pl.Article = lx;
+            ////一个评论必须有一个它所评论的文章
+            //pl.Article = wz;
+            //wz.Comment = new List<Comment> { pl };
+            ////每个文章和评论都有一个评价
+            //lx.Comment = new List<Comment> { pl };
+            //pl.Article = lx;
 
-            //一篇文章可以有多个关键字，一个关键字可以对应多篇文章
+            ////一篇文章可以有多个关键字，一个关键字可以对应多篇文章
 
-            wz.keyword = new List<Keyword> { csharp, js };
-            lx.keyword = new List<Keyword> {js, sql };
+            //wz.keyword = new List<Keyword> { csharp, js };
+            //lx.keyword = new List<Keyword> {js, sql };
 
-            csharp.Article = new List<Article> { wz };
-            js.Article = new List<Article> { wz,lx };
-            sql.Article = new List<Article> { lx };
-            js.Article = new List<Article> { lx,wz };
+            //csharp.Article = new List<Article> { wz };
+            //js.Article = new List<Article> { wz,lx };
+            //sql.Article = new List<Article> { lx };
+            //js.Article = new List<Article> { lx,wz };
 
             #endregion
             #region  C#进阶：集合：foreach背后
             //作业
             //让之前的双向链表，能够：被foreach迭代
 
-            Dictionary<string, DLinkNodeTests> DLinkNodeTest = new Dictionary<string, DLinkNodeTests>
-            {
-                {"lx",new DLinkNodeTests() },
-                {"ll",new DLinkNodeTests() },
-                {"xx",new DLinkNodeTests() },
+            //Dictionary<string, DLinkNodeTests> DLinkNodeTest = new Dictionary<string, DLinkNodeTests>
+            //{
+            //    {"lx",new DLinkNodeTests() },
+            //    {"ll",new DLinkNodeTests() },
+            //    {"xx",new DLinkNodeTests() },
 
-            };
-            foreach (var item in DLinkNodeTest)
-            {
-                Console.WriteLine(item.Key);
-            }
+            //};
+            //foreach (var item in DLinkNodeTest)
+            //{
+            //    Console.WriteLine(item.Key);
+            //}
 
-            Console.WriteLine(typeof(DLinkNode<int>)==new DLinkNode<int>().GetType());
+            //Console.WriteLine(typeof(DLinkNode<int>) == new DLinkNode<int>().GetType());
             #endregion
 
             #region 扩展（extension）方法
             //作业
             //调用扩展方法Max()：能够返回之前双向链表中存贮着最大值的节点
 
+
+            #endregion
+            #region  C#进阶：匿名方法 / Lambda / 闭包
+            //作业：
+            //声明一个委托：打水（ProvideWater），可以接受一个Person类的参数，返回值为int类型
+            //使用：
+            //方法
+            //匿名方法
+            //lambda表达式
+            //给上述委托赋值，并运行该委托
+            //声明一个方法GetWater()，该方法接受ProvideWater作为参数，并能将ProvideWater的返回值输出
+
+            //ProvideWater provideWater = Water1;
+            //provideWater(new Person());
+
+            //ProvideWater provideWater1 = delegate (Person person){return 1;};
+
+            //ProvideWater provideWater2 = (Person person) => { return 1; };
 
             #endregion
 
