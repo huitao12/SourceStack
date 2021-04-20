@@ -12,9 +12,10 @@ namespace CSharp
         //其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
         protected string kind;
         private string _title;
+        //public string Title { get; set; }
 
         private DateTime createTime { get; }
-        public DateTime PublishTime { get; }
+        public DateTime PublishTime { get; set; }
 
         public Content()
         {
@@ -50,9 +51,9 @@ namespace CSharp
             get { return _title; }
             set
             {
-                if (_title.Contains("") || _title.Contains(null) || _title.Contains("   "))
+                if (value.Contains("") || value.Contains(null))
                 {
-                    _title = _title.Trim(); //.Trim去掉前后两端的空格
+                    _title = value.Trim(); //.Trim去掉前后两端的空格
                 }
                 _title = value;
             }

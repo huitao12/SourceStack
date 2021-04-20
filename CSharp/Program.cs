@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using static CSharp.Person;
 
@@ -738,6 +739,167 @@ namespace CSharp
 
             //ProvideWater provideWater2 = (Person person) => { return 1; };
 
+            #endregion
+            #region C#进阶：Linq
+            //作业：
+            //在之前“文章 / 评价 / 评论 / 用户 / 关键字”对象模型的基础上，添加相应的数据，然后完成以下操作：
+            //用户
+            //User fg = new User { Name = "飞哥" };
+            //User xy = new User { Name = "小鱼" };
+            //IEnumerable<User> users = new List<User> { fg, xy };
+            ////关键字
+            //Keyword kw1 = new Keyword { key = "C#" };
+            //Keyword kw2 = new Keyword { key = ".NET" };
+            //Keyword kw3 = new Keyword { key = "avaScript" };
+            //Keyword kw4 = new Keyword { key = "C" };
+            //Keyword kw5 = new Keyword { key = "SQL" };
+            //IEnumerable<Keyword> keywords = new List<Keyword> { kw1, kw2, kw3, kw4, kw5 };
+            ////文章
+            //Article csharp = new Article { Title = "C#文章", Author = fg, keyword = new List<Keyword> { kw1, kw3, kw5 } };
+            //Article js = new Article { Title = "JavaScript文章", Author = fg, keyword = new List<Keyword> { kw2, kw3, kw4, kw5 } };
+            //Article sql = new Article { Title = "SQL文章", Author = xy, keyword = new List<Keyword> { kw1, kw3, kw4, kw5 } };
+            //Article net = new Article { Title = ".NET文章", Author = fg, keyword = new List<Keyword> { kw1, kw3 } };
+            //Article c = new Article { Title = "C文章", Author = xy, keyword = new List<Keyword> { kw3, kw4 } };
+            //IEnumerable<Article> articles = new List<Article> { csharp, js, sql, net, c };
+
+            ////找出“飞哥”发布的文章
+            //var result = from a in articles //var==IEnumerable<Article>
+            //             where a.Author == fg
+            //             select a;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
+
+            ////找出2019年1月1日以后“小鱼”发布的文章
+
+            //Article article1 = new Article() { Title = "哈哈", Author = xy, PublishTime = new DateTime(2015, 6, 2) };
+            //Article article2 = new Article() { Title = "哦豁", Author = fg, PublishTime = new DateTime(2010, 8, 2) };
+            //Article article3 = new Article() { Title = "阿西吧", Author = xy, PublishTime = new DateTime(2020, 1, 2) };
+            //Article article4 = new Article() { Title = "阿萨", Author = xy, PublishTime = new DateTime(2020, 5, 2) };
+            //IEnumerable<Article> article = new List<Article> { article1, article2, article3, article4 };
+            //var result1 = from a in article
+            //              where a.Author == xy && a.PublishTime > new DateTime(2019, 1, 1)
+            //              select a;
+            //foreach (var item in result1)
+            //{
+            //    Console.WriteLine(item.PublishTime);
+            //}
+
+            ////按发布时间升序 / 降序排列显示文章
+            //var result2 = from a in article
+            //              orderby a.PublishTime
+            //              select a;
+            //foreach (var item in result2)
+            //{
+            //    Console.WriteLine(item.PublishTime);
+            //}
+            //var result3 = from a in article
+            //              orderby a.PublishTime descending
+            //              select a;
+            //foreach (var item in result3)
+            //{
+            //    Console.WriteLine(item.PublishTime);
+            //}
+
+
+            ////统计每个用户各发布了多少篇文章
+            //var result4 = from a in articles
+            //              group a by a.Author;
+            //foreach (var item in result4)
+            //{
+            //    Console.WriteLine(item.Key.Name);//用户名
+            //    foreach (var b in item)
+            //    {
+            //        Console.WriteLine(b.Title);
+            //    }
+            //    Console.WriteLine($"{item.Key.Name}一共发布了：{item.Count()}文章");
+            //}
+            ////投影
+            //var result5 = from a in articles
+            //              group a by a.Author
+            //              into gm  //into类似于命名，将之前的结果集命名为：gm
+            //              select new
+            //              {
+            //                  gm.Key,
+            //                  sum = gm.Count()
+            //              };
+            //foreach (var item in result5)
+            //{
+            //    Console.WriteLine(item.Key.Name + "一共发布了：" + item.sum + "文章");
+            //}
+
+            //找出包含关键字“C#”或“.NET”的文章
+            //var result6 = from a in articles
+            //              where a.Title.Contains("C#") || a.Title.Contains(".NET")
+            //              select a;
+            //foreach (var item in result6)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
+            //var result6 = from a in articles
+            //              where a.keyword.Any(k => k.key == "C#") || a.keyword.Any(k => k.key == ".NET")//有一个存在就为真
+            //              select a;
+            //foreach (var item in result6)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
+            //找出评论数量最多的文章
+            //Comment comment = new Comment { Title = "偶是看", Article = csharp };
+            //Comment comment1 = new Comment { Title = "大傻蛋", Article = js };
+            //Comment comment2 = new Comment { Title = "士大夫", Article = csharp };
+            //Comment comment3 = new Comment { Title = "来应", Article = ui };
+            //Comment comment4 = new Comment { Title = "读后感", Article = sql };
+            //Comment comment5 = new Comment { Title = "热帖", Article = ui };
+            //Comment comment6 = new Comment { Title = "干饭", Article = sql };
+            //Comment comment7 = new Comment { Title = "火锅", Article = ui };
+            //Comment comment8 = new Comment { Title = "软便", Article = net };
+            //IEnumerable<Comment> comments = new List<Comment> {
+            //    comment, comment1, comment2, comment3,comment4,comment5,comment6,comment7,comment8 };
+            //var result7 = from c in comments
+            //              group c by c.Article
+            //              into gm
+            //              select new
+            //              {
+            //                  gm.Key,
+            //                  number = gm.Count()
+            //              };
+            //foreach (var item in result7)
+            //{
+            //    if (item.number == result7.Max(m => m.number))//{ return m.number; })),m就是result7里面的元素
+            //    {
+            //        Console.WriteLine(item.Key.Title + ":" + item.number);
+            //    }
+            //}
+
+            //找出每个作者评论数最多的文章
+            //var result8 = from u in comments
+            //              join a in articles on u.Article equals a
+            //              group u by u.Article
+            //              into gm
+            //              select new
+            //              {
+            //                  num = gm.Count(),
+            //                  title = gm.Key.Title,
+            //                  author = gm.Key.Author
+            //              };
+            //foreach (var item in result8)
+            //{
+            //    //if (item.num == result8.Max(m => m.num))//{ return m.number; })),m就是result8里面的元素
+            //    //{
+            //    //    Console.WriteLine(item.author.Name + "---" + item.title + "---" + item.num);
+            //    //}
+            //    Console.WriteLine(item.author.Name + "---" + item.title + "---" + item.num);
+
+            //}
+
+
+            #endregion
+            #region linq方法
+            //作业：
+            //将之前作业的Linq查询表达式用Linq方法实现
+            //找出每个作者最近发布的一篇文章
+            //为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者
             #endregion
 
             //Console.WriteLine(
