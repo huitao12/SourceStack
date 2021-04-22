@@ -33,8 +33,9 @@ namespace CSharp
             {
                 if (value < 0)
                 {
-                    Console.WriteLine("不能为负数");
-                    return;
+                    //Console.WriteLine("不能为负数");
+                    //return;
+                    throw new Exception("参数越界");
                 }
                 else
                 {

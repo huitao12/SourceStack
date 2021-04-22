@@ -10,7 +10,6 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -456,7 +455,7 @@ namespace CSharp
             //Console.WriteLine(lxx.name);
             //  problem.Reward不能为负数
             //Problem lx = new Problem();
-            //lx.Reward = 1;
+            //lx.Reward = -1;
             //Console.WriteLine(lx.Reward);
             //调用这些类的有参 / 无参构造函数，生成这些类的对象，调用他们的方法
             // 一起帮的求助可以有多个（最多10个）关键字，请为其设置索引器，以便于我们通过其整数下标进行读写。
@@ -521,7 +520,7 @@ namespace CSharp
 
             //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
             #endregion
-
+            
             //多态作业
             {
                 //作业：
@@ -759,8 +758,8 @@ namespace CSharp
             //Article js = new Article { Title = "JavaScript文章", Author = fg, keyword = new List<Keyword> { kw2, kw3, kw4, kw5 } };
             //Article sql = new Article { Title = "SQL文章", Author = xy, keyword = new List<Keyword> { kw1, kw3, kw4, kw5 } };
             //Article net = new Article { Title = ".NET文章", Author = fg, keyword = new List<Keyword> { kw1, kw3 } };
-            //Article c = new Article { Title = "C文章", Author = xy, keyword = new List<Keyword> { kw3, kw4 } };
-            //IEnumerable<Article> articles = new List<Article> { csharp, js, sql, net, c };
+            //Article java = new Article { Title = "JAVA文章", Author = xy, keyword = new List<Keyword> { kw3, kw4 } };
+            //IEnumerable<Article> articles = new List<Article> { csharp, js, sql, net, java };
 
             ////找出“飞哥”发布的文章
             //var result = from a in articles //var==IEnumerable<Article>
@@ -770,7 +769,12 @@ namespace CSharp
             //{
             //    Console.WriteLine(item.Title);
             //}
-
+            //linq方法
+            //var result = articles.Where(a => a.Author == fg);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
             ////找出2019年1月1日以后“小鱼”发布的文章
 
             //Article article1 = new Article() { Title = "哈哈", Author = xy, PublishTime = new DateTime(2015, 6, 2) };
@@ -785,7 +789,12 @@ namespace CSharp
             //{
             //    Console.WriteLine(item.PublishTime);
             //}
-
+            ////linq方法
+            //var result = article.Where(a => a.Author == xy && a.PublishTime > new DateTime(2019, 1, 1));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.PublishTime);
+            //}
             ////按发布时间升序 / 降序排列显示文章
             //var result2 = from a in article
             //              orderby a.PublishTime
@@ -801,7 +810,18 @@ namespace CSharp
             //{
             //    Console.WriteLine(item.PublishTime);
             //}
+            //linq方法
+            //var result = article.OrderBy(a => a.PublishTime);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.PublishTime);
+            //}
 
+            //var result = article.OrderByDescending(a => a.PublishTime);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.PublishTime);
+            //}
 
             ////统计每个用户各发布了多少篇文章
             //var result4 = from a in articles
@@ -815,6 +835,18 @@ namespace CSharp
             //    }
             //    Console.WriteLine($"{item.Key.Name}一共发布了：{item.Count()}文章");
             //}
+            //linq方法
+            //var result = articles.GroupBy(a => a.Author);
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Key.Name);//用户名
+            //    foreach (var b in item)
+            //    {
+            //        Console.WriteLine(b.Title);
+            //    }
+            //    Console.WriteLine($"{item.Key.Name}一共发布了：{item.Count()}文章");
+            //}
+
             ////投影
             //var result5 = from a in articles
             //              group a by a.Author
@@ -828,8 +860,19 @@ namespace CSharp
             //{
             //    Console.WriteLine(item.Key.Name + "一共发布了：" + item.sum + "文章");
             //}
+            //////linq方法
+            //var reslut = articles.GroupBy(a => a.Author);
+            //var reslut1 = reslut.Select(a => new
+            //{
+            //    a.Key,
+            //    sum = a.Count()
+            //});
+            //foreach (var item in reslut1)
+            //{
+            //    Console.WriteLine(item.Key.Name + "一共发布了：" + item.sum + "文章");
+            //}
 
-            //找出包含关键字“C#”或“.NET”的文章
+            ////找出包含关键字“C#”或“.NET”的文章
             //var result6 = from a in articles
             //              where a.Title.Contains("C#") || a.Title.Contains(".NET")
             //              select a;
@@ -838,24 +881,35 @@ namespace CSharp
             //    Console.WriteLine(item.Title);
             //}
             //var result6 = from a in articles
-            //              where a.keyword.Any(k => k.key == "C#") || a.keyword.Any(k => k.key == ".NET")//有一个存在就为真
+            //              where a.keyword.Any(result6 => result6.key == "C#") || a.keyword.Any(result6 => result6.key == ".NET")//有一个存在就为真,result6可以简写(k=> k.key == "C#"),k是参数名
             //              select a;
             //foreach (var item in result6)
             //{
             //    Console.WriteLine(item.Title);
             //}
-            //找出评论数量最多的文章
-            //Comment comment = new Comment { Title = "偶是看", Article = csharp };
-            //Comment comment1 = new Comment { Title = "大傻蛋", Article = js };
-            //Comment comment2 = new Comment { Title = "士大夫", Article = csharp };
-            //Comment comment3 = new Comment { Title = "来应", Article = ui };
-            //Comment comment4 = new Comment { Title = "读后感", Article = sql };
-            //Comment comment5 = new Comment { Title = "热帖", Article = ui };
-            //Comment comment6 = new Comment { Title = "干饭", Article = sql };
-            //Comment comment7 = new Comment { Title = "火锅", Article = ui };
-            //Comment comment8 = new Comment { Title = "软便", Article = net };
-            //IEnumerable<Comment> comments = new List<Comment> {
-            //    comment, comment1, comment2, comment3,comment4,comment5,comment6,comment7,comment8 };
+            ////linq 方法
+            //var result = articles.Where(a => a.Title.Contains("C#") || a.Title.Contains(".NET"));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
+            //var result = articles.Where(a => a.keyword.Any(result6 => result6.key == "C#") || a.keyword.Any(result6 => result6.key == ".NET"));
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Title);
+            //}
+            ////找出评论数量最多的文章
+            Comment comment = new Comment { Title = "偶是看", Article = csharp };
+            Comment comment1 = new Comment { Title = "大傻蛋", Article = js };
+            Comment comment2 = new Comment { Title = "士大夫", Article = csharp };
+            Comment comment3 = new Comment { Title = "来应", Article = java };
+            Comment comment4 = new Comment { Title = "读后感", Article = sql };
+            Comment comment5 = new Comment { Title = "热帖", Article = java };
+            Comment comment6 = new Comment { Title = "干饭", Article = sql };
+            Comment comment7 = new Comment { Title = "火锅", Article = java };
+            Comment comment8 = new Comment { Title = "软便", Article = net };
+            IEnumerable<Comment> comments = new List<Comment> {
+                comment, comment1, comment2, comment3,comment4,comment5,comment6,comment7,comment8 };
             //var result7 = from c in comments
             //              group c by c.Article
             //              into gm
@@ -871,11 +925,24 @@ namespace CSharp
             //        Console.WriteLine(item.Key.Title + ":" + item.number);
             //    }
             //}
-
-            //找出每个作者评论数最多的文章
-            //var result8 = from u in comments
-            //              join a in articles on u.Article equals a
-            //              group u by u.Article
+            //////linq 方法
+            //var result = comments.GroupBy(c => c.Article);
+            //var result1 = result.Select(c => new
+            //{
+            //    c.Key,
+            //    number = c.Count()
+            //});
+            //foreach (var item in result1)
+            //{
+            //    if (item.number == result1.Max(m => m.number))//{ return m.number; })),m就是result7里面的元素
+            //    {
+            //        Console.WriteLine(item.Key.Title + ":" + item.number);
+            //    }
+            //}
+            ////找出每个作者评论数最多的文章
+            //var result8 = from c in comments
+            //              join a in articles on c.Article equals a
+            //              group c by c.Article
             //              into gm
             //              select new
             //              {
@@ -883,6 +950,7 @@ namespace CSharp
             //                  title = gm.Key.Title,
             //                  author = gm.Key.Author
             //              };
+
             //foreach (var item in result8)
             //{
             //    //if (item.num == result8.Max(m => m.num))//{ return m.number; })),m就是result8里面的元素
@@ -890,7 +958,6 @@ namespace CSharp
             //    //    Console.WriteLine(item.author.Name + "---" + item.title + "---" + item.num);
             //    //}
             //    Console.WriteLine(item.author.Name + "---" + item.title + "---" + item.num);
-
             //}
 
 
@@ -899,8 +966,49 @@ namespace CSharp
             //作业：
             //将之前作业的Linq查询表达式用Linq方法实现
             //找出每个作者最近发布的一篇文章
-            //为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者
+            //var result = article.GroupBy(a =>new { a.Author,a.Title ,a.PublishTime });
+            //var result2 = result.Select(a => new { a.Key.Author, a.Key.Title ,a.Key.PublishTime});
+            //foreach (var item in result2)
+            //{
+            //    Console.WriteLine($"{item.Author.Name}：时间{item.PublishTime} 文章:{ item.Title} ");
+            //}
+
+            ////为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者
+            //Problem problem = new Problem { Reward = 12, Author = xy, Title = "阿萨" };
+            //Problem problem1 = new Problem { Reward = 2, Author = fg, Title = "多睡会" };
+            //Problem problem2 = new Problem { Reward = 1, Author = xy, Title = "低功耗" };
+            //Problem problem3 = new Problem { Reward = 17, Author = fg, Title = "换个方式" };
+            //Problem problem4 = new Problem { Reward = 3, Author = fg, Title = "更多" };
+            //IEnumerable<Problem> problems = new List<Problem> { problem, problem1, problem2, problem3, problem4 };
+
+            //var result = problems.GroupBy(p => p.Author);
+            //var result1 = result.Select(r => new
+            //{
+            //    author = r.Key.Name,
+            //    reward = r.Key.Reward > 5,
+            //});
+            //foreach (var item in result1)
+            //{
+            //    Console.WriteLine(item.author);
+            //}
+
+
             #endregion
+            #region C#进阶：异常处理
+            //作业：
+            //修改之前的属性验证：problem.Reward为负数时直接抛出“参数越界”异常
+            //Problem lx = new Problem();
+            //lx.Reward = -1;
+            //内容（Content）发布（Publish）的时候检查其作者（Author）是否为空，如果为空抛出“参数为空”异常
+          
+            //在ContentService中捕获异常
+            //如果是“参数为空”异常，Console.WriteLine()输出：内容的作者不能为空，将当前异常封装进新异常的InnerException，再将新异常抛出
+            //如果是“”参数越界”异常，Console.WriteLine()输出：求助的Reward为负数（-XX），不再抛出异常
+            //ContentService中无论是否捕获异常，均要Console.WriteLine()输出：XXXX年XX月XX日 XX点XX分XX秒（当前时间），请求发布内容（Id = XXX）
+            //在Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
+            #endregion
+
+
 
             //Console.WriteLine(
             //    string

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public abstract class Content: Entity<string>
+    public abstract class Content : Entity<string>
     {
         //Content中有一个字段：kind，记录内容的种类（problem/article/suggest等），只能被子类使用
         //确保每个Content对象都有kind的非空值
@@ -14,7 +14,7 @@ namespace CSharp
         private string _title;
         //public string Title { get; set; }
 
-        private DateTime createTime { get; }
+        public  DateTime createTime { get; private set; }
         public DateTime PublishTime { get; set; }
 
         public Content()
@@ -58,7 +58,14 @@ namespace CSharp
                 _title = value;
             }
         }
-
+        //内容（Content）发布（Publish）的时候检查其作者（Author）是否为空，如果为空抛出“参数为空”异常
+        public void Publish()
+        {
+            if (Author==null)
+            {
+                throw new Exception("参数为空");
+            }
+        }
 
     }
 }

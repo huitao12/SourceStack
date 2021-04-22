@@ -98,6 +98,9 @@ namespace CSharp
             }
         }
 
+        public int Reward { get; internal set; }
+
+
 
         //确保用户（User）的密码（Password）：
         //长度不低于6
@@ -108,7 +111,7 @@ namespace CSharp
         //    {
         //        if (_Password.Length > 6)
         //        {
-                   
+
         //        }
         //        else
         //        {
@@ -117,7 +120,7 @@ namespace CSharp
         //    }
         //}
 
-     
+
 
     }
 }
