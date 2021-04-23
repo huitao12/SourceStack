@@ -41,25 +41,25 @@ namespace CSharp
 
         public void Publish(Content content)
         {
-
             try
             {
-                Console.WriteLine("内容的作者不能为空");
+                content.Publish();
             }
-          
-            catch (Exception)
+            catch (ArgumentNullException e)
             {
-
-                throw;
+                Console.WriteLine("内容的作者不能为空");
+                throw new Exception("内容的作者不能为空", e);
+            }
+            catch (IndexOutOfRangeException)
+            {
+                Console.WriteLine("求助的Reward为负数（-XX）");
             }
             finally
             {
-                Console.WriteLine("??");
-            }
-
-
-
+                Console.WriteLine(DateTime.Now.ToString("yyyy年MM月dd日 hh点mm分ss秒"));
             }
 
         }
+
     }
+}

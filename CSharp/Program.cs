@@ -520,7 +520,6 @@ namespace CSharp
 
             //再为之前所有类（含User、HelpMoney等）抽象一个基类：Entity，包含一个只读的Id属性。试一试，Suggest能有Id属性么？
             #endregion
-            
             //多态作业
             {
                 //作业：
@@ -899,18 +898,18 @@ namespace CSharp
             //    Console.WriteLine(item.Title);
             //}
             ////找出评论数量最多的文章
-            Comment comment = new Comment { Title = "偶是看", Article = csharp };
-            Comment comment1 = new Comment { Title = "大傻蛋", Article = js };
-            Comment comment2 = new Comment { Title = "士大夫", Article = csharp };
-            Comment comment3 = new Comment { Title = "来应", Article = java };
-            Comment comment4 = new Comment { Title = "读后感", Article = sql };
-            Comment comment5 = new Comment { Title = "热帖", Article = java };
-            Comment comment6 = new Comment { Title = "干饭", Article = sql };
-            Comment comment7 = new Comment { Title = "火锅", Article = java };
-            Comment comment8 = new Comment { Title = "软便", Article = net };
-            IEnumerable<Comment> comments = new List<Comment> {
-                comment, comment1, comment2, comment3,comment4,comment5,comment6,comment7,comment8 };
-            //var result7 = from c in comments
+            //Comment comment = new Comment { Title = "偶是看", Article = csharp };
+            //Comment comment1 = new Comment { Title = "大傻蛋", Article = js };
+            //Comment comment2 = new Comment { Title = "士大夫", Article = csharp };
+            //Comment comment3 = new Comment { Title = "来应", Article = java };
+            //Comment comment4 = new Comment { Title = "读后感", Article = sql };
+            //Comment comment5 = new Comment { Title = "热帖", Article = java };
+            //Comment comment6 = new Comment { Title = "干饭", Article = sql };
+            //Comment comment7 = new Comment { Title = "火锅", Article = java };
+            //Comment comment8 = new Comment { Title = "软便", Article = net };
+            //IEnumerable<Comment> comments = new List<Comment> {
+            //    comment, comment1, comment2, comment3,comment4,comment5,comment6,comment7,comment8 };
+            ////var result7 = from c in comments
             //              group c by c.Article
             //              into gm
             //              select new
@@ -1000,12 +999,22 @@ namespace CSharp
             //Problem lx = new Problem();
             //lx.Reward = -1;
             //内容（Content）发布（Publish）的时候检查其作者（Author）是否为空，如果为空抛出“参数为空”异常
-          
+
             //在ContentService中捕获异常
             //如果是“参数为空”异常，Console.WriteLine()输出：内容的作者不能为空，将当前异常封装进新异常的InnerException，再将新异常抛出
             //如果是“”参数越界”异常，Console.WriteLine()输出：求助的Reward为负数（-XX），不再抛出异常
             //ContentService中无论是否捕获异常，均要Console.WriteLine()输出：XXXX年XX月XX日 XX点XX分XX秒（当前时间），请求发布内容（Id = XXX）
             //在Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
+            
+            try
+            {
+                ContentService contentService = new ContentService();
+                contentService.Publish(contentService);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
             #endregion
 
 

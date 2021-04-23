@@ -12,7 +12,7 @@ namespace CSharp
         private int _Reward;
         public DateTime PublishDateTime { get; set; }
         public User Author { get; set; }
-        private string repoistory;
+        private string repoistory { get; set; }
         public void Publish()
         {
 
@@ -26,7 +26,7 @@ namespace CSharp
 
         }
         //  problem.Reward不能为负数
-        internal int Reward
+        public int Reward
         {
             get { return _Reward; }
             set
