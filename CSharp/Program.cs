@@ -1006,15 +1006,15 @@ namespace CSharp
             //ContentService中无论是否捕获异常，均要Console.WriteLine()输出：XXXX年XX月XX日 XX点XX分XX秒（当前时间），请求发布内容（Id = XXX）
             //在Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
             
-            try
-            {
-                ContentService contentService = new ContentService();
-                contentService.Publish(contentService);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
+            //try
+            //{
+            //    ContentService contentService = new ContentService();
+            //    contentService.Publish(contentService);
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.ToString());
+            //}
             #endregion
 
 
