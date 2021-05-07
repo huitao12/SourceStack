@@ -1,5 +1,9 @@
-﻿using System;
+﻿using CSharp.Repoistory;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using static CSharp.Person;
@@ -10,6 +14,21 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
+            UserRepoistory l = new UserRepoistory();
+            l.GetbyName("小胖");
+
+            UserRepoistory p = new UserRepoistory();
+            p.Save(new User() { Name = "小黑", Password = "1q1" });
+
+
+            ArticleRepository article = new ArticleRepository();
+            article.Svae(new Article() { Title = "阿斯顿" });
+            new ArticleRepository().Svae(new Article() { Title = "阿斯顿" });
+
+
+            ArticleRepository article1 = new ArticleRepository();
+            article1.GetById(1);
+
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
             //1.输出两个整数 / 小数的和 / 差 / 积 / 商
@@ -1005,7 +1024,7 @@ namespace CSharp
             //如果是“”参数越界”异常，Console.WriteLine()输出：求助的Reward为负数（-XX），不再抛出异常
             //ContentService中无论是否捕获异常，均要Console.WriteLine()输出：XXXX年XX月XX日 XX点XX分XX秒（当前时间），请求发布内容（Id = XXX）
             //在Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
-            
+
             //try
             //{
             //    ContentService contentService = new ContentService();
