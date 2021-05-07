@@ -18,25 +18,25 @@ namespace CSharp
 
             SqlDbContext context = new SqlDbContext();
 
-            User user = new User
-            {
-                Name = "灰灰"
-            };
-            context.Users.Add(user);
+            //User user = new User
+            //{
+            //    Name = "灰灰"
+            //};
+            //context.Users.Add(user);
 
-            context.SaveChanges();//保存改动，存到数据库
+            //context.SaveChanges();//保存改动，存到数据库
 
-            ////Database属性从何而来？
-            //var db = context.Database;
+            //Database属性从何而来？
+            var db = context.Database;
 
-            ////类似于Update-Database: apply all pending migrations
-            ////本身不生成Migrations
-            //db.Migrate();
+            //类似于Update-Database: apply all pending migrations
+            //本身不生成Migrations
+            db.Migrate();
 
-            ////Enusure：存在才删除，不存在才创建
-            //db.EnsureDeleted();
-            ////Create数据库的同时建立表结构，
-            //db.EnsureCreated();
+            //Enusure：存在才删除，不存在才创建
+            db.EnsureDeleted();
+            //Create数据库的同时建立表结构，
+            db.EnsureCreated();
 
 
 
