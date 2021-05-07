@@ -1,4 +1,5 @@
 ﻿using CSharp.Repoistory;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,20 +15,60 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-            UserRepoistory l = new UserRepoistory();
-            l.GetbyName("小胖");
 
-            UserRepoistory p = new UserRepoistory();
-            p.Save(new User() { Name = "小黑", Password = "1q1" });
+            SqlDbContext context = new SqlDbContext();
+
+            User user = new User
+            {
+                Name = "灰灰"
+            };
+            context.Users.Add(user);
+
+            context.SaveChanges();//保存改动，存到数据库
+
+            ////Database属性从何而来？
+            //var db = context.Database;
+
+            ////类似于Update-Database: apply all pending migrations
+            ////本身不生成Migrations
+            //db.Migrate();
+
+            ////Enusure：存在才删除，不存在才创建
+            //db.EnsureDeleted();
+            ////Create数据库的同时建立表结构，
+            //db.EnsureCreated();
 
 
-            ArticleRepository article = new ArticleRepository();
-            article.Svae(new Article() { Title = "阿斯顿" });
-            new ArticleRepository().Svae(new Article() { Title = "阿斯顿" });
 
 
-            ArticleRepository article1 = new ArticleRepository();
-            article1.GetById(1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //UserRepoistory l = new UserRepoistory();
+            //l.GetbyName("小胖");
+
+            //UserRepoistory p = new UserRepoistory();
+            //p.Save(new User() { Name = "小黑", Password = "1q1" });
+
+
+            //ArticleRepository article = new ArticleRepository();
+            //article.Svae(new Article() { Title = "阿斯顿" });
+            //new ArticleRepository().Svae(new Article() { Title = "阿斯顿" });
+
+
+            //ArticleRepository article1 = new ArticleRepository();
+            //article1.GetById(1);
 
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292
