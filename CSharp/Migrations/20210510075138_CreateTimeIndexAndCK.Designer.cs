@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSharp.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20210510031635_CreateTimeIndex")]
-    partial class CreateTimeIndex
+    [Migration("20210510075138_CreateTimeIndexAndCK")]
+    partial class CreateTimeIndexAndCK
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,7 +28,7 @@ namespace CSharp.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("CreateTime")
+                    b.Property<DateTime?>("CreateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("InvitationCode")
@@ -49,9 +49,12 @@ namespace CSharp.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreateTime")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[CreateTime] IS NOT NULL");
 
                     b.ToTable("Register");
+
+                    b.HasCheckConstraint("CK_CreateTime", "CreateTime>='2000/1/1'");
                 });
 #pragma warning restore 612, 618
         }

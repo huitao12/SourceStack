@@ -15,28 +15,59 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
-
+            #region EF
             SqlDbContext context = new SqlDbContext();
 
+            ////利用EF，插入3个User对象
             //User user = new User
             //{
-            //    Name = "灰灰"
+            //    Name = "灰灰",
+            //    Password = "121"
+            //};
+            //User user1 = new User
+            //{
+            //    Name = "黑鬼",
+            //    Password = "1211",
+            //};
+            //User user2 = new User
+            //{
+            //    Name = "桌子",
+            //    Password = "1212"
             //};
             //context.Users.Add(user);
+            //context.Add(user1);
+            //context.Add<User>(user2);
+
+            //通过主键找到其中一个User对象
+            //User user = context.Find<User>(11);
+            //Console.WriteLine(user.Name);
+
+            ////修改该User对象的Name属性，将其同步到数据库
+            //user.Name = "板凳";
+
+            ////不加载User对象，仅凭其Id用一句Update SQL语句完成上题
+            //User user1 = new User() { Id = 11 };
+            //context.Attach<User>(user1);//默认Unchanged
+            //user1.Name = "小胖";//好处  之改动这一列
+
+
+            //////删除该用户
+            //context.Remove<User>(user1);
 
             //context.SaveChanges();//保存改动，存到数据库
 
+
             //Database属性从何而来？
-            var db = context.Database;
+            //var db = context.Database;
 
-            //类似于Update-Database: apply all pending migrations
-            //本身不生成Migrations
-            db.Migrate();
+            ////类似于Update-Database: apply all pending migrations
+            ////本身不生成Migrations
+            //db.Migrate();
 
-            //Enusure：存在才删除，不存在才创建
-            db.EnsureDeleted();
-            //Create数据库的同时建立表结构，
-            db.EnsureCreated();
+            ////Enusure：存在才删除，不存在才创建
+            //db.EnsureDeleted();
+            ////Create数据库的同时建立表结构，
+            //db.EnsureCreated();
 
 
 
@@ -69,6 +100,7 @@ namespace CSharp
 
             //ArticleRepository article1 = new ArticleRepository();
             //article1.GetById(1);
+            #endregion
 
             #region 运算符和表达式作业
             //https://17bang.ren/Article/292

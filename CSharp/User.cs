@@ -26,7 +26,7 @@ namespace CSharp
         [NotMapped]//不映射到数据库
         public int FailedTry { get; set; }//添加尝试登陆失败次数
 
-        public DateTime CreateTime { get; set; }
+        public DateTime? CreateTime { get; set; }
        
 
 
