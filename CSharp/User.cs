@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
@@ -7,14 +10,24 @@ using System.Text;
 
 namespace CSharp
 {
+    [Index("CreateTime",IsUnique =true)]
     public sealed class User : Entity<int>, ISendMessage, IChat //让USer无法被继承
     {
         public int Id { get; set; }
+
+        //[Key]设置主键
         public string Name { get; set; }
+
+        [Required]//不能为空
         public string Password { get; set; }
         public string Invitedby { get; set; }
         public string InvitationCode { get; set; }
+
+        [NotMapped]//不映射到数据库
         public int FailedTry { get; set; }//添加尝试登陆失败次数
+
+        public DateTime CreateTime { get; set; }
+       
 
 
 
