@@ -15,8 +15,11 @@ namespace CSharp
     {
         static void Main(string[] args)
         {
+
+
+
             #region EF
-            SqlDbContext context = new SqlDbContext();
+            //SqlDbContext context = new SqlDbContext();
 
             ////利用EF，插入3个User对象
             //User user = new User
