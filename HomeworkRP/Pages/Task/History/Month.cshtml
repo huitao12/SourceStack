@@ -1,9 +1,52 @@
 ﻿@page
 @model SourceStack.Pages.Task.History.MonthModel
 
-@{ DateTime month = new DateTime(2021/ 5);}
-
-@for (int i = 0; i <5 ; i++)
-{
-    <span>@i</span>
+@{
+    DateTime date = new DateTime(2021, 5,1);
+    string datatime = date.Year.ToString() + "年" + date.Month.ToString() + "月";
 }
+
+
+@functions{
+
+    DateTime GetDate(DateTime dateTime)
+    {
+        DateTime Dt = new DateTime( dateTime.Year,dateTime.Month, 1);
+        while (Dt.DayOfWeek != DayOfWeek.Monday)
+        {
+            Dt = Dt.AddDays(1);
+        }
+        int i = 1;
+        int month = Dt.Month;
+        while (Dt.Month == month)
+        {
+            <table>
+                <tr>
+                    @for (int j = 0; j < 7; j++)
+                    {
+                        <td style="width:70px;height:70px;border:1px solid #ea9225">@Dt.ToString("dd日")</td>
+                        Dt = Dt.AddDays(1);
+                    }
+                </tr>
+            </table>
+            i++;
+        }
+        return Dt;
+    }
+
+}
+<div style=" width:490px;height:600px;border:2px solid #7bd1d1;text-align :center">
+    <p> @date</p>
+    <table>
+        <tr>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周一</td>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周二</td>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周三</td>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周四</td>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周五</td>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周六</td>
+            <td style="width:70px;height:70px;border:1px solid #ea9225">周日</td>
+        </tr>
+    </table>
+    @(GetDate(date))
+</div>

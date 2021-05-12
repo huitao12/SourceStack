@@ -11,6 +11,7 @@
     <None Include="wwwroot\17bang\FAQ.html" />
     <None Include="wwwroot\17bang\float.html" />
     <None Include="wwwroot\17bang\Register.html" />
+    <None Include="wwwroot\LogOn.html" />
   </ItemGroup>
 
   <ItemGroup>
