@@ -86,12 +86,11 @@ namespace CSharp
 
 
 
-            //UserRepoistory l = new UserRepoistory();
-            //l.GetbyName("小胖");
+            UserRepoistory l = new UserRepoistory();
+            l.GetbyName("鬼娃");
 
             //UserRepoistory p = new UserRepoistory();
-            //p.Save(new User() { Name = "小黑", Password = "1q1" });
-
+            //p.Save(new User() { Name = "阿萨", Password = "111" ,Invitedby="小"});
 
             //ArticleRepository article = new ArticleRepository();
             //article.Svae(new Article() { Title = "阿斯顿" });

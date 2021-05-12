@@ -11,13 +11,22 @@ namespace CSharp
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=17B;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string connectionString = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=17B;Integrated Security=True;Connect Timeout=30;";
 
             optionsBuilder
                 .UseSqlServer(connectionString)
+#if DEBUG
                 .EnableSensitiveDataLogging()
+#endif
+                //.UseLoggerFactory(new LoggerFactory(  //无LogTo()方法的版本可以使用
+                // new ILoggerProvider[]
+                // {
+                //     //new DebugLoggerProvider((s, l) => true)
+                //     //为了更清晰的获取需要的log信息，通常会对log信息进行过滤
+                //     new DebugLoggerProvider((s,l)=> l == LogLevel.Debug)
+                // }));
                 .LogTo((
-                    id, level) => level == Microsoft.Extensions.Logging.LogLevel.Debug,//过滤添加
+                    id, level) => level == Microsoft.Extensions.Logging.LogLevel.Debug,//过滤条件
                     log => Console.WriteLine(log)//如何记录log
                 );
 

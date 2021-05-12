@@ -132,27 +132,11 @@ namespace CSharp
         //    }
         //}
 
-        //public int Reward { get; internal set; }
+   
 
 
 
-        ////确保用户（User）的密码（Password）：
-        ////长度不低于6
-        ////必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成
-        ////public string Password
-        ////{
-        ////    set
-        ////    {
-        ////        if (_Password.Length > 6)
-        ////        {
-
-        ////        }
-        ////        else
-        ////        {
-        ////            Console.WriteLine("密码长度不能低于6位");
-        ////        }
-        ////    }
-        ////}
+   
 
 
         #endregion
