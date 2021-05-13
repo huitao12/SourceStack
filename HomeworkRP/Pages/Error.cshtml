@@ -2,25 +2,39 @@
 @model ErrorModel
 @{
     ViewData["Title"] = "Error";
+    Layout = "Layout/_Dual";
 }
+<head>
+    <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……" />
+    <meta name="keywords" content="源栈 一起帮 自由飞" />
+    <title>首页·一起帮</title>
+    <link rel="shortcut icon" type="image/ico" href="/Images/logo.ico" media="screen" />
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+    <style>
+        input {
+            width: 400px
+        }
+    </style>
+</head>
 
-<h1 class="text-danger">Error.</h1>
-<h2 class="text-danger">An error occurred while processing your request.</h2>
 
-@if (Model.ShowRequestId)
-{
-    <p>
-        <strong>Request ID:</strong> <code>@Model.RequestId</code>
-    </p>
+@section Widgets{
+    <p>哈好的</p>
+    <p>哈好的</p>
+    <p>哈好的</p>
+    <p>哈好的</p>
+    <p>哈好的</p>
+    <p>哈好的</p>
+    
+
+    <aside style="float:right;position:fixed;top:200px;left:1100px">
+        <h4>“源栈”Web开发培训班</h4>
+        <h4 style="color:red">火热<span> 招生中：</span></h4>
+        <p>线上：全程直播，<b>免费</b>收看</p>
+        <p>线下：<b>灵活</b>学制，拎包入住，</p>
+        <p>有意向的同学，可以加QQ群：326801052</p>
+        <img src="http://17bang.ren/Images/qq-group.png" alt="http://17bang.ren/Images/qq-group.png" />
+    </aside>
 }
-
-<h3>Development Mode</h3>
-<p>
-    Swapping to the <strong>Development</strong> environment displays detailed information about the error that occurred.
-</p>
-<p>
-    <strong>The Development environment shouldn't be enabled for deployed applications.</strong>
-    It can result in displaying sensitive information from exceptions to end users.
-    For local debugging, enable the <strong>Development</strong> environment by setting the <strong>ASPNETCORE_ENVIRONMENT</strong> environment variable to <strong>Development</strong>
-    and restarting the app.
-</p>
