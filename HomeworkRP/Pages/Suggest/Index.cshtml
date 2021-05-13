@@ -1,0 +1,283 @@
+﻿@page
+@model SourceStack.Pages.Suggest.IndexModel
+@{
+}
+<head>
+    <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……" />
+    <meta name="keywords" content="源栈 一起帮 自由飞" />
+    <title>意见建议·一起帮</title>
+    <link rel="shortcut icon" type="image/ico" href="/Images/logo.ico" media="screen" />
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/font-awesome.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container ">
+                <img src="http://17bang.ren/Images/logo-big.ico" alt="一起帮lago" />
+                <b>一起帮·</b>网咯互助平台
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse  nav justify-content-end " id="navbarSupportedContent">
+                    <ul class="navbar-nav ">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-question-circle"></span>
+                                求助
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">督导班</a>
+                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="#">疑问发布</a>
+                                <a class="dropdown-item" href="#">疑问列表</a><hr />
+                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="#">发布</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-eye"></span>
+                                监督
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">督导班</a>
+                                <a class="dropdown-item" href="#">求监督</a>
+                                <a class="dropdown-item" href="#">监督别人</a>
+                                <a class="dropdown-item" href="#">我的目标</a><hr />
+                                <a class="dropdown-item" href="#">我的督促</a>
+                                <a class="dropdown-item" href="#">未交作业</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-clipboard"></span>
+                                文章
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="#">开通</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-user-circle-o"></span>
+                                uao
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">新手任务</a>
+                                <a class="dropdown-item" href="#">我的主页</a>
+                                <a class="dropdown-item" href="#">疑问发布</a>
+                                <p> <a class="dropdown-item" href="#">帮帮豆</a>:2颗</p>
+                                <p> <a class="dropdown-item" href="#">帮帮点</a>:10点</p>
+                                <p> <a class="dropdown-item" href="#">帮帮币</a>:0枚</p>
+                                <p>修改</p>
+                                <a class="dropdown-item" href="#">我的秘密</a>
+                                <a class="dropdown-item" href="#">联系方式</a>
+                                <a class="dropdown-item" href="#">个人资料</a>
+                                <a class="dropdown-item" href="#">退出登录</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="fa fa-dashboard"></span>
+                                后台
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">邀请注册</a>
+                                <a class="dropdown-item" href="#">我的消息</a>
+                                <a class="dropdown-item" href="#">我的草稿</a>
+                                <p>广告推广</p>
+                                <a class="dropdown-item" href="#">联系方式</a>
+                                <a class="dropdown-item" href="#">侧边栏</a>
+                                <p>帮帮币</p>
+                                <a class="dropdown-item" href="#">购买</a>
+                                <a class="dropdown-item" href="#">出售</a>
+                                <a class="dropdown-item" href="#">已购买</a>
+                                <a class="dropdown-item" href="#">已出售</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class=" container">
+        <nav>
+            <div>
+                用户<a href="#">CHen</a>使用了<a href="#">李慢慢</a>的邀请码进行注册，系统奖励<a href="#">李慢慢</a><a href="#">帮帮点</a>10点
+                <a href="#" style="float:right">全部消息</a>
+            </div>
+        </nav>
+        <div class="row" style="margin-top:55px">
+            <div class="col-md-8 ">
+                <article>
+                    <p style="font-size:40px"><span class="fa fa-list-alt"></span>意见建议</p><hr />
+                    <div>
+                        <label>👁只显示</label>
+                        <label><input type="checkbox" />未处理</label>
+                        <label><input type="checkbox" />bug</label>
+                        <label><input type="checkbox" />建议</label>
+                        <label><input type="checkbox" />完成</label>
+                        <label><input type="checkbox" />全部</label>
+                    </div>
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日 10点25分</p>
+                        <p style="font-size:25px"><span class=" fa fa-cubes"></span><a href="#" class="text-info">关于学习编程转行程序员，收集同学们最关心的问题</a></p>
+                        <p>欢迎踊跃留言，比如：我大专学历，能不能学会编程？怎么才能学好编程？编程是不是吃青春饭的？……注意：不包括具体的技术问题，^_^ ……</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                    </div>  <hr />
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日 10点43分</p>
+                        <p style="font-size:25px"><span class=" fa fa-hourglass-o"></span><a href="#" class="text-info">操作不方便</a></p>
+                        <p>习惯了按返回键返回上一个界面，结果就退出了App ……</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                    </div><hr />
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日 10点46分</p>
+                        <p style="font-size:25px"><span class=" fa fa-cubes"></span><a href="#" class="text-info">学习励志标语征集</a></p>
+                        <p>用于源栈教室墙壁，比如：今天学习不努力，明天努力找工作！键盘敲烂，月薪过万！ ……</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                    </div><hr />
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日  10点48分</p>
+                        <p style="font-size:25px"><span class=" fa fa-hourglass-o"></span><a href="#" class="text-info">test</a></p>
+                        <p>1234 ……</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                    </div><hr />
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日 10点50分</p>
+                        <p style="font-size:25px"><span class=" fa fa-cubes"></span><a href="#" class="text-info">【征集】计算机/编程发展史上著名图片/格言</a></p>
+                        <p>作为“源栈”墙壁装饰，比如：第一台计算机，图灵格言： ……</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                    </div><hr />
+                    <div>
+                        <P><span class=" fa fa-calendar"></span>2021年2月26日 11点05分</P>
+                        <p style="font-size:25px"><span class=" fa  fa-bug"></span><a href="#" class="text-info"> 求助中的评论列表</a></p>
+                        <p>鼠标移动到评论中获得焦点的评论会变白其他的会变蓝页面首次加载时却都是白的个人认为应该是颜色写反了获得焦点应该是蓝色 没有焦点白色 ……</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                    </div><hr />
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日 14点26分</p>
+                        <p style="font-size:25px"><span class="fa fa-smile-o"></span><a href="#" class="text-info"> 激活email的邮件中的链接, 没有登录打开, 点击返回之前页面bug</a></p>
+                        <p>......</p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p><hr />
+                    </div>
+                    <div>
+                        <div>
+                            <span style="float:left"> <span class=" fa fa-calendar"></span>2021年2月26日  14点28分</span>
+                            <span style="float:right">(<a href="#">✔已奖励</a><a href="#">💧帮帮点</a>30点)</span>
+                        </div>
+                        <div style="clear:both">
+                            <p style="font-size:25px"><span class="fa fa-smile-o"></span><a href="#" class="text-info">将应答设为总结时报异常</a></p>
+                            <p>页面弹出了阻止提示的Modal：但后台仍然受到异常信息：System.Exception:用户（Id=3359）无权在该求助（Id=382）上发布总结，原因：求助既未撤销，也未酬谢 ……</p>
+                            <span>👷‍作者：<a href=" #">叶飞</a></span>
+                            <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p><hr />
+                        </div>
+                    </div>
+                    <div>
+                        <p><span class=" fa fa-calendar"></span>2021年2月26日 14点30分</p>
+                        <p style="font-size:25px"><span class=" fa fa-cubes"></span><a href="#" class="text-info"> 调查：你愿不愿意成为“好心人”？</a></p>
+                        <p>
+                            “一起帮”是一个倡导通过“一对一”远程协助，直接解决求助人具体问题的虚拟社区平台。目前愿意求助的同学，我们找到了一些；但愿意帮忙的大神，目前还很缺乏。
+                            为了“一起帮”的健康发展，我想做这么一次调查。希望能获得以下这些信息的反馈：是否愿意（能够）在“一起帮”上远程协助他人解决问题？如果不愿意（能够）的话，主要的原因是什么？
+                            （非常重要，即使不愿意，我们也非常愿意听到你的声音），如：没时间、累、不喜欢远程、搞不定的话丢人……但“技术还不够”就不用写了，这个理由我们也没法处理。如果愿意的话，可继续回答：所在城市和工 ……
+                        </p>
+                        <span>👷‍作者：<a href=" #">叶飞</a></span>
+                        <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p><hr />
+                    </div>
+                    <div>
+                        <div>
+                            <span style="float:left"><span class=" fa fa-calendar"></span>2021年2月26日 14点33分</span>
+                            <span style="float:right">(<a href="#">✔已奖励</a><a href="#">💧帮帮点</a>10点)</span>
+                        </div>
+                        <div style="clear:both">
+                            <p style="font-size:25px"><span class=" fa  fa-bug"></span><a href="#" class="text-info">用户排行榜定位错了</a></p>
+                            <p>我是coldcoder，但显示的却是： ……</p>
+                            <div>
+                                <span>👷‍作者：<a href=" #">叶飞</a></span>
+                                <p style="float:right"><a>0</a><a>👍5</a><a>👎0</a></p>
+                            </div><hr />
+                        </div>
+                    </div>
+                    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                            <a href="#" class="btn btn-light">1</a>
+                            <a href="#" class="btn btn-light">2</a>
+                            <a href="#" class="btn btn-light">3</a>
+                            <a href="#" class="btn btn-light">4</a>
+                            <a href="#" class="btn btn-light">5</a>
+                            <a href="#" class="btn btn-light">6</a>
+                            <a href="#" class="btn btn-light">7</a>
+                            <a href="#" class="btn btn-light">8</a>
+                            <a href="#" class="btn btn-light">9</a>
+                            <a href="#" class="btn btn-light">10</a>
+                            <a href="#" class="btn btn-light">>></a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div>
+                <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:265px;">
+                    <a href="#"><span class="fa fa-question-circle"></span><br />帮助</a>
+                </div>
+                <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:265px;">
+                    <a href="#"><span class=" fa fa-comments-o"></span><br />反馈</a>
+                </div>
+            </div>
+            <aside class="col-md-4 ">
+                <div class="sidebar">
+                    <p style="font-size:25px"><span class="fa fa-map-signs"></span>开发线路图</p>
+                    <label><input type="checkbox" /><a href="#">用户</a></label><br />
+                    <label><input type="checkbox" /><a href="#">文章合投稿</a></label><br />
+                    <label><input type="checkbox" /><a href="#">积分管理</a></label><br />
+                    <p>引入支付宝/微信接口</p>
+                    <p>全站积分情况统计</p>
+                    <label><input type="checkbox" /><a href="#">关键字组织检索</a></label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />每周榜单：慷慨哥/奉献帝，求助单页可邀请</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />协助流程中引入“开始协助”，总结付费阅读，及其评价评论</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：帮帮币的购买和出售，使用帮帮币发布广告，用户捐赠，以及彩色用户标识功能</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：我的关注关键字筛选和补足功能</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：新人测试功能</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：用户间消息/帮帮豆功能，重构评价功能，调整帮帮币使用和系统奖励政策等</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked /> 新增：精品文章板块</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：星级评价/求助总结/注册流程重构等功能</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：邀请注册/Email通知/酬谢时评价/个人资料/个人主页等功能</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：邀请注册、系统通知的发布/推送功能，关于我们/常见问题/意见建议等说明页面</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked />新增：撤销/酬谢/用户消息/关键字/列表筛选等功能</label><br />
+                    <p>2021年2月26日</p>
+                    <label><input type="checkbox" checked /> “乞丐版”发布：能够注册/登录/求助/回复</label><br />
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer class="container">
+        <hr />
+        <div>
+            <a href="#">关于我们</a>|<a href="#">常见问题</a>|<a href="Suggest.html">意见建议</a>|
+            <a href="#">历史通知</a>|<a href="#" style="color:deepskyblue">友情提示</a>|<a href="#">诚邀合伙人</a>
+        </div>
+        <span style="float:right"><a href="Article.html">渝ICP备18007191号（备案）</a>© 2020 - 自由<img src="https://17bang.ren/Images/freeflying.ico" /></span>
+    </footer>
+</body>

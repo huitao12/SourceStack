@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitTestProject1", "NUnitT
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Captcha", "Captcha\Captcha.csproj", "{06DE2CE5-64EA-4EF5-9E01-404136D50A60}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MySQL", "MySQL\MySQL.csproj", "{DE9AB52F-E0A7-4502-93A0-A82F3222B5D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MySQL", "MySQL\MySQL.csproj", "{DE9AB52F-E0A7-4502-93A0-A82F3222B5D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
