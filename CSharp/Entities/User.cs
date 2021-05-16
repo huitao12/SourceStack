@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace CSharp
+namespace CSharp.Entities
 {
     [Index("CreateTime",IsUnique =true)]
     public sealed class User : Entity<int>, ISendMessage, IChat //让USer无法被继承
@@ -16,7 +16,7 @@ namespace CSharp
         public int Id { get; set; }
 
         //[Key]设置主键
-        public string Name { get; set; }
+        public string Name { get; set; } 
 
         [Required]//不能为空
         public string Password { get; set; }

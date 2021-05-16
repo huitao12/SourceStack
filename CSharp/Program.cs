@@ -1,4 +1,4 @@
-﻿using CSharp.Repoistory;
+﻿using CSharp.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

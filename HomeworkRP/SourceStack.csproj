@@ -23,4 +23,8 @@
     <Folder Include="wwwroot\SQL\NewFolder\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CSharp\CSharp.csproj" />
+  </ItemGroup>
+
 </Project>

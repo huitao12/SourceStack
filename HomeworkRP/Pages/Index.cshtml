@@ -1,8 +1,8 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
-    Layout = "Layout/_Dual";
+    ViewData["Title"] = "首页";
+    //Layout = "Layout/_Dual";
 }
 
 
@@ -74,7 +74,15 @@
             </div>
 
         </article>
-
     </main>
-
+    @section Widgets{
+        <aside style="float:right;position:fixed;top:200px;left:1100px">
+            <h4>“源栈”web开发培训班</h4>
+            <h4 style="color:red">火热<span> 招生中：</span></h4>
+            <p>线上：全程直播，<b>免费</b>收看</p>
+            <p>线下：<b>灵活</b>学制，拎包入住，</p>
+            <p>有意向的同学，可以加qq群：326801052</p>
+            <img src="http://17bang.ren/images/qq-group.png" alt="http://17bang.ren/images/qq-group.png" />
+        </aside>
+    }
 </body>

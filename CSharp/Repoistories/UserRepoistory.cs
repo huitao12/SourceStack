@@ -5,7 +5,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Text;
 
-namespace CSharp.Repoistory
+namespace CSharp.Entities
 {
     public class UserRepoistory
     {

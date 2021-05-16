@@ -1,149 +1,217 @@
 ﻿@page
 @model SourceStack.Pages.Article.IndexModel
 @{
+    ViewData["Title"] = "精品文章";
+
 }
 <head>
     <meta charset="utf-8" />
     <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……" />
     <meta name="keywords" content="源栈 一起帮 自由飞" />
-    <title>精品文章·一起帮</title>
     <link rel="shortcut icon" type="image/ico" href="http://17bang.ren/Images/logo-big.ico" media="screen" />
     <link rel="stylesheet" href="/css/StyleSheet.css">
     <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="/css/font-awesome.css" />
-
 </head>
-<body>
-    <main class="container">
-        <nav>
-            因为注册时使用了叶飞的邀请码，系统赠送给 源潮 ① 10点 帮帮点
-            <a href="#" style="float:right">全部消息</a>
-        </nav>
-        <div class="row" style="margin-top:55px">
-            <article class="col-md-8">
-                <div>
-                    <p style="float:left">2020年12月06日23点06分</p>
-                    <p><span style="float:right"><b>作者：</b><a href="Article.html">叶飞</a></span></p>
-                    <div style="clear:both">
-                        <span><a href="723.html" style="font-size:30px">知乎，这一次是真的决定离开</a></span><br />
-                        <span>起因查了一下，从2015年7月知乎首答：5年多的时间，9万+的关注，8万+的收藏，15万+的赞同，勉勉强强算一个小V吧：忽然发现，</span><br />
-                        <span>从赞/关注/收藏的比例来看，很多同学对我关注胜于赞同。大概就是：不赞同我的观点，但感兴趣我这个人，或者我写的东西大家愿</span><br />
-                        <span> 意收藏起来慢慢看。当然我也知道：“以后再看”≈“不看”，^_^离开知乎的诱因是昨天晚上，我的一个小号突然：申诉无果：看标题 </span><br />
-                        <span>就知道，这是纯粹的技术文章。 其实最初我是不想发布到知乎的，因为太“干”，看的人肯定很少。而且确实是我在开始做培训班之后，</span><br />
-                        <span> “呕心沥血”整理出来 <a href="Article.html">……</a> </span><br />
-                        <div>
-                            <span><b>关键字：</b></span>
-                            <span>离开知乎</span>
-                            <span>优质内容</span>
-                            <span>推广</span>
-                            <div style="float:right">
-                                <span><a href="Article.html">评论：</a>1</span>
-                                <span><a href="Article.html">👍赞：</a>1</span>
-                                <span><a href="Article.html">👎踩：</a>0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <hr />
-                    <p style="float:left">2020年11月23日22点36分</p>
-                    <p><span style="float:right"><b>作者：</b><a href="Article.html">叶飞</a></span></p>
-                    <div style="clear:both">
-                        <span><a href="Article.html" style="font-size:30px">高阶：泛型/集合/Lambda/异常/IO/多线程</a></span><br />
-                        <span>泛型可以有泛型方法/类等，同C#可以有约束public class Student<T extends IMajor>extends Person {子类继承时：public </span><br />
-                        <span>class OnlineStudent<T extends IMajor>extends Student<T>{协变/逆变通配符：？实现extends：协变（out）super：逆变</span><br />
-                        <span>（in）Optional 类对应NullableOptional<Integer> age = <a href="Article.html">……</a></span><br />
-                        <div>
-                            <span><b>关键字：</b></span>
-                            <span>Java</span>
-                            <span>C#</span>
-                            <span>对比</span>
-                            <span>高阶语法</span>
-                            <div style="float:right">
-                                <span><a href="Article.html">评论：</a>0</span>
-                                <span><a href="Article.html">👍赞：</a>3</span>
-                                <span><a href="Article.html">👎踩：</a>0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <div>
-                    <p style="float:left">2020年11月19日21点44分</p>
-                    <p><span style="float:right"><b>作者：</b><a href="Article.html">叶飞</a></span></p>
-                    <div style="clear:both">
-                        <span><a href="Article.html" style="font-size:30px">异步：方法和TPL:async/await/Parallel</a></span><br />
-                        <span>封装我们要把上面这个Task封装成方法，怎么办？最重要的一点，这个方法要能返回生成的random，后面的代码要用！public static </span><br />
-                        <span> Task<int>getRandom(){return Task<int>.Run(() =>{Thread.Sleep(500); //模拟耗时return new Random().Next();});}</span><br />
-                        <span>@@想一想@@：应该如何调用这个方法？（提示：不要直接getRandom().Result） 假如我们还需要进一步的封装，添加 <a href="Article.html">……</a></span><br />
-                        <div>
-                            <span>关键字：</span>
-                            <span>异步</span>
-                            <span>async</span>
-                            <span>await</span>
-                            <span>并发</span>
-                            <div style="float:right">
-                                <span><a href="Article.html">评论：</a>0</span>
-                                <span><a href="Article.html">👍赞：</a>0</span>
-                                <span><a href="Article.html">👎踩：</a>0</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr />
-                <nav style="padding:30px 0px">
-                    <button><a href="#">1</a></button>
-                    <button><a href="#">2</a></button>
-                    <button><a href="#">3</a></button>
-                    <button><a href="#">4</a></button>
-                    <button><a href="#">5</a></button>
-                    <button><a href="#">6</a></button>
-                    <button><a href="#">7</a></button>
-                    <button><a href="#">8</a></button>
-                    <button><a href="#">9</a></button>
-                    <button><a href="#">10</a></button>
-                    <button><a href="#">>></a></button>
-                </nav>
-            </article>
-            <aside class="col-md-4">
-                <div class=" sidebar">
-                    <p style="font-size:30px">关键字</p><hr />
-                    <div style="font-size:25px">
-                        <span class="badge badge-secondary">编程开发语言</span>
-                        <span class="badge badge-secondary">C#</span>
-                        <span class="badge badge-secondary">JAVA</span>
-                        <span class="badge badge-secondary">工具软件</span>
-                        <span class="badge badge-secondary">javascript</span>
-                        <span class="badge badge-secondary">顾问咨询</span>
-                        <span class="badge badge-secondary">html</span>
-                        <span class="badge badge-secondary">visualstudio</span>
-                        <span class="badge badge-secondary">操作系统</span>
-                        <span class="badge badge-secondary">职场</span>
-                        <span class="badge badge-secondary">SQL</span>
-                    </div>
-                    <hr />
-                    <span> <input type="text" placeholder="直接输入关键字查找" /></span>
-                    <input type="button" value="换一批" />
-                </div>
-                <div class=" sidebar">
-                    <ol>
-                        <li><span><a href="Article.html">学编程，来“源站”！飞哥精品小班等着你......</a></span></li>
-                        <li> <span><a href="Article.html">免费广告位，抢到就是赚到！</a></span></li>
-                        <li><span><a href="Article.html">免费广告位，抢到就是赚到！</a></span></li>
-                        <li><span><a href="Article.html">免费广告位，抢到就是赚到！</a></span></li>
-                        <li> <span><a href="Article.html">免费广告位，抢到就是赚到！</a></span></li>
-                        <li><span>本站本机由<a href="Article.html">西部数码</a>提供</span></li>
-                    </ol>
-                </div>
-            </aside>
+
+<main class="container">
+    <div class="row" style="margin-top:60px">
+        <div id="notification" class="container">
+            <span class="fa fa-calendar"></span>
+            文章的评论已截屏保存，飞哥加油被涛咆哮赞，获得帮帮点 奖励2点
+            <a href="723.html" style="float:right; color:#337ab7"><span class=" fa fa-hand-o-right "></span>全部消息</a>
         </div>
-    </main>
-    <div>
-        <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:260px;">
-            <a href="#"><span class="fa fa-question-circle"></span><br />帮助</a>
-        </div>
-        <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:260px;">
-            <a href="#"><span class=" fa fa-comments-o"></span><br />反馈</a>
+        @foreach (var item in Model.Articles)
+        {
+            <div class="col-md-8">
+                <div style="margin-top:15px">
+                    <p style="float:left">@item.PublishTime.ToString("yyyy年MM月dd日 hh点mm分")</p>
+                    <p><span style="float:right"><b>作者：</b><a href="/User/@item.Author.Id">@item.Author.Name</a></span></p>
+                    <div style="clear:both">
+                        <span><a href="/Article/Single?id=@item.Id" style="font-size:30px">@item.Title</a></span><br />
+                        <span>@item.Body<a href="Article.html">……</a></span><br />
+                        <div>
+                            <span class=" fa fa-tags " style="font-size:15px"><b>关键字：</b></span>
+                            <span class="badge badge-secondary" style="border-radius: 10px;font-size:15px">离开知乎</span>
+                            <span class="badge badge-secondary" style="border-radius: 10px;font-size:15px">优质内容</span>
+                            <span class="badge badge-secondary" style="border-radius: 10px;font-size:15px">推广</span>
+                            <div style="float:right">
+                                <span><a href="Article.html">评论：</a>@ViewData["CommentCount"]</span>
+                                <span><a href="Article.html">👍赞：</a>@ViewData["AgreeCount"]</span>
+                                <span><a href="Article.html">👎踩：</a>@ViewData["OpposeCount"]</span>
+                            </div>
+                        </div>
+                    </div><hr />
+                </div>
+            </div>
+        }
+    </div>
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+
+            @*<a href="/Article?pageIndex=@(i)" class="btn btn-light">上一页</a>*@
+           
+
+            @for (int i = 0; i < 10; i++)
+            {
+
+                <a href="/Article?pageIndex=@(i+1)" class="btn btn-light">@(i+1)</a>
+
+                @*<a href="/Article?pageIndex=@(i+2)" class="btn btn-light">下一页</a>*@
+
+            }
         </div>
     </div>
-</body>
+    <aside class="col-md-4 ">
+        <div class="widget clearfix">
+            <p style="font-size:30px"><span class="fa fa-tags"></span>关键字</p><hr>
+            <div style="font-size:25px">
+                <span class="badge badge-secondary" style="border-radius: 10px;">编程开发语言</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">C#</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">JAVA</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">工具软件</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">javascript</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">顾问咨询</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">html</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">visualstudio</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">操作系统</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">职场</span>
+                <span class="badge badge-secondary" style="border-radius: 10px;">SQL</span>
+            </div>
+            <hr>
+            <div class="input-group mb-3">
+                <input type="text" style="width:50%" placeholder="直接输入关键字查找" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                <div class="input-group-append" style="margin-right:25px">
+                    <span class="input-group-text" id="basic-addon2"><span class="fa fa-search"></span></span>
+                </div>
+                <div>
+                    <button type="button" style="margin-left:1px" class="btn btn-outline-dark"><span class="fa fa-random"></span>换一批</button>
+                </div>
+            </div>
+        </div>
+        <div class="widget">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link " aria-current="page" href="#" style="margin-top: -15px"> <span class="fa  fa-eye"></span>每日督促</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" style="color:red;margin-top: -15px" href="#"><span class="fa  fa-heart"></span>排行榜</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="margin-top: -15px"><span class="fa  fa-user-circle-o"></span>新注册</a>
+                </li>
+            </ul>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: black">1</span></h4></td>
+                        <td>
+                            <span><a href="#">unkownn</a></span>
+                            <span style="margin-right:120px"><a href="#" title="中级学徒">②</a></span>
+                        </td>
+                        <td>44</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #696969">2</span></h4></td>
+                        <td>
+                            <span><a href="#" style="color:#dcb962">叶飞</a></span>
+                            <span style="margin-right:120px"><a href="#" title="大宗师">⑩</a></span>
+                        </td>
+                        <td>38</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: gray">3</span></h4></td>
+                        <td>
+                            <span><a href="#">Edwin521</a></span>
+                            <span style="margin-right:120px"><a href="#" title="初级学徒">①</a></span>
+                        </td>
+                        <td>30</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">4</span></h4></td>
+                        <td>
+                            <span><a href="#" style="color:#dcb962">dk</a></span>
+                            <span style="margin-right:120px"><a href="#" title="初级宗师">④</a></span>
+                        </td>
+                        <td>23</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">5</span></h4></td>
+                        <td>
+                            <span><a href="#">Gabriel</a></span>
+                            <span style="margin-right:120px"><a href="#" title="初级学徒">①</a></span>
+                        </td>
+                        <td>11</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">6</span></h4></td>
+                        <td>
+                            <span><a href="#">忠哲</a></span>
+                            <span style="margin-right:120px"><a href="#" title="初级学徒">①</a></span>
+                        </td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">7</span></h4></td>
+                        <td>
+                            <span><a href="#">和光同尘</a></span>
+                            <span style="margin-right:120px"><a href="#" title="中级学徒">②</a></span>
+                        </td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">8</span></h4></td>
+                        <td>
+                            <span><a href="#">知名跳伞体验家</a></span>
+                            <span style="margin-right:110px"><a href="#" title="中级学徒">②</a></span>
+                        </td>
+                        <td>1</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class=" nav justify-content-end " style="padding:10px">
+                <a href="#"><span class="fa fa-hand-o-right "></span>我的排名</a>
+            </div>
+        </div>
+        <div class="widget">
+            <table>
+                <tbody>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: black">1</span></h4></td>
+                        <td><a href="Article.html">学编程，来“源站”！飞哥精品小班等着你......</a></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #696969">2</span></h4></td>
+                        <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: gray">3</span></h4></td>
+                        <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">4</span></h4></td>
+                        <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">5</span></h4></td>
+                        <td><a href="Article.html">免费广告位，抢到就是赚到！</a></td>
+                    </tr>
+                    <tr>
+                        <td><h4 style="margin-right:20px"><span class="badge badge-secondary" style="background-color: #a9a9a9">6</span></h4></td>
+                        <td>本站本机由<a href="Article.html">西部数码</a>提供</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class=" nav justify-content-end "><small><span class="fa fa-buysellads">广告</span></small> </a>
+        </div>
+    </aside>
+
+</main>
+<div>
+    <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:260px;">
+        <a href="#"><span class="fa fa-question-circle"></span><br />帮助</a>
+    </div>
+    <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:260px;">
+        <a href="#"><span class=" fa fa-comments-o"></span><br />反馈</a>
+    </div>
+</div>

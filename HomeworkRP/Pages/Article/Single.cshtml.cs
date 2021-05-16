@@ -2,29 +2,30 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using E = CSharp.Entities;
-using CSharp.ArticleRepository;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using E=CSharp.Entities;
+using CSharp.ArticleRepository;
 
 namespace SourceStack.Pages.Article
 {
-    public class IndexModel : PageModel
+    public class SingleModel : PageModel
     {
+
         private ArticleRepository articleRepository;
-        public IndexModel()
+        public SingleModel()
         {
             articleRepository = new ArticleRepository();
         }
-        public IList<E.Article> Articles { get; set; }
-
+        public  E.Article Article { get; set; }
         public void OnGet()
         {
-            int pageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
-            Articles = articleRepository.Get(pageIndex, 2);
-            ViewData["CommentCount"] = 1;
+            int id = Convert.ToInt32(RouteData.Values["id"]);
+            //int id = Convert.ToInt32(Request.Query["id"][0]);
+            Article = articleRepository.Find(id);
             ViewData["AgreeCount"] = 3;
-            ViewData["OpposeCount"] = 1;
         }
+
+
     }
 }

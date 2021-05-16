@@ -1,6 +1,11 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
+<head>
+    <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……" />
+    <meta name="keywords" content="源栈 一起帮 自由飞" />
+    <link rel="shortcut icon" type="image/ico" href="/img/logo-big.ico" media="screen">
+    <title>@ViewData["Title"]·一起帮</title>
+</head>
 <body>
     <header style="position:fixed;z-index:999;top:0px; width:100%;left: 0px">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,7 +53,7 @@
                                 文章
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">列表</a>
+                                <a class="dropdown-item" href="/Article?pageIndec={id}">列表</a>
                                 <a class="dropdown-item" href="#">开通</a>
                             </div>
                         </li>
@@ -94,16 +99,11 @@
                 </div>
             </div>
         </nav>
-
     </header>
     <div>
         @RenderBody()
     </div>
-    <div>
-        @if (IsSectionDefined("Widgets"))//老式写法
-        {
-            @RenderSection("Widgets")
-        }
+    <div >
         @RenderSection("Widgets",false)
     </div>
     <footer class=" container">

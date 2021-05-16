@@ -4,18 +4,36 @@
 <div>
     @RenderBody()
 </div>
-<aside style="float:right;position:fixed;top:200px;left:1100px">
-    <h4>“源栈”web开发培训班</h4>
-    <h4 style="color:red">火热<span> 招生中：</span></h4>
-    <p>线上：全程直播，<b>免费</b>收看</p>
-    <p>线下：<b>灵活</b>学制，拎包入住，</p>
-    <p>有意向的同学，可以加qq群：326801052</p>
-    <img src="http://17bang.ren/images/qq-group.png" alt="http://17bang.ren/images/qq-group.png" />
-</aside>
-<div>
-    @*@if (IsSectionDefined("Widgets"))//老式写法
-        {
-            @RenderSection("Widgets")
-        }*@
+<div style="background-color:lavender">
     @RenderSection("Widgets", false)
 </div>
+@section Widgets{
+    <div class="container">
+        <aside class="col-md-6 offset-md-2">
+            <div class="text-info" style="font-size:30px;margin-bottom:20px">
+                <span class="fa fa-question-circle"></span>
+                <span>说明</span>
+            </div>
+            <div>
+                <ol>
+                    <li>
+                        <p>我们希望通过一起帮，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。</p>
+                    </li>
+                    <li>
+                        <p>现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？</p>
+                    </li>
+                    <li>
+                        <p>当然，你也可以在你熟悉的领域去帮助别人。由此而形成我们这个“你帮他他帮我我帮你，大家一起帮”的网上互助社区平台。</p>
+                    </li>
+                    <li>
+                        <p>公平起见，我们还引入了 帮帮点/币/豆 三级概念，以记录和衡量社区成员的收获和贡献。</p>
+                    </li>
+                    <li>
+                        <p>赶快加入我们，赚取帮帮币吧！</p>
+                    </li>
+                </ol>
+            </div>
+        </aside>
+    </div>
+}
+
