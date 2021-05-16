@@ -8,15 +8,14 @@
         <a href="723.html" style="float:right; color:#337ab7"><span class=" fa fa-hand-o-right "></span>全部消息</a>
     </div>
     <div style="font-size:35px;margin:25px 0 15px 0">
-        <span class="fa fa-sign-in"></span>
-        <span>用户登录</span><hr />
-    </div>
+        @RenderSection("headline")
+    </div><hr />
     <div class="row" style="margin:30px 0px">
-        <article class="col-md-4 ">
+        <article class="col-md-5 ">
             @RenderBody()
         </article>
 
-        <aside class="col-md-6 offset-md-2">
+        <aside class="col-md-6 offset-md-1">
             <div class="text-info" style="font-size:30px;margin-bottom:20px">
                 <span class="fa fa-question-circle"></span>
                 <span>说明</span>

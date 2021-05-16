@@ -1,9 +1,12 @@
 ﻿@page
-
 @model SourceStack.Pages.Log.InModel
 @{
     Layout = "Layout/_Dual";
     ViewData["Title"] = "用户·登录";
+}
+@section headline{
+    <span class="fa fa-sign-in"></span>
+    <span>用户登录</span>
 }
 <p style="font-weight:600">用户名：（* 必填）</p>
 <p><input class="alert alert-primary" role="alert" style="width:100%" id="username" /></p>
@@ -26,7 +29,6 @@
 </div>
 
 @section Widgets{
-
     <div>
         <ol>
             <li>

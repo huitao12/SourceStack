@@ -64,7 +64,7 @@
                                 文章
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="/Article?pageIndec={id}">列表</a>
+                                <a class="dropdown-item" href="/Article?pageIndex{id:int}">列表</a>
                                 <a class="dropdown-item" href="#">开通</a>
                             </div>
                         </li>
@@ -113,6 +113,17 @@
     </header>
     <div>
         @RenderBody()
+    </div>
+    <div>
+        <div class=" location" style="text-align:center;position:fixed;top:130px;right:310px;">
+            <a href="#"><span class="fa fa-mail-forward"></span>返回</a>
+        </div>
+        <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:260px;">
+            <a href="#"><span class="fa fa-question-circle-o"></span><br />帮助</a>
+        </div>
+        <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:260px;">
+            <a href="#"><span class=" fa fa-comments-o"></span><br />反馈</a>
+        </div>
     </div>
     <footer class=" container">
         <hr />
