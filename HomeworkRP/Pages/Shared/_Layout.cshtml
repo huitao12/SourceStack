@@ -1,10 +1,21 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……" />
-    <meta name="keywords" content="源栈 一起帮 自由飞" />
+    <meta charset="utf-8">
+    <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……">
+    <meta name="keywords" content="源栈 一起帮 自由飞">
+    <title> @ViewData["Title"]·一起帮</title>
     <link rel="shortcut icon" type="image/ico" href="/img/logo-big.ico" media="screen">
-    <title>@ViewData["Title"]·一起帮</title>
+    <link rel="stylesheet" href="/css/StyleSheet.css">
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/font-awesome.css">
+    <style>
+        a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 <body>
     <header style="position:fixed;z-index:999;top:0px; width:100%;left: 0px">
@@ -103,9 +114,6 @@
     <div>
         @RenderBody()
     </div>
-    <div >
-        @RenderSection("Widgets",false)
-    </div>
     <footer class=" container">
         <hr />
         <div>
@@ -115,7 +123,7 @@
         <span style="float:right"><a href="Article.html" style="color: #337ab7">渝ICP备18007191号（备案）</a>© 2020 - 自由<img src="https://17bang.ren/Images/freeflying.ico"></span>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     @RenderSection("Scripts", required: false)
