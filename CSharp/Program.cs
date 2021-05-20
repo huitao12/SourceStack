@@ -89,7 +89,7 @@ namespace CSharp
 
 
 
-            UserRepoistory l = new UserRepoistory();
+            UserRepository l = new UserRepository();
             l.GetbyName("鬼娃");
 
             //UserRepoistory p = new UserRepoistory();

@@ -1,4 +1,5 @@
 ﻿@page
+
 @model SourceStack.Pages.Article.IndexModel
 @{
     ViewData["Title"] = "精品文章";
@@ -37,14 +38,21 @@
             }
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
-                    @*<a href="/Article?pageIndex=@(i)" class="btn btn-light">上一页</a>*@
+
+                    @if (Model.ArticlesSum != 0 )
+                    {
+
+                    }
+                    <a href="/Article?pageIndex=@(Model.ArticlesSum-1)" class="btn btn-light">上一页</a>
+
                     @for (int i = 0; i < 10; i++)
                     {
 
                         <a href="/Article?pageIndex=@(i+1)" class="btn btn-light">@(i+1)</a>
 
-                        @*<a href="/Article?pageIndex=@(i+2)" class="btn btn-light">下一页</a>*@
                     }
+                    <a href="/Article?pageIndex=@(Model.ArticlesSum+1)" class="btn btn-light">下一页</a>
+
                 </div>
             </div>
         </div>
@@ -193,4 +201,5 @@
         </aside>
     </div>
 </main>
+
 

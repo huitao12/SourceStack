@@ -27,8 +27,8 @@ namespace SourceStack
                 .AddRazorPagesOptions(opt =>
                 {
                     opt.Conventions.AddPageRoute("/Log/On", "/LogOn");
-                    //opt.Conventions.AddPageRoute("/Article/Index", "/Article/777-{id:int}");
-                    opt.Conventions.AddPageRoute("/Article/Single", "/Article/{id:int}");
+                    opt.Conventions.AddPageRoute("/Article/Single", "/Article/{id=1}");
+                    opt.Conventions.AddPageRoute("/Article/Index", "/Article/Paged-{id:int}");
                 });
         }
 

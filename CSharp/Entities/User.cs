@@ -13,7 +13,7 @@ namespace CSharp.Entities
     [Index("CreateTime",IsUnique =true)]
     public sealed class User : Entity<int>, ISendMessage, IChat //让USer无法被继承
     {
-        public int Id { get; set; }
+        //public int Id { get; set; }
 
         //[Key]设置主键
         public string Name { get; set; } 

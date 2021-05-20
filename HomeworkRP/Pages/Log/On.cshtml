@@ -8,27 +8,32 @@
     <span class="fa fa-sign-in"></span>
     <span>用户登录</span>
 }
-<p style="font-weight:600">用户名：（* 必填）</p>
-<p><input class="alert alert-primary" role="alert" style="width:100%" id="username" /></p>
-<p style="font-weight:600">密码：（* 必填）</p>
-<p><input class="alert alert-primary" role="alert" style="width:100%" id="username" /></p>
-<p style="font-weight:600">验证码：（* 必填）</p>
-<span><input type="button" class="btn btn-outline-secondary" style="width:100px" /></span>
-<a href="#">看不清楚</a>
-<br />
-<div style="margin-top:20px">
-    <button class="btn btn-primary" style=" background-color: #337ab7">提交</button>
-    <div class="form-check form-check-inline" style="margin-left:15px">
-        <input class="form-check-input" type="checkbox" checked id="inlineCheckbox1" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">记住我</label>
+<form method="post" asp-page="~/On">
+    <div>
+        <label style="font-weight:600">用户名：（* 必填）</label>
+        <input class="alert alert-primary" role="alert" style="width:100%" id="username" asp-for="UserName" />
+        <label style="font-weight:600">密码：（* 必填）</label>
+        <input class="alert alert-primary" role="alert" style="width:100%" id="username" asp-for="Password" />
+        <label style="font-weight:600">验证码：（* 必填）</label>
+        <input type="button" class="btn btn-outline-secondary" style="width:100px" />
+        <a href="#">看不清楚</a>
+        <br />
     </div>
-    <div class="pull-right">
-        <a href="#">(｡ŏ_ŏ) 忘了</a>
-        <a href="#" style="margin-left:10px"><span class="fa fa-registered"></span>注册</a>
+    <div style="margin-top:30px">
+        <button class="btn btn-primary" style=" background-color: #337ab7" type="submit">提交</button>
+        <div class="form-check form-check-inline" style="margin-left:15px">
+            <input class="form-check-input" type="checkbox" checked id="inlineCheckbox1" value="option1">
+            <label class="form-check-label" for="inlineCheckbox1">记住我</label>
+        </div>
+        <div class="pull-right">
+            <a href="#">(｡ŏ_ŏ) 忘了</a>
+            <a href="#" style="margin-left:10px"><span class="fa fa-registered"></span>注册</a>
+        </div>
     </div>
-</div>
+</form>
 
-@section Widgets{
+
+@section Explain{
     <div>
         <ol>
             <li>

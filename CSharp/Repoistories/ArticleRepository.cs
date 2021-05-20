@@ -135,6 +135,8 @@ namespace CSharp.ArticleRepository
         {
         }
 
+        public int ArticleCount { get; set; }
+
         public Article Find(int id)
         {
             return articles.Where(a => a.Id == id).SingleOrDefault();

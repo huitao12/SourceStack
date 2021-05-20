@@ -7,7 +7,7 @@ using System.Text;
 
 namespace CSharp.Entities
 {
-    public class UserRepoistory
+    public class UserRepository
     {
         //作业
         //将之前ASP.NET项目中以下Repository方法用ADO.NET实现：

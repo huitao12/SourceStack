@@ -9,34 +9,43 @@
     <span class="fa fa-registered"></span>
     <span>注册</span>
 }
-<div class="list-group-item list-group-item-warning" id="reward">
-    <p><a href="#" class="pull-right"><span class="fa fa-question-circle"></span>为什么需要邀请</a></p>
-    <div style="clear:both">
-        <span><b>邀请人：（*必填，没有邀请人）</b></span>
-        <input type="text" class="alert form-control" id="formGroupExampleInput" placeholder="他的用户名，模糊查询只能从头开始名">
-        <span><b>邀请码：（*必填）</b></span><br />
-        <input type="text" class="alert  form-control" id="formGroupExampleInput" placeholder="4位数字">
+<form method="post" asp-page="~/Regiter">
+    <div class="list-group-item list-group-item-warning" id="reward">
+        <p><a href="#" class="pull-right"><span class="fa fa-question-circle"></span>为什么需要邀请</a></p>
+        <div style="clear:both">
+            <label><b>邀请人：（*必填，没有邀请人）</b></label>
+            <input type="text" class="alert form-control" id="formGroupExampleInput" placeholder="他的用户名，模糊查询只能从头开始名">
+            <label><b>邀请码：（*必填）</b></label><br />
+            <input type="text" class="alert  form-control" id="formGroupExampleInput" placeholder="4位数字">
+        </div>
     </div>
-</div>
-<div style="margin-top:20px">
-    <span><b>用户名：（*必填）</b></span><br />
-    <input class="alert alert-primary form-control" role="alert" type="text" id="username" placeholder="登录用户名，可修改，不能重复" />
-    <span><b>密码：（*必填）</b></span><br />
-    <input class="alert alert-primary form-control" role="alert" type="text" id="username" placeholder="不少于4个字符" />
-    <span><b>验证密码：（*必填）</b></span><br />
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="和密码相同">
     <div style="margin-top:20px">
-        <span><b>验证码：（*必填）</b></span><br />
-        <input type="button" class="btn btn-outline-secondary " style="width:100px" />点击输入框显示
+        <div>
+            <label><b>用户名：（*必填）</b></label><br />
+            <input class="alert alert-primary form-control" role="alert" type="text" id="username" placeholder="登录用户名，可修改，不能重复" />
+        </div>
+        <div>
+            <label><b>密码：（*必填）</b></label><br />
+            <input class="alert alert-primary form-control" role="alert" type="text" id="username" placeholder="不少于4个字符" />
+        </div>
+        <div>
+            <label><b>验证密码：（*必填）</b></label><br />
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="和密码相同">
+        </div>
+        <div style="margin-top:20px">
+            <label><b>验证码：（*必填）</b></label><br />
+            <input type="button" class="btn btn-outline-secondary " style="width:100px" />点击输入框显示
+        </div>
     </div>
-</div>
-<div style="margin-top:15px">
-    <button class="btn btn-primary" style="background-color: #337ab7">提交</button>
-    <button type="button" class="btn btn-outline-info">重置</button>
-    <span style="float:right"><a href="Register.html"><span class="fa fa-sign-in"></span>登录</a></span>
-</div>
-
-@section Widgets{
+    <div style="margin-top:15px">
+        @*<button class="btn btn-primary" style="background-color: #337ab7">提交</button>*@
+        <input class="btn btn-primary" style="background-color: #337ab7" value="提交" type="submit">
+        @*<button type="button" class="btn btn-outline-info">重置</button>*@
+        <input type="reset"value="重置" class="btn btn-outline-info">
+        <span style="float:right"><a href="Register.html"><span class="fa fa-sign-in"></span>登录</a></span>
+    </div>
+</form>
+@section Explain{
     <ol>
         <li><p>我们希望通过<a href="Article.html">一起帮</a>，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。</p></li>
         <li> <p>现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？</p></li>
