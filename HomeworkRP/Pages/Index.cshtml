@@ -54,9 +54,13 @@
                 <span class="input-group-text" id="basic-addon2">发送</span>
             </div>
         </div>
-
     </article>
+    <datetime asp-showicon="true" asp-only="date">@DateTime.Now.ToString("yyyy年MM月dd日 hh时mm分")</datetime>
 </main>
+
+
+
+
 <aside style="float:right;position:fixed;top:200px;left:1100px">
     <h4>“源栈”web开发培训班</h4>
     <h4 style="color:red">火热<span> 招生中：</span></h4>
@@ -65,4 +69,3 @@
     <p>有意向的同学，可以加qq群：326801052</p>
     <img src="http://17bang.ren/images/qq-group.png" alt="http://17bang.ren/images/qq-group.png" />
 </aside>
-<pager path="/Index" pageIndex="3">第三页</pager>

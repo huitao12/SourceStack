@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SourceStack.TagHelpers
 {
-    [HtmlTargetElement("pager", Attributes = "pageIndex, path")]
+    [HtmlTargetElement("datetime", Attributes = "asp-showicon,asp-only")]
     ///必须继承自TagHelper
     public class PagerTagHelper : TagHelper
     {
@@ -14,17 +14,15 @@ namespace SourceStack.TagHelpers
         //output：输出的原生html标签
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.TagName = "a";   //原生标签名
-
-            //分别取出pageIndex和path的值
-            object pageIndex = context.AllAttributes["pageIndex"].Value;
-            //output.Attributes.Remove(context.AllAttributes["pageIndex"]);
-
-            object path = context.AllAttributes["path"].Value;
-            //output.Attributes.RemoveAll("path");
-
-            //设置a标签里href的值
-            output.Attributes.Add("href", $"{path}/Page-{pageIndex}");
+            output.TagName = "small";   //原生标签名
+            if (context.AllAttributes["asp-showicon"].Value.ToString() == "true")
+            {
+                output.PreContent.AppendHtml("<span class=\"fa fa-calendar \"></span>");
+            }
+            if (context.AllAttributes["asp-only"].Value.ToString() == "date")
+            {
+                output.Content.AppendHtml(DateTime.Now.Date.ToString("yyyy年MM月dd日"));
+            }
 
             base.Process(context, output);
         }
