@@ -18,6 +18,7 @@ namespace CSharp.Entities
         //[Key]设置主键
         public string Name { get; set; } 
         public bool IsMale { get; set; }
+        public string Introduction { get; set; }
 
         [Required]//不能为空
         [DataType(DataType.Password)]

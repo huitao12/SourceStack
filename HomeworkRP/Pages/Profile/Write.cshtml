@@ -5,131 +5,72 @@
 }
 
 
-    <main class="container"style="margin-top:60px">
-        <div>
-            👍因为注册时使用了叶飞的邀请码，系统赠送给 源潮 ① 10点 帮帮点
-            <a href="#" style="float:right">全部消息</a>
-        </div>
-        <div>
-            <p style="font-size:45px;padding:10px"><span class="fa fa-user-circle-o"></span>个人资料</></p><hr />
-        </div>
-        <article>
-            <div style="margin-top:55px" class="row input-group">
-                <div class="col-md-7 input-group-prepend">
-                    <form>
-                        <div class="form-group">
-                            <p style="font-weight:900">头像：（* 仅限jpg/png/gif）</p>
-                            <input type="text" placeholder="页面提交时上传文件" />
-                            <input type="file" value="浏览" /><br />
-                        </div>
-                        <div class="form-group">
-                            <label style="font-weight:900">性别：</label>
-                            <label>
-                                <input type="radio" asp-for="NewUser.IsMale" value="true" checked />男
-                                <input type="radio" asp-for="NewUser.IsMale" value="false" readonly />女 <br />
-                            </label>
-                        </div>
-                        <div class="form-group">
-                            <label style="font-weight:900">生日：</label><br />
-                            <div class="input-group mb-3">
-                                <div class="input-group-append">
-                                    <select name="year">
-                                        <option value=" ">---</option>
-                                        <option value="1990">1990</option>
-                                        <option value="1991">1991</option>
-                                        <option value="1992">1992</option>
-                                        <option value="1993">1993</option>
-                                        <option value="1994">1994</option>
-                                        <option value="1995">1995</option>
-                                        <option value="1996">1996</option>
-                                        <option value="1997">1997</option>
-                                        <option value="1998">1998</option>
-                                        <option value="1999">1999</option>
-                                        <option value="2000">2000</option>
-                                        <option value="2001">2001</option>
-                                        <option value="2002">2002</option>
-                                    </select>
-                                    <span class="input-group-text" id="basic-addon2">年</span>
-                                    <select name="month">
-                                        <option value=" ">---</option>
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-                                        <option value="11">11</option>
-                                        <option value="12">12</option>
-                                    </select>
-                                    <span class="input-group-text" id="basic-addon2">月</span>
-                                    <select name="month">
-                                        <option value=" ">--</option>
-                                        <option value="双鱼座 ">双鱼座 </option>
-                                        <option value="水瓶座 ">水瓶座 </option>
-                                        <option value="双子座">双子座</option>
-                                        <option value="巨蟹座">巨蟹座</option>
-                                        <option value="狮子座">狮子座</option>
-                                        <option value="处女座">处女座</option>
-                                        <option value="天平座">天平座</option>
-                                        <option value="天蝎座">天蝎座</option>
-                                        <option value="射手座">射手座</option>
-                                        <option value="魔蝎座">魔蝎座</option>
-                                        <option value="白羊座">白羊座</option>
-                                        <option value="金牛座">金牛座</option>
-                                    </select>
-                                    <span class="input-group-text" id="basic-addon2">星座</span>
-                                </div>
+<main class="container" style="margin-top:60px">
+    <div>
+        👍因为注册时使用了叶飞的邀请码，系统赠送给 源潮 ① 10点 帮帮点
+        <a href="#" style="float:right">全部消息</a>
+    </div>
+    <div>
+        <p style="font-size:45px;padding:10px"><span class="fa fa-user-circle-o"></span>个人资料</></p><hr />
+    </div>
+    <article>
+        <div style="margin-top:55px" class="row input-group">
+            <div class="col-md-7 input-group-prepend">
+                <form>
+                    <div class="form-group">
+                        <p style="font-weight:900">头像：（* 仅限jpg/png/gif）</p>
+                        <input type="text" placeholder="页面提交时上传文件" />
+                        <input type="file" value="浏览" /><br />
+                    </div>
+                    <div class="form-group">
+                        <label style="font-weight:900">性别：</label>
+                        <label>
+                            <input type="radio" asp-for="NewUser.IsMale" value="true" checked />男
+                            <input type="radio" asp-for="NewUser.IsMale" value="false" />女 <br />
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-weight:900">生日：</label><br />
+                        <div class="input-group mb-3">
+                            <div class="input-group-append">
+                                <select asp-for="BirthYear" asp-items="Model.AvailableYears"></select>
+                                <span class="input-group-text" id="basic-addon2">年</span>
+                                <select asp-for="BirthMonth" asp-items="Model.AvailableMonths"></select>
+                                <span class="input-group-text" id="basic-addon2">月</span>
+                                <select asp-for="Constellation" asp-items="Model.AvailableConstellations"></select>
+                                <span class="input-group-text" id="basic-addon2">星座</span>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label style="font-weight:900">关键字：（* 使用空格分隔）</label><br />
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">--1级--</span>
-                                </div>
-                                <select name="keyword">
-                                    <option>编程开发</option>
-                                    <option>工具软件</option>
-                                    <option>顾问咨询</option>
-                                    <option>操作系统</option>
-                                </select>
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">--2级--</span>
-                                </div>
-                                <select name="Secondkeyword">
-                                    <option>C#</option>
-                                    <option>JAVA</option>
-                                    <option>JavaScript</option>
-                                    <option>html</option>
-                                    <option>python</option>
-                                    <option>SQL</option>
-                                    <option>CSS</option>
-                                    <option>PHP</option>
-                                    <option>C++</option>
-                                    <option>C</option>
-                                </select>
-                                <input type="text" class="form-control" placeholder="自定义关机键，使用空格分隔">
+                    </div>
+                    <div class="form-group">
+                        <label style="font-weight:900">关键字：（* 使用空格分隔）</label><br />
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">--1级--</span>
                             </div>
+                            <select asp-for="StairKeyword" asp-items="Model.AvailableStairKeywords"></select>
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">--2级--</span>
+                            </div>
+                            <select asp-for="SecondKeyword" asp-items="Model.AvailableSecondKeywords"></select>
+                            <input type="text" class="form-control" placeholder="自定义关机键，使用空格分隔">
                         </div>
-                        <div class="form-group">
-                            <label style="font-weight:900">自我介绍：</label><br />
-                            <textarea style="width:400px">简单的介绍一下自己吧，不超过255字</textarea><br />
-                        </div>
-                        <input class="btn btn-primary" type="submit" value="提交">
-                    </form>
-                </div>
-                <aside class="col-md-5">
-                    <p class="text-info" style="font-size:30px;"><span class="fa fa-question-circle"></span>说明</p>
-                    <ol>
-                        <li style="margin-bottom:10px">头像仅接受jpg/png/gif格式，大小不超过256KB。</li>
-                        <li style="margin-bottom:10px">头像图片的建议宽度为300像素左右，过宽或过窄都有可能失真。</li>
-                        <li style="margin-bottom:10px">自我介绍的字数不要超过255字。</li>
-                    </ol>
-                </aside>
+                    </div>
+                    <div class="form-group">
+                        <label style="font-weight:900">自我介绍：</label><br />
+                        <textarea asp-for="NewUser.Introduction" style="width:400px">简单的介绍一下自己吧，不超过255字</textarea><br />
+                    </div>
+                    <input class="btn btn-primary" type="submit" value="提交">
+                </form>
             </div>
-        </article>
-    </main>
+            <aside class="col-md-5">
+                <p class="text-info" style="font-size:30px;"><span class="fa fa-question-circle"></span>说明</p>
+                <ol>
+                    <li style="margin-bottom:10px">头像仅接受jpg/png/gif格式，大小不超过256KB。</li>
+                    <li style="margin-bottom:10px">头像图片的建议宽度为300像素左右，过宽或过窄都有可能失真。</li>
+                    <li style="margin-bottom:10px">自我介绍的字数不要超过255字。</li>
+                </ol>
+            </aside>
+        </div>
+    </article>
+</main>

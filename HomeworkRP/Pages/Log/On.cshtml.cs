@@ -19,6 +19,7 @@ namespace SourceStack.Pages.Log
         }
         public void OnPost()
         {
+
             string username = Request.Form["NewUser.Name"];
             NewUser = new User { Name = username };
         }
