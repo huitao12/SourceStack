@@ -9,7 +9,15 @@
     <span class="fa fa-registered"></span>
     <span>注册</span>
 }
-<form method="post" asp-page="~/Regiter">
+@if (Request.Method == "POST")
+{
+    <p>@Model.NewUser.Name  注册成功!</p>
+}
+@*@if (ViewData["UserName"] != null)
+{
+    <p>ViewData["UserName"] 注册成功</p>
+}*@
+<form method="post" asp-page="~/Home">
     <div class="list-group-item list-group-item-warning" id="reward">
         <p><a href="#" class="pull-right"><span class="fa fa-question-circle"></span>为什么需要邀请</a></p>
         <div style="clear:both">
@@ -22,11 +30,11 @@
     <div style="margin-top:20px">
         <div>
             <label><b>用户名：（*必填）</b></label><br />
-            <input class="alert alert-primary form-control" role="alert" type="text" id="username" placeholder="登录用户名，可修改，不能重复" />
+            <input class="alert alert-primary form-control" placeholder="登录用户名，可修改，不能重复" asp-for="NewUser.Name" />
         </div>
         <div>
             <label><b>密码：（*必填）</b></label><br />
-            <input class="alert alert-primary form-control" role="alert" type="text" id="username" placeholder="不少于4个字符" />
+            <input class="alert alert-primary form-control" role="alert" placeholder="不少于4个字符" asp-for="NewUser.Password" />
         </div>
         <div>
             <label><b>验证密码：（*必填）</b></label><br />
@@ -38,10 +46,8 @@
         </div>
     </div>
     <div style="margin-top:15px">
-        @*<button class="btn btn-primary" style="background-color: #337ab7">提交</button>*@
         <input class="btn btn-primary" style="background-color: #337ab7" value="提交" type="submit">
-        @*<button type="button" class="btn btn-outline-info">重置</button>*@
-        <input type="reset"value="重置" class="btn btn-outline-info">
+        <input type="reset" value="重置" class="btn btn-outline-info">
         <span style="float:right"><a href="Register.html"><span class="fa fa-sign-in"></span>登录</a></span>
     </div>
 </form>

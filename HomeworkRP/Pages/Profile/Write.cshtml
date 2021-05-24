@@ -1,18 +1,10 @@
 ﻿@page
 @model SourceStack.Pages.Profile.IndexModel
 @{
+    ViewData["Title"] = "个人资料";
 }
-<head>
-    <meta charset="utf-8" />
-    <meta name="description" content="大神自由飞的原创首发精品文章，菜鸟入门编程开发必看，还包括求职入职、代码规范、项目管理、系统架构等一系列程序猿关心的问题……" />
-    <meta name="keywords" content="源栈 一起帮 自由飞" />
-    <title>个人资料·一起帮</title>
-    <link rel="shortcut icon" type="image/ico" href="http://17bang.ren/Images/logo.ico" media="screen" />
-    <link rel="stylesheet" href="/css/StyleSheet.css">
-    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/css/font-awesome.css" />
-</head>
-<body>
+
+
     <main class="container"style="margin-top:60px">
         <div>
             👍因为注册时使用了叶飞的邀请码，系统赠送给 源潮 ① 10点 帮帮点
@@ -32,8 +24,10 @@
                         </div>
                         <div class="form-group">
                             <label style="font-weight:900">性别：</label>
-                            <label><input type="radio" name="gender" value="male" checked /> 男</label>
-                            <input type="radio" name="gender" value="female" readonly />女 <br />
+                            <label>
+                                <input type="radio" asp-for="NewUser.IsMale" value="true" checked />男
+                                <input type="radio" asp-for="NewUser.IsMale" value="false" readonly />女 <br />
+                            </label>
                         </div>
                         <div class="form-group">
                             <label style="font-weight:900">生日：</label><br />
@@ -125,7 +119,7 @@
                             <label style="font-weight:900">自我介绍：</label><br />
                             <textarea style="width:400px">简单的介绍一下自己吧，不超过255字</textarea><br />
                         </div>
-                        <input class="btn btn-primary" type="button" value="提交">
+                        <input class="btn btn-primary" type="submit" value="提交">
                     </form>
                 </div>
                 <aside class="col-md-5">
@@ -137,17 +131,5 @@
                     </ol>
                 </aside>
             </div>
-            <div>
-                <div class=" location" style="text-align:center;position:fixed;top:130px;right:320px;">
-                    <a href="#"><span class="fa fa-mail-forward"></span>返回</a>
-                </div>
-                <div class=" location" style="text-align:center;position:fixed;bottom:99px;right:270px;">
-                    <a href="#"><span class="fa fa-question-circle"></span><br />帮助</a>
-                </div>
-                <div class="location" style=" text-align:center;position:fixed;bottom:40px;right:270px;">
-                    <a href="#"><span class=" fa fa-comments-o"></span><br />反馈</a>
-                </div>
-            </div>
         </article>
     </main>
-</body>

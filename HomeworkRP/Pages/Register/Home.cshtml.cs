@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using CSharp.Entities;
@@ -10,19 +11,17 @@ namespace SourceStack.Pages.Register
 {
     public class HomeModel : PageModel
     {
-        private UserRepository userRepository;
-        public HomeModel()
-        {
-            userRepository = new UserRepository();
-        }
-
+        public User NewUser { get; set; }
+        public bool Rememberme { get; set; }
         public void OnGet()
         {
-
         }
         public void OnPost()
         {
+            string username = Request.Form["NewUSer.Name"];
+            NewUser = new User { Name = username };
 
+            //ViewData["UserName"]= Request.Form["NewUSer.Name"];
         }
     }
 }
