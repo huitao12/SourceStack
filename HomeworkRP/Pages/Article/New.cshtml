@@ -1,0 +1,128 @@
+﻿@page
+@model SourceStack.Pages.Candle.Course.Confusion.NewModel
+@{
+    ViewData["Title"] = "发布文章";
+}
+<head>
+    <style>
+        a {
+            color: #337ab7;
+            text-decoration: none;
+        }
+
+        .interval {
+            margin-left: 7px;
+            margin-right: 7px;
+        }
+
+        .photo {
+            border: 1px solid #ddd;
+            margin-top: 60px;
+            height: 200px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<main style="margin-top:80px">
+    <div id="notification" class="container">
+        <span class="fa fa-pencil-square-o" title="2021年3月18日 15点40分"></span>
+        文章的评论叶飞老师，我之前就是看你的文章学的SQL，非常感谢...被uao赞，获得帮帮点 奖励2点
+        <a href="723.html" style="float:right; color:#337ab7"><span class=" fa fa-hand-o-right"></span>全部消息</a>
+    </div>
+    <div class="container" style="margin-top:20px">
+        <div class="row">
+            <article class="col-md-9">
+                <div style="font-size:40px">
+                    <span class="fa fa-pencil-square-o "></span>
+                    文章发布
+                </div><hr />
+                <div class="form-group">
+                    <span><b>标题：（* 必填）</b></span><br />
+                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="简明扼要，不超过255字" style="background-color: #eee;margin-top:5px" />
+                </div>
+                <div class="form-group">
+                    <span><b>内容：（* 必填）</b></span><br />
+                    <div style="margin-top:5px;width:90%">
+                        <input type="text" class="form-control" id="formGroupExampleInput" style="background-color: #eee;" />
+                        <textarea class="form-control" id="exampleFormControlTextarea1" style="height:500px"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>添加到系列：</label>
+                    <a href="/Category/Manage" class="pull-right"><span class="fa fa-cog"></span>  管理</a>
+                    <div class="input-group">
+                        <select class="form-control valid" data-val="true" data-val-number="字段 SelectedCategoryId 必须是一个数字。" data-val-required="SelectedCategoryId 字段是必需的。" id="SelectedCategoryId" name="SelectedCategoryId" zyf-categories="" aria-required="true" aria-describedby="SelectedCategoryId-error" aria-invalid="false">
+                            <option value="10">默认分类</option>
+                            <option value="11">HJB</option>
+                        </select>
+                        <a class="btn input-group-addon" data-toggle="modal" data-target="#new-category">
+                            <span class="fa fa-plus" data-toggle="tooltip" title="" data-original-title="添加"></span> 新系列
+                        </a>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>关键字：（* 必填）</label>
+                    <input class="form-control" data-val="true" data-val-length="* 关键字的长度不能大于25" data-val-length-max="25" data-val-required="* 关键字不能为空" id="Keywords" name="Keywords" placeholder="用空格分割，总长度不超过25个字符" type="text" value="">
+                    <span class="field-validation-valid" data-valmsg-for="Keywords" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label>摘要：（* 建议填写）</label>
+                    <textarea class="form-control" cols="20" data-val="true" data-val-length="* 摘要的长度不能大于255" data-val-length-max="255" id="Abstract" name="Abstract" placeholder="不填写的话，系统会截取文章前255字作为摘要显示" rows="3" zyf-in-max-length="255"></textarea>
+                    <span class="field-validation-valid" data-valmsg-for="Abstract" data-valmsg-replace="true"></span>
+                </div>
+                <div class="form-group">
+                    <label>之前用过的广告：</label>
+                    <select class="form-control" data-val="true" data-val-number="字段 SelectedHistory 必须是一个数字。" id="AdContent_SelectedHistory" name="AdContent.SelectedHistory" zyf-ad-in-widget-history-select="">
+                        <option value="">----- 使用新的广告 -----</option>
+                        <option value="5">雅芳比女人更了解女人</option>
+                    </select>
+                </div>
+                <section style="padding:10px 20px; margin-bottom:20px;border:dashed 1px" class="yellow-highlight" zyf-ad-content-container="">
+                    <div class="text-right checkbox">
+                        <label>
+                            <input data-val="true" data-val-required="Edit 字段是必需的。" id="AdContent_Edit" name="AdContent.Edit" type="checkbox" value="true" zyf-ad-content-edit=""><input name="AdContent.Edit" type="hidden" value="false"> 修改
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>文字内容：（* 必填）</label>
+                        <input class="form-control" data-val="true" data-val-length="* 文本的长度不能大于30" data-val-length-max="30" data-val-required="* 文本不能为空" id="AdContent_Text" name="AdContent.Text" placeholder="最多不超过24个字符" type="text" value="" zyf-ad-in-widget-input-text="">
+                        <span class="field-validation-valid" data-valmsg-for="AdContent.Text" data-valmsg-replace="true"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>链接：（* 必填）</label>
+                        <input class="form-control" data-val="true" data-val-regex="* URL格式错误" data-val-regex-pattern="http(s)?://.*" data-val-required="* 链接不能为空" id="AdContent_Url" name="AdContent.Url" placeholder="http或https开头的网址" type="text" value="" zyf-ad-in-widget-input-url="">
+                        <span class="field-validation-valid" data-valmsg-for="AdContent.Url" data-valmsg-replace="true"></span>
+                    </div>
+                </section>
+                <input type="submit" class="btn btn-primary" style=" background-color:#265a88" value="发布为最新" />
+                <button class="btn btn-light" style="border:1px solid #ccc">保存基本内容</button>
+            </article>
+            <aside class="col-md-3">
+                <div id="advertising" style="background-color:#ffffe0">
+                    <div style="font-size:25px">
+                        <span class="fa fa-list"></span>
+                        新手任务
+                    </div><hr />
+                    <p><span class="fa fa-square-o fa-fw"></span><span class="interval">填写:</span><a href="#">联系方式</a></p>
+                    <p><span class="fa fa-square-o fa-fw"></span><span class="interval">填写:</span><a href="#">Email</a></p>
+                    <p><span class="fa fa-square-o fa-fw"></span><span class="interval">填写:</span><a href="#">我的小伙伴</a></p>
+                    <p><span class="fa fa-square-o fa-fw"></span><span class="interval">填写:</span><a href="#">新人测试</a></p>
+                    <p><span class="fa fa-square-o fa-fw"></span><span class="interval">填写:</span><a href="#">第一次求助</a></p>
+                    <p><span class="fa fa-square-o fa-fw"></span><span class="interval">填写:</span><a href="#">第一次协助</a></p>
+                    <p><span class="fa fa-check-square-o fa-fw"></span><span class="interval">填写:若干</span><a href="#" style="color:rgba(203,180,26,1)"><span class="fa fa-dollar"></span>帮帮币</a></p>
+                </div>
+                <a href="#" class="pull-right" style="font-size:15px;margin-top:20px"><span class="fa fa-pencil-square-o" style="margin-right:4px"></span>修改</a>
+                <div class="photo">
+                    <span class="fa fa-picture-o" style="font-size:60px;text-align:center;width:100%;margin-top:20%"></span>
+                    <div style="margin-left: 30%;margin-top:20px">等待上传中<span class="fa fa-hourglass-half"></span>...</div>
+                </div>
+                <div style="margin-top:20px">
+                    <span><b>用户:</b><a href="#" style="margin-left:20px;margin-right:4px">uao</a><a href="#" style="margin-right:20px">①</a><a href="#"><span class="fa fa-pencil-square-o" style="margin-right:4px"></span>修改</a></span>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>
+
+  
+   
