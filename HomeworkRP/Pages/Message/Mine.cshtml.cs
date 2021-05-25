@@ -18,15 +18,15 @@ namespace SourceStack.Pages.Message
         }
         public string Name { get; set; }
 
-        [BindProperty]
-        public IList<Message> Messages { get; set; }
-        public void OnGet()
-        {
-            Messages = messageRepository.GetMine();
-        }
-        public void OnPost()
-        {
+        //[BindProperty]
+        //public IList<Message> Messages { get; set; }
+        //public void OnGet()
+        //{
+        //    Messages = messageRepository.GetMine();
+        //}
+        //public void OnPost()
+        //{
 
-        }
+        //}
     }
 }

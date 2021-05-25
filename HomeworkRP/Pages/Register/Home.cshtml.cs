@@ -20,15 +20,24 @@ namespace SourceStack.Pages.Register
             userRepository = new UserRepository();
         }
         public User NewUser { get; set; }
+
         public string ConfirmPassword { get; set; }
         public void OnGet()
         {
         }
         public void OnPost()
         {
+            if (ConfirmPassword != NewUser.Password)
+            {
+                ModelState.AddModelError("ConfirmPassword", "两次密码输入不一致");
+            }
+            if (!ModelState.IsValid)
+            {
+                return;
+            }
             //string username = Request.Form["NewUSer.Name"];
             //NewUser = new User { Name = username };
-            //ViewData["UserName"]= Request.Form["NewUSer.Name"];
+            ViewData["UserName"] = Request.Form["NewUSer.Name"];
 
             User invitedBy = userRepository.GetByName(NewUser.Invitedby.Name);
             NewUser.Invitedby = invitedBy;

@@ -16,21 +16,25 @@ namespace CSharp.Entities
         //public int Id { get; set; }
 
         //[Key]设置主键
+        [Required(ErrorMessage = "*用户名不能为空")]
         public string Name { get; set; }
         public bool IsMale { get; set; }
         public string Introduction { get; set; }
 
-        [Required]//不能为空
+        [MinLength(4, ErrorMessage = "*密码至少4个字符")]//不能为空
         [DataType(DataType.Password)]
         public string Password { get; set; }
+
         public User Invitedby { get; set; }
+
+        [StringLength(4, MinimumLength = 4, ErrorMessage = "*邀请码只能是4位数字")]
         public string InviteCode { get; set; }
 
         [NotMapped]//不映射到数据库
         public int FailedTry { get; set; }//添加尝试登陆失败次数
 
         public DateTime? CreateTime { get; set; }
-        public int BCredit { get;  set; }
+        public int BCredit { get; set; }
 
         public void Register()
         {
