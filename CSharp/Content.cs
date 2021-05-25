@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public abstract class Content : Entity<string>
+    public abstract class Content : Entity
     {
         //Content中有一个字段：kind，记录内容的种类（problem/article/suggest等），只能被子类使用
         //确保每个Content对象都有kind的非空值

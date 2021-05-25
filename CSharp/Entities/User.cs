@@ -11,7 +11,7 @@ using System.Text;
 namespace CSharp.Entities
 {
     [Index("CreateTime", IsUnique = true)]
-    public sealed class User : Entity<int>, ISendMessage, IChat //让USer无法被继承
+    public sealed class User : Entity, ISendMessage, IChat //让USer无法被继承
     {
         //public int Id { get; set; }
 

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp.Entities
 {    //文章 
-    public class Article : Entity<int>
+    public class Article : Entity
     {
         public DateTime PublishTime { get; set; }
         public string Title { get; set; }
