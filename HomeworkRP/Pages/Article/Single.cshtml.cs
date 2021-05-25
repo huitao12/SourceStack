@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using E=CSharp.Entities;
-using CSharp.ArticleRepository;
+using CSharp.Repoistories;
 
 namespace SourceStack.Pages.Article
 {

@@ -1,4 +1,5 @@
 ﻿using CSharp.Entities;
+using CSharp.Repoistories;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -89,8 +90,8 @@ namespace CSharp
 
 
 
-            UserRepository l = new UserRepository();
-            l.GetbyName("鬼娃");
+            //UserRepository l = new UserRepository();
+            //l.GetbyName("鬼娃");
 
             //UserRepoistory p = new UserRepoistory();
             //p.Save(new User() { Name = "阿萨", Password = "111" ,Invitedby="小"});

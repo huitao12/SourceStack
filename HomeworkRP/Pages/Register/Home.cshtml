@@ -22,23 +22,23 @@
         <p><a href="#" class="pull-right"><span class="fa fa-question-circle"></span>为什么需要邀请</a></p>
         <div style="clear:both">
             <label><b>邀请人：（*必填，没有邀请人）</b></label>
-            <input type="text" class="alert form-control" id="formGroupExampleInput" placeholder="他的用户名，模糊查询只能从头开始名">
+            <input asp-for="NewUser.Invitedby.Name" class="alert form-control"  placeholder="他的用户名，模糊查询只能从头开始名">
             <label><b>邀请码：（*必填）</b></label><br />
-            <input type="text" class="alert  form-control" id="formGroupExampleInput" placeholder="4位数字">
+            <input asp-for="NewUser.Invitedby.InviteCode"   class="alert  form-control"  placeholder="4位数字">
         </div>
     </div>
     <div style="margin-top:20px">
         <div>
             <label><b>用户名：（*必填）</b></label><br />
-            <input class="alert alert-primary form-control" placeholder="登录用户名，可修改，不能重复" asp-for="NewUser.Name" />
+            <input asp-for="NewUser.Name" class="alert alert-primary form-control" placeholder="登录用户名，可修改，不能重复" />
         </div>
         <div>
             <label><b>密码：（*必填）</b></label><br />
-            <input class="alert alert-primary form-control" role="alert" placeholder="不少于4个字符" asp-for="NewUser.Password" />
+            <input asp-for="NewUser.Password" class="alert alert-primary form-control" role="alert" placeholder="不少于4个字符"  />
         </div>
         <div>
             <label><b>验证密码：（*必填）</b></label><br />
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="和密码相同">
+            <input asp-for="ConfirmPassword" class="form-control" id="formGroupExampleInput" placeholder="和密码相同">
         </div>
         <div style="margin-top:20px">
             <label><b>验证码：（*必填）</b></label><br />

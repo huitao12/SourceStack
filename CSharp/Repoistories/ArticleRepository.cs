@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using E = CSharp.Entities;
 
-namespace CSharp.ArticleRepository
+namespace CSharp.Repoistories
 {
     public class ArticleRepository
     {

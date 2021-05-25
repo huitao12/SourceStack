@@ -10,29 +10,32 @@ using System.Text;
 
 namespace CSharp.Entities
 {
-    [Index("CreateTime",IsUnique =true)]
+    [Index("CreateTime", IsUnique = true)]
     public sealed class User : Entity<int>, ISendMessage, IChat //让USer无法被继承
     {
         //public int Id { get; set; }
 
         //[Key]设置主键
-        public string Name { get; set; } 
+        public string Name { get; set; }
         public bool IsMale { get; set; }
         public string Introduction { get; set; }
 
         [Required]//不能为空
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public string Invitedby { get; set; }
-        public string InvitationCode { get; set; }
+        public User Invitedby { get; set; }
+        public string InviteCode { get; set; }
 
         [NotMapped]//不映射到数据库
         public int FailedTry { get; set; }//添加尝试登陆失败次数
 
         public DateTime? CreateTime { get; set; }
-       
+        public int BCredit { get;  set; }
 
-
+        public void Register()
+        {
+            Invitedby.BCredit += 10;
+        }
 
 
 
@@ -135,11 +138,11 @@ namespace CSharp.Entities
         //    }
         //}
 
-   
 
 
 
-   
+
+
 
 
         #endregion

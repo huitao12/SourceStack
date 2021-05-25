@@ -1,5 +1,5 @@
 ﻿@page
-@model SourceStack.Pages.Log.InModel
+@model SourceStack.Pages.Log.OnModel
 @{
     Layout = "Layout/_Dual";
     ViewData["Title"] = "用户·登录";
@@ -26,7 +26,7 @@
     <div style="margin-top:30px">
         <button class="btn btn-primary" style=" background-color: #337ab7" type="submit">提交</button>
         <div class="form-check form-check-inline" style="margin-left:15px">
-            <input class="form-check-input" asp-for="RememberMe" checked value="option1">
+            <input class="form-check-input" asp-for="RememberMe" checked >
             <label class="form-check-label" for="inlineCheckbox1">记住我</label>
         </div>
         <div class="pull-right">
