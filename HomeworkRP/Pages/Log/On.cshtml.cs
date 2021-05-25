@@ -28,6 +28,11 @@ namespace SourceStack.Pages.Log
         }
         public void OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return;
+            }
+            ViewData["UserName"] = Request.Form["NewUSer.Name"];
 
             string username = Request.Form["NewUser.Name"];
             NewUser = new User { Name = username };

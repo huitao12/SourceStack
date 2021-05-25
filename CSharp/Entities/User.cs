@@ -21,7 +21,7 @@ namespace CSharp.Entities
         public bool IsMale { get; set; }
         public string Introduction { get; set; }
 
-        [MinLength(4, ErrorMessage = "*密码至少4个字符")]//不能为空
+        [MinLength(4, ErrorMessage = "*密码的长度不能小于4，大于20")]//不能为空
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
