@@ -146,7 +146,10 @@ namespace CSharp.Repoistories
         {
             return articles.Skip((pageIndex - 1) * pageSize).Take(pageSize).ToList();
         }
-
+        public IList<Article> Get()
+        {
+            return articles;
+        }
         //void Delete()
         //{
 

@@ -14,7 +14,7 @@
     </div>
     <div class="row" style="margin-top:60px">
         <div class="col-md-8">
-            @foreach (var item in Model.Articles)
+            @foreach (var item in Model.PagedArticles)
             {
                 <div style="margin-top:15px">
                     <p style="float:left">@item.PublishTime.ToString("yyyy年MM月dd日 hh点mm分")</p>
@@ -28,9 +28,9 @@
                             <span class="badge badge-secondary" style="border-radius: 10px;font-size:15px">优质内容</span>
                             <span class="badge badge-secondary" style="border-radius: 10px;font-size:15px">推广</span>
                             <div style="float:right">
-                                <span><a href="Article.html">评论：</a>@ViewData["CommentCount"]</span>
-                                <span><a href="Article.html">👍赞：</a>@ViewData["AgreeCount"]</span>
-                                <span><a href="Article.html">👎踩：</a>@ViewData["OpposeCount"]</span>
+                                <span><a href="Article.html"><span class="fa fa-comment-o"></span>评论：</a>@ViewData["CommentCount"]</span>
+                                <span><a href="Article.html"><span class="fa fa-thumbs-o-up"></span>赞：</a>@ViewData["AgreeCount"]</span>
+                                <span><a href="Article.html"><span class="fa fa-thumbs-o-down"></span>踩：</a>@ViewData["OpposeCount"]</span>
                             </div>
                         </div>
                     </div><hr />
@@ -38,21 +38,26 @@
             }
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
+                    @{
+                        int pageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
+                        int sumOfPage = Model.SumOfAllArticles / Model.PageSize +
+                            (Model.SumOfAllArticles % Model.PageSize > 0 ? 1 : 0);
+                    }
 
-                    @if (Model.ArticlesSum != 0 )
+                    @if (pageIndex > 1)
                     {
+                        <a href="/Article?pageIndex=@(pageIndex-1)" class="btn btn-light">上一页</a>
 
                     }
-                    <a href="/Article?pageIndex=@(Model.ArticlesSum-1)" class="btn btn-light">上一页</a>
-
-                    @for (int i = 0; i < 10; i++)
+                    @for (int i = 1; i <= sumOfPage; i++)
                     {
-
-                        <a href="/Article?pageIndex=@(i+1)" class="btn btn-light">@(i+1)</a>
-
+                        string active = (pageIndex == i) ? "active" : string.Empty;
+                        <a href="/Article?pageIndex=@(i)" class="@active btn btn-light">@(i)</a>
                     }
-                    <a href="/Article?pageIndex=@(Model.ArticlesSum+1)" class="btn btn-light">下一页</a>
-
+                    @if (pageIndex < sumOfPage)
+                    {
+                        <a href="/Article?pageIndex=@(pageIndex+1)" class="btn btn-light">下一页</a>
+                    }
                 </div>
             </div>
         </div>

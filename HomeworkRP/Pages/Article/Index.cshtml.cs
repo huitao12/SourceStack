@@ -16,15 +16,20 @@ namespace SourceStack.Pages.Article
         {
             articleRepository = new ArticleRepository();
         }
-        public IList<E.Article> Articles { get; set; }
-        public int ArticlesSum { get; set; }
+        public IList<E.Article> PagedArticles { get; set; }
+        public int SumOfAllArticles { get; set; }
 
-        public const int PageSize = 2;
+        public  int PageSize = 2;
         public void OnGet()
         {
-            int pageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
-            //ArticlesSum = articleRepository.ArticleCount / PageSize;
-            Articles = articleRepository.Get(pageIndex, PageSize);
+            int pageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);//µ±Ç°Ò³
+            if (pageIndex<1)
+            {
+                throw new ArgumentException($"pageIndex={pageIndex}");
+            }
+
+            PagedArticles = articleRepository.Get(pageIndex, PageSize);
+            SumOfAllArticles = articleRepository.Get().Count();
 
             ViewData["CommentCount"] = 1;
             ViewData["AgreeCount"] = 3;
