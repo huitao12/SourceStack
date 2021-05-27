@@ -21,13 +21,32 @@ namespace SourceStack.Pages.Message
 
         [BindProperty]
         public IList<E.Message> Messages { get; set; }
+
         public void OnGet()
         {
             Messages = messageRepository.GetMine();
         }
         public void OnPost()
         {
-
+            if (!ModelState.IsValid)
+            {
+                return;
+            }
+            //foreach (var item in Messages)
+            //{
+            //    if (item.Selected)
+            //    {
+            //        messageRepository.Find(item.Id).Read();
+            //        //item.Read();
+            //    }
+            //}
+            foreach (var item in Messages)
+            {
+                if (item.Selected)
+                {
+                    messageRepository.Delete(item);
+                }
+            }
         }
     }
 }

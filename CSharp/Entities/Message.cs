@@ -11,6 +11,10 @@ namespace CSharp.Entities
         public bool Selected { get; set; }
         public DateTime Createtime { get; set; }
         public string Content { get; set; }
+        public void Read()
+        {
+
+        }
+       
     }
 }
- 
