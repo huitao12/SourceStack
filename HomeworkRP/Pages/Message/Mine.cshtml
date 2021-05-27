@@ -34,68 +34,46 @@
         <div class="col-md-9">
             <h2 class="page-header">
                 <span class="fa fa-bell" aria-hidden="true"></span> 我的消息
-            </h2>
-            <div><hr />
-                <form action="/Message/Mine" method="post" style="margin-top:20px;">
+            </h2><hr />
+            <div>
+                <form asp-page="~/Mine" method="post" style="margin-top:20px;">
                     <div class="row" style="margin-bottom:20px;">
                         <div class="col-xs-12 col-sm-8 col-md-6">
                             <label class="checkbox-inline">
-                                <input type="checkbox" zyf-select-all /> 全选
+                                <input type="checkbox" l /> 全选
                             </label>
-                            <button type="submit" value="Read" class="btn btn-primary btn-xs" zyf-named-submit-once>
+                            <button type="submit" value="Read" class="btn btn-primary btn-xs">
                                 <span class="fa fa-check-circle"></span> 已读
                             </button>
-                            <button type="submit" value="Delete" class="btn btn-default btn-xs" zyf-named-submit-once>
+                            <button type="submit" value="Delete" class="btn btn-default btn-xs">
                                 <span class="fa fa-times-circle"></span> 删除
                             </button>
                         </div>
-                        <input type="hidden" name="submit" value="" zyf-trigger />
+                        <input type="hidden" name="submit" value="" />
                     </div>
                     <div class="row visible-sm visible-md visible-lg">
                         <div class="col-sm-1"></div>
-                        <div class="col-sm-1">时间</div>
-                        <div class="col-sm-2">
-                            <a zyf-message-filter data-toggle="tooltip" title="筛选/退订">订阅种类 <span class="fa fa-cog"></span></a>
-                        </div>
-                        <div class="col-sm-8">内容</div>
+                        <div class="col-sm-2">时间</div>
+                        <div class="col-sm-7">内容</div>
                     </div>
                     <hr class="thin visible-sm visible-md visible-lg" />
-                    <div class="row text-bold">
-                        <div class="col-xs-2 col-sm-1">
+                    @for (int i = 0; i < Model.Messages.Count; i++)
+                    {
+                        <div class="row text-bold">
+                            <div class="col-xs-2 ">
+                                <input asp-for="@Model.Messages[i].Selected" />
+                            </div>
+                            <div class="col-xs-2 col-sm-3" data-toggle="tooltip">
+                                <span>@Model.Messages[i].Createtime</span>
+                            </div>
+                            <div class="col-xs-12 col-sm-7">
+                                <span>@Model.Messages[i].Content</span>
+                            </div>
+                        </div>
+                        <hr />
+                    }
 
-                            <input checked="checked" data-val="true" data-val-required="Selected 字段是必需的。" id="Items_9__Selected" name="Items[9].Selected" type="checkbox" value="true" zyf-in-select-all="" /><input name="Items[9].Selected" type="hidden" value="false" />
-                            <input data-val="true" data-val-number="字段 Id 必须是一个数字。" data-val-required="Id 字段是必需的。" id="Items_9__Id" name="Items[9].Id" type="hidden" value="29911" />
-                        </div>
-                        <div class="col-xs-2 col-sm-1" data-toggle="tooltip" title="2021年03月16日 08点04分">
-                            <small>
-                                <span class="fa fa-calendar"></span>
-                            </small>
-                        </div>
-                        <div class="col-xs-8 col-sm-2">
-                            <a href="/Message/Unsubscribe?kind=BeanRefresh" zyf-message-unsubscribe>
-                                <span class="fa fa-times-circle" data-toggle="tooltip" title="退订"></span>
-                            </a>
-                            刷新
-                        </div>
-                        <div class="col-xs-12 col-sm-8">
-                            <recipient>你</recipient>因为登录获得系统随机分配给你的 <span class="fa fa-star text-success"></span><a class="text-info" href="https://17bang.ren/FAQ/Bean">帮帮豆</a> 4 枚，可用于感谢赞赏等。
-                        </div>
-                    </div>
-                    <hr class="thin dashed" />
-                    <div class="row" style="margin-top:20px;">
-                        <div class="col-xs-12 col-sm-8 col-md-6">
-                            <label class="checkbox-inline">
-                                <input type="checkbox" zyf-select-all /> 全选
-                            </label>
-                            <button type="submit" value="Read" class="btn btn-primary btn-xs" zyf-named-submit-once>
-                                <span class="fa fa-check-circle"></span> 已读
-                            </button>
-                            <button type="submit" value="Delete" class="btn btn-default btn-xs" zyf-named-submit-once>
-                                <span class="fa fa-times-circle"></span> 删除
-                            </button>
-                        </div>
-                        <input type="hidden" name="submit" value="" zyf-trigger />
-                    </div>
+                    <input class="btn btn-primary" style="background-color: #337ab7" value="提交" type="submit">
                 </form>
             </div>
         </div>

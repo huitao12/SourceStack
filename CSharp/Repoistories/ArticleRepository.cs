@@ -154,10 +154,10 @@ namespace CSharp.Repoistories
         //{
 
         //}
-        //void Save(Article article)
-        //{
-        //    articles.Add(article);
-        //}
+       public void Save(Article article)
+        {
+            articles.Add(article);
+        }
     }
 }
 

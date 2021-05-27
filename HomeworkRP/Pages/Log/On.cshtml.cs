@@ -20,8 +20,8 @@ namespace SourceStack.Pages.Log
         }
         public User NewUser { get; set; }
         public bool RememberMe { get; set; }
-        public string Name { get; set; }
-        public string Password { get; set; }
+        //public string Name { get; set; }
+        //public string Password { get; set; }
 
         public void OnGet()
         {
