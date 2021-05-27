@@ -10,7 +10,7 @@
 }
 @if (ViewData["UserName"] != null)
 {
-    <p>@ViewData["UserName"] 注册成功</p>
+<p>@ViewData["UserName"] 登录成功!</p>
 }
 <style>
     .field-validation-error {
@@ -33,11 +33,11 @@
 <form method="post" asp-page="~/On">
     <div>
         <label style="font-weight:600">用户名：（* 必填）</label>
-        <input class="alert alert-primary" role="alert" style="width:100%" asp-for="NewUser.Name" />
-        <span asp-validation-for="NewUser.Name"></span>
-        <label style="font-weight:600">密码：（* 必填）</label><br />
-        <input class="alert alert-primary" role="alert" style="width:100%" asp-for="NewUser.Password" />
-        <span asp-validation-for="NewUser.Password"></span><br />
+        <input class="alert alert-primary" role="alert" style="width:100%" asp-for="Name" />
+        <span asp-validation-for="Name"></span><br />
+        <label style="font-weight:600">密码：（* 必填）</label>
+        <input class="alert alert-primary" role="alert" style="width:100%" asp-for="Password" />
+        <span asp-validation-for="Password"></span><br />
         <label style="font-weight:600">验证码：（* 必填）</label>
         <input type="button" class="btn btn-outline-secondary" style="width:100px" />
         <a href="#">看不清楚</a>

@@ -25,6 +25,7 @@ namespace CSharp.Entities
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
+        [Required(ErrorMessage = "*邀请人不能为空")]
         public User Invitedby { get; set; }
 
         [StringLength(4, MinimumLength = 4, ErrorMessage = "*邀请码只能是4位数字")]
@@ -36,10 +37,10 @@ namespace CSharp.Entities
         public DateTime? CreateTime { get; set; }
         public int BCredit { get; set; }
 
-        public void Register()
-        {
-            Invitedby.BCredit += 10;
-        }
+        //public void Register()
+        //{
+        //    Invitedby.BCredit += 10;
+        //}
 
 
 

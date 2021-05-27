@@ -52,7 +52,7 @@ namespace SourceStack.Pages.Register
 
             //}
 
-            NewUser.Register();
+            //NewUser.Register();
             userRepository.Save(NewUser);
         }
     }

@@ -79,6 +79,8 @@ namespace CSharp.Repoistories
                 new User
                 {
                     Id=1,
+                    Name="消息",
+                    Password="1234"
                 },
             };
         }
