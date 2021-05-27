@@ -10,7 +10,7 @@
 }
 @if (ViewData["UserName"] != null)
 {
-<p>@ViewData["UserName"] 登录成功!</p>
+    <p>@ViewData["UserName"] 登录成功!</p>
 }
 <style>
     .field-validation-error {
@@ -38,7 +38,7 @@
         <label style="font-weight:600">密码：（* 必填）</label>
         <input class="alert alert-primary" role="alert" style="width:100%" asp-for="Password" />
         <span asp-validation-for="Password"></span><br />
-        <label style="font-weight:600">验证码：（* 必填）</label>
+        <label style="font-weight:600">验证码：（* 必填）</label><br />
         <input type="button" class="btn btn-outline-secondary" style="width:100px" />
         <a href="#">看不清楚</a>
         <br />
@@ -46,8 +46,10 @@
     <div style="margin-top:30px">
         <button class="btn btn-primary" style=" background-color: #337ab7" type="submit">提交</button>
         <div class="form-check form-check-inline" style="margin-left:15px">
-            <input class="form-check-input" asp-for="RememberMe" checked>
-            <label class="form-check-label" for="inlineCheckbox1">记住我</label>
+            <label>
+                <input asp-for="RememberMe" checked>
+                记住我
+            </label>
         </div>
         <div class="pull-right">
             <a href="#">(｡ŏ_ŏ) 忘了</a>

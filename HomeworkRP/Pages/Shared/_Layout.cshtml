@@ -68,44 +68,60 @@
                                 <a class="dropdown-item" href="#">开通</a>
                             </div>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" style="color:cornflowerblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-user-circle-o"></span>
-                                uao
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">新手任务</a>
-                                <a class="dropdown-item" href="#">我的主页</a>
-                                <a class="dropdown-item" href="#">疑问发布</a>
-                                <p> <a class="dropdown-item" href="#">帮帮豆</a>:2颗</p>
-                                <p> <a class="dropdown-item" href="#">帮帮点</a>:10点</p>
-                                <p> <a class="dropdown-item" href="#">帮帮币</a>:0枚</p>
-                                <p>修改</p>
-                                <a class="dropdown-item" href="#">我的秘密</a>
-                                <a class="dropdown-item" href="#">联系方式</a>
-                                <a class="dropdown-item" href="#">个人资料</a>
-                                <a class="dropdown-item" href="#">退出登录</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="fa fa-dashboard"></span>
-                                后台
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="#">邀请注册</a>
-                                <a class="dropdown-item" href="#">我的消息</a>
-                                <a class="dropdown-item" href="#">我的草稿</a>
-                                <p>广告推广</p>
-                                <a class="dropdown-item" href="#">联系方式</a>
-                                <a class="dropdown-item" href="#">侧边栏</a>
-                                <p>帮帮币</p>
-                                <a class="dropdown-item" href="#">购买</a>
-                                <a class="dropdown-item" href="#">出售</a>
-                                <a class="dropdown-item" href="#">已购买</a>
-                                <a class="dropdown-item" href="#">已出售</a>
-                            </div>
-                        </li>
+                        @if (ViewData["HasLogOn"] == null)
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                 未登录</a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="/Log/On">登录</a>
+                                    <a class="dropdown-item" href="/Register/Home">注册</a>
+                                    <a class="dropdown-item" href="/Password/Forget">忘记密码</a>
+                                </div>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" style="color:cornflowerblue" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fa fa-user-circle-o"></span>
+                                    已登录
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">新手任务</a>
+                                    <a class="dropdown-item" href="#">我的主页</a>
+                                    <a class="dropdown-item" href="#">疑问发布</a>
+                                    <p> <a class="dropdown-item" href="#">帮帮豆</a>:2颗</p>
+                                    <p> <a class="dropdown-item" href="#">帮帮点</a>:10点</p>
+                                    <p> <a class="dropdown-item" href="#">帮帮币</a>:0枚</p>
+                                    <p>修改</p>
+                                    <a class="dropdown-item" href="#">我的秘密</a>
+                                    <a class="dropdown-item" href="#">联系方式</a>
+                                    <a class="dropdown-item" href="#">个人资料</a>
+                                    <a class="dropdown-item" href="/Log/Off">退出登录</a>
+                                </div>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="fa fa-dashboard"></span>
+                                    后台
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="#">邀请注册</a>
+                                    <a class="dropdown-item" href="#">我的消息</a>
+                                    <a class="dropdown-item" href="#">我的草稿</a>
+                                    <p>广告推广</p>
+                                    <a class="dropdown-item" href="#">联系方式</a>
+                                    <a class="dropdown-item" href="#">侧边栏</a>
+                                    <p>帮帮币</p>
+                                    <a class="dropdown-item" href="#">购买</a>
+                                    <a class="dropdown-item" href="#">出售</a>
+                                    <a class="dropdown-item" href="#">已购买</a>
+                                    <a class="dropdown-item" href="#">已出售</a>
+                                </div>
+                            </li>
+                        }
+
                     </ul>
                 </div>
             </div>

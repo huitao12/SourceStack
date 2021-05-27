@@ -28,6 +28,7 @@ namespace SourceStack.Pages.Log
 
         public void OnGet()
         {
+            ViewData["hasLogOn"] = Request.Cookies[Keys.UserId];
         }
         public void OnPost()
         {
@@ -53,13 +54,10 @@ namespace SourceStack.Pages.Log
             if (RememberMe)
             {
                 options.Expires = DateTime.Now.AddDays(14);
-                Response.Cookies.Append("userid", user.Id.ToString(), options);
-            }//else
-            
-            //Response.Cookies.Append("userid", user.Id.ToString(), new Microsoft.AspNetCore.Http.CookieOptions()
-            //{
-            //    Expires = DateTime.Now.AddDays(14)
-            //}); ;
+            }//else 
+            Response.Cookies.Append(Keys.UserId, user.Id.ToString(), options);
+
+
         }
     }
 }
