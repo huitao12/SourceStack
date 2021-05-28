@@ -80,7 +80,7 @@ namespace CSharp.Repoistories
                 {
                     Id=1,
                     Name="消息",
-                    Password="1234"
+                    Password="1234",
                 },
             };
         }

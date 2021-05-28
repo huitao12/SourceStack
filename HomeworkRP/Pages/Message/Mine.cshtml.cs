@@ -16,37 +16,31 @@ namespace SourceStack.Pages.Message
         {
             messageRepository = new MessageRepository();
         }
-        public string Name { get; set; }
-
 
         [BindProperty]
         public IList<E.Message> Messages { get; set; }
 
         public void OnGet()
         {
-            Messages = messageRepository.GetMine();
+            Messages = messageRepository.GetMine(true);
         }
-        public void OnPost()
+        public RedirectToPageResult OnPost()
         {
-            if (!ModelState.IsValid)
-            {
-                return;
-            }
-            //foreach (var item in Messages)
-            //{
-            //    if (item.Selected)
-            //    {
-            //        messageRepository.Find(item.Id).Read();
-            //        //item.Read();
-            //    }
-            //}
             foreach (var item in Messages)
             {
                 if (item.Selected)
                 {
-                    messageRepository.Delete(item);
+                    messageRepository.Find(item.Id).Read();
                 }
             }
+            return RedirectToPage();
+            //foreach (var item in Messages)
+            //{
+            //    if (item.Selected)
+            //    {
+            //        messageRepository.Delete(item);
+            //    }
+            //}
         }
     }
 }

@@ -27,10 +27,18 @@ namespace CSharp.Repoistories
                 },
             };
         }
-        public IList<Message> GetMine()
+        public IList<Message> GetMine(bool onlyNotRead=false)
         {
-            return messages;
+            var reault = messages;
+            if (onlyNotRead)
+            {
+                reault = messages.Where(m => !m.HasRead).ToList();
+            }
+            return reault;
         }
+
+
+
         public Message Find(int id)
         {
             return messages.Where(m => m.Id == id).SingleOrDefault();

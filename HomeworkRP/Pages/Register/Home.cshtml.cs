@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CSharp.Entities;
 using CSharp.Repoistories;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -24,33 +25,40 @@ namespace SourceStack.Pages.Register
         public string ConfirmPassword { get; set; }
         public void OnGet()
         {
+            ViewData["hasLogOn"] = Request.Cookies[Keys.UserId];
         }
         public void OnPost()
         {
+
+            ////判断邀请人，邀请码
+            if (NewUser.InvitedBy == null)
+            {
+                ModelState.AddModelError("NewUser.InvitedBy", "邀请人不存在");
+            }
+            if (NewUser.InvitedBy.InviteCode != NewUser.InvitedBy.InviteCode)
+            {
+                ModelState.AddModelError("NewUser.InvitedBy.InviteCode", "邀请人的邀请码不存在");
+            }
             if (ConfirmPassword != NewUser.Password)
             {
                 ModelState.AddModelError("ConfirmPassword", "两次密码输入不一致");
             }
-            if (!ModelState.IsValid)
-            {
-                return;
-            }
-            //string username = Request.Form["NewUSer.Name"];
-            //NewUser = new User { Name = username };
+            //if (!ModelState.IsValid)
+            //{
+            //    return;
+            //}
+
             ViewData["UserName"] = Request.Form["NewUSer.Name"];
 
-            User invitedBy = userRepository.GetByName(NewUser.Invitedby.Name);
-            NewUser.Invitedby = invitedBy;
+            Response.Cookies.Append(Keys.UserId, NewUser.Name.ToString(), new CookieOptions()
+            {
+                Expires = DateTime.Now.AddDays(14)
+            });
 
-            ////判断邀请人，邀请码
-            //if (invitedBy == null)
-            //{
+            //User invitedBy = userRepository.GetByName(NewUser.InvitedBy.Name);
+            //NewUser.InvitedBy = invitedBy;
 
-            //}
-            //if (invitedBy.InviteCode != NewUser.Invitedby.InviteCode)
-            //{
 
-            //}
 
             //NewUser.Register();
             userRepository.Save(NewUser);

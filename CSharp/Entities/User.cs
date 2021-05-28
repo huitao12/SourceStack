@@ -26,9 +26,10 @@ namespace CSharp.Entities
         public string Password { get; set; }
 
         [Required(ErrorMessage = "*邀请人不能为空")]
-        public User Invitedby { get; set; }
+        public User InvitedBy { get; set; }
 
         [StringLength(4, MinimumLength = 4, ErrorMessage = "*邀请码只能是4位数字")]
+        [Required(ErrorMessage = "*邀请码不能为空")]
         public string InviteCode { get; set; }
 
         [NotMapped]//不映射到数据库

@@ -45,8 +45,9 @@
                             <button type="submit" value="Read" class="btn btn-primary btn-xs">
                                 <span class="fa fa-check-circle"></span> 已读
                             </button>
-                            <span class="fa fa-times-circle"></span> 
-                            <input class="btn btn-primary " style="background-color: #337ab7" value="删除" type="submit">
+                            <button type="submit" value="Delete" class="btn btn-primary btn-xs">
+                                <span class="fa fa-times-circle"></span>删除
+                            </button>
                         </div>
                         <input type="hidden" name="submit" value="" />
                     </div>
@@ -72,7 +73,6 @@
                         <input type="hidden" asp-for="@Model.Messages[i].Id" />
                         <hr />
                     }
-                    <input class="btn btn-primary" style="background-color: #337ab7" value="提交" type="submit">
                 </form>
             </div>
         </div>
