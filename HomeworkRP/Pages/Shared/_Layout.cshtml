@@ -72,7 +72,8 @@
                         {
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                 未登录</a>
+                                    未登录
+                                </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     <a class="dropdown-item" href="/Log/On">登录</a>
                                     <a class="dropdown-item" href="/Register/Home">注册</a>
@@ -127,6 +128,18 @@
             </div>
         </nav>
     </header>
+    <br />
+    @{
+        bool InForm = Context.Request.Cookies.TryGetValue("InForm", out string inform);
+        if (!InForm)
+        {
+            <div>
+                <p>这是一个通知</p>
+                <a asp-page="/InForm">知道了</a>
+            </div>
+        } /*else*/
+    }
+    <br />
     <div>
         @RenderBody()
     </div>

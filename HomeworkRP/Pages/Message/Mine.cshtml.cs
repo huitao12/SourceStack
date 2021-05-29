@@ -20,9 +20,14 @@ namespace SourceStack.Pages.Message
         [BindProperty]
         public IList<E.Message> Messages { get; set; }
 
-        public void OnGet()
+        public IActionResult OnGet()
         {
+            if (string.IsNullOrEmpty(Request.Cookies[Keys.UserId]))
+            {
+                return RedirectToPage("/Log/On");
+            }
             Messages = messageRepository.GetMine(true);
+            return Page();
         }
         public RedirectToPageResult OnPost()
         {

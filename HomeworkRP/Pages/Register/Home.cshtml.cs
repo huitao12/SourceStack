@@ -7,6 +7,7 @@ using CSharp.Entities;
 using CSharp.Repoistories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SourceStack.Pages.Register
@@ -23,30 +24,35 @@ namespace SourceStack.Pages.Register
         public User NewUser { get; set; }
 
         public string ConfirmPassword { get; set; }
+
+
         public void OnGet()
         {
             ViewData["hasLogOn"] = Request.Cookies[Keys.UserId];
+            
         }
         public void OnPost()
         {
-
             ////判断邀请人，邀请码
+            // = userRepository.GetByName(NewUser.InvitedBy.Name);
             if (NewUser.InvitedBy == null)
             {
-                ModelState.AddModelError("NewUser.InvitedBy", "邀请人不存在");
+                ModelState.AddModelError(nameof(NewUser.InvitedBy), "邀请人不存在");
+               
             }
             if (NewUser.InvitedBy.InviteCode != NewUser.InvitedBy.InviteCode)
             {
-                ModelState.AddModelError("NewUser.InvitedBy.InviteCode", "邀请人的邀请码不存在");
+                ModelState.AddModelError(nameof(NewUser.InvitedBy.InviteCode), "邀请人的邀请码不存在");
+             
             }
             if (ConfirmPassword != NewUser.Password)
             {
-                ModelState.AddModelError("ConfirmPassword", "两次密码输入不一致");
+                ModelState.AddModelError(nameof(ConfirmPassword), "两次密码输入不一致");
             }
-            //if (!ModelState.IsValid)
-            //{
-            //    return;
-            //}
+            if (!ModelState.IsValid)
+            {
+                return;
+            }
 
             ViewData["UserName"] = Request.Form["NewUSer.Name"];
 
@@ -62,6 +68,7 @@ namespace SourceStack.Pages.Register
 
             //NewUser.Register();
             userRepository.Save(NewUser);
+
         }
     }
 }

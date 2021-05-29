@@ -43,6 +43,7 @@ namespace SourceStack.Pages.Log
             }
             ModelState.Merge(errorInPost);
         }
+
         public RedirectToPageResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -51,6 +52,7 @@ namespace SourceStack.Pages.Log
             }
 
             User user = userRepository.GetByName(Name);
+
             if (user == null)
             {
                 ModelState.AddModelError(nameof(Name), "*用户名不存在");
