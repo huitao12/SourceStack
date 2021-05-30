@@ -23,7 +23,9 @@ namespace SourceStack
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-             services.AddRazorPages()
+             services
+                .AddSession()
+                .AddRazorPages()
                 .AddRazorPagesOptions(opt =>
                 {
                     opt.Conventions.AddPageRoute("/Log/On", "/LogOn");
@@ -50,6 +52,8 @@ namespace SourceStack
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseSession();
 
             app.UseAuthorization();
 

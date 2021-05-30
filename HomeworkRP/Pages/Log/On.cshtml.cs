@@ -17,6 +17,8 @@ namespace SourceStack.Pages.Log
     [NeedLogOn]
     public class OnModel : PageModel
     {
+        private ModelStateDictionary errorInPost;
+
         private UserRepository userRepository;
         public OnModel()
         {
@@ -28,7 +30,8 @@ namespace SourceStack.Pages.Log
         public string Name { get; set; }
 
         public string Password { get; set; }
-        private ModelStateDictionary errorInPost; 
+
+        public string Captcha { get; set; }
 
         public void OnGet()
         {
@@ -44,8 +47,11 @@ namespace SourceStack.Pages.Log
                 }
             }
             ModelState.Merge(errorInPost);
-        }
 
+            string captcha = "12qw";
+
+            HttpContext.Session.SetString(Keys.Captcha, captcha);
+        }
         public RedirectToPageResult OnPost()
         {
             if (!ModelState.IsValid)
@@ -87,16 +93,35 @@ namespace SourceStack.Pages.Log
                 TempData[Keys.ErrorInfo] = errors;
                 return RedirectToPage();
             }
-
-            ViewData["UserName"] = Request.Form["NewUSer.Name"];
-
-            CookieOptions options = new CookieOptions();
-            if (RememberMe)
+            if (Captcha != HttpContext.Session.GetString(Keys.Captcha))
             {
-                options.Expires = DateTime.Now.AddDays(14);
-            }//else 
+                ModelState.AddModelError(nameof(Captcha), "验证码错误");
+                //1. 从ModelState中提取Error信息
+                Dictionary<string, string> errors =
+                    ModelState.Where(m => m.Value.Errors.Any())
+                        .ToDictionary(
+                            m => m.Key,
+                            m => m.Value.Errors
+                                .Select(s => s.ErrorMessage)
+                                .FirstOrDefault(s => s != null));
 
-            Response.Cookies.Append(Keys.UserId, user.Id.ToString(), options);
+                //2. 将Error信息存放到TempData
+                TempData[Keys.ErrorInfo] = errors;
+                return RedirectToPage();
+            }
+            else
+            {
+
+                ViewData["UserName"] = Request.Form["NewUSer.Name"];
+
+                CookieOptions options = new CookieOptions();
+                if (RememberMe)
+                {
+                    options.Expires = DateTime.Now.AddDays(14);
+                }//else 
+
+                Response.Cookies.Append(Keys.UserId, user.Id.ToString(), options);
+            }
 
             return RedirectToPage();
         }

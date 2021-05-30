@@ -39,7 +39,8 @@
         <input class="alert alert-primary" role="alert" style="width:100%" asp-for="Password" />
         <span asp-validation-for="Password"></span><br />
         <label style="font-weight:600">验证码：（* 必填）</label><br />
-        <input type="button" class="btn btn-outline-secondary" style="width:100px" />
+        <input asp-for="Captcha" class="btn btn-outline-info" style="width:100px" />
+       <span asp-validation-for="Captcha"></span>
         <a href="#">看不清楚</a>
         <br />
     </div>
@@ -53,7 +54,7 @@
         </div>
         <div class="pull-right">
             <a href="#">(｡ŏ_ŏ) 忘了</a>
-            <a href="#" style="margin-left:10px"><span class="fa fa-registered"></span>注册</a>
+            <a href="~/Register/Home" style="margin-left:10px"><span class="fa fa-registered"></span>注册</a>
         </div>
     </div>
 </form>

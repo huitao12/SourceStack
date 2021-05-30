@@ -9,5 +9,6 @@ namespace SourceStack
     {
         public const string UserId = "UserId";
         public const string ErrorInfo = "ErrorInfo";
+        public const string Captcha = "Captcha";
     }
 }
