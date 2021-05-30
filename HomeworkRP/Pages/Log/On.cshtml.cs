@@ -48,6 +48,7 @@ namespace SourceStack.Pages.Log
             }
             ModelState.Merge(errorInPost);
 
+            //验证码  存
             string captcha = "12qw";
 
             HttpContext.Session.SetString(Keys.Captcha, captcha);
@@ -93,7 +94,7 @@ namespace SourceStack.Pages.Log
                 TempData[Keys.ErrorInfo] = errors;
                 return RedirectToPage();
             }
-            if (Captcha != HttpContext.Session.GetString(Keys.Captcha))
+            if (Captcha != HttpContext.Session.GetString(Keys.Captcha))//验证码取
             {
                 ModelState.AddModelError(nameof(Captcha), "验证码错误");
                 //1. 从ModelState中提取Error信息
