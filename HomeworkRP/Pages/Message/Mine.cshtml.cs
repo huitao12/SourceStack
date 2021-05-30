@@ -22,6 +22,7 @@ namespace SourceStack.Pages.Message
 
         public IActionResult OnGet()
         {
+            ViewData["hasLogOn"] = Request.Cookies[Keys.UserId];
             if (string.IsNullOrEmpty(Request.Cookies[Keys.UserId]))
             {
                 return RedirectToPage("/Log/On");

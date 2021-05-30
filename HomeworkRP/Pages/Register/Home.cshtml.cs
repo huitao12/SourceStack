@@ -28,8 +28,7 @@ namespace SourceStack.Pages.Register
 
         public void OnGet()
         {
-            ViewData["hasLogOn"] = Request.Cookies[Keys.UserId];
-            
+            //ViewData["hasLogOn"] = Request.Cookies[Keys.UserId];
         }
         public void OnPost()
         {

@@ -9,10 +9,12 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using SourceStack.Filters;
 
 namespace SourceStack.Pages.Log
 {
     [BindProperties]
+    [NeedLogOn]
     public class OnModel : PageModel
     {
         private UserRepository userRepository;
