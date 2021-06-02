@@ -17,17 +17,15 @@ namespace CSharp
         static void Main(string[] args)
         {
 
-
-
             #region EF
-            //SqlDbContext context = new SqlDbContext();
+            SqlDbContext context = new SqlDbContext();
 
             ////利用EF，插入3个User对象
-            //User user = new User
-            //{
-            //    Name = "灰灰",
-            //    Password = "121"
-            //};
+            User user = new User
+            {
+                Name = "大灰狼",
+                Password = "121"
+            };
             //User user1 = new User
             //{
             //    Name = "黑鬼",
@@ -38,7 +36,7 @@ namespace CSharp
             //    Name = "桌子",
             //    Password = "1212"
             //};
-            //context.Users.Add(user);
+            context.Users.Add(user);
             //context.Add(user1);
             //context.Add<User>(user2);
 

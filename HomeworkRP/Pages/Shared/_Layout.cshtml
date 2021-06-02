@@ -128,17 +128,18 @@
             </div>
         </nav>
     </header>
-    @{
-        bool InForm = Context.Request.Cookies.TryGetValue("InForm", out string inform);
-        if (!InForm)
-        {
-            <div>
-                <p>这是一个通知</p>
-                <a asp-page="/InForm">知道了</a>
-            </div>
-        } /*else*/
-    }
-    <br />
+    @*<div style="border: 1px dashed;margin-top:50px">
+        @{
+            bool InForm = Context.Request.Cookies.TryGetValue("InForm", out string inform);
+            if (!InForm)
+            {
+                <div>
+                    <p>通知</p>
+                    <a asp-page="/InForm">知道了</a>
+                </div>
+            } /*else*/
+        }
+    </div>*@
     <div>
         @RenderBody()
     </div>
