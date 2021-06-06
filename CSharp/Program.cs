@@ -21,11 +21,11 @@ namespace CSharp
             SqlDbContext context = new SqlDbContext();
 
             ////利用EF，插入3个User对象
-            User user = new User
-            {
-                Name = "大灰狼",
-                Password = "121"
-            };
+            //User user = new User
+            //{
+            //    Name = "大灰狼",
+            //    Password = "121"
+            //};
             //User user1 = new User
             //{
             //    Name = "黑鬼",
@@ -36,7 +36,7 @@ namespace CSharp
             //    Name = "桌子",
             //    Password = "1212"
             //};
-            context.Users.Add(user);
+            //context.Users.Add(user);
             //context.Add(user1);
             //context.Add<User>(user2);
 
@@ -60,18 +60,19 @@ namespace CSharp
 
 
             //Database属性从何而来？
-            //var db = context.Database;
+            var db = context.Database;
 
             ////类似于Update-Database: apply all pending migrations
             ////本身不生成Migrations
-            //db.Migrate();
+            db.Migrate();
 
-            ////Enusure：存在才删除，不存在才创建
-            //db.EnsureDeleted();
-            ////Create数据库的同时建立表结构，
-            //db.EnsureCreated();
+            //Enusure：存在才删除，不存在才创建
+            db.EnsureDeleted();
+            //Create数据库的同时建立表结构，
+            db.EnsureCreated();
 
 
+            context.SaveChanges();//保存改动，存到数据库
 
 
 

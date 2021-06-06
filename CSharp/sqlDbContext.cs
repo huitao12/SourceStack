@@ -36,11 +36,11 @@ namespace CSharp
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
-            modelBuilder.Entity<User>()
-                .HasCheckConstraint("CK_CreateTime", "CreateTime>='2000/1/1'")//自定义约束
-                .ToTable("Register")//修改表名
-                .Property(m => m.Name).HasMaxLength(256).HasColumnName("UserName")//修改属性类型
-                ;
+            //modelBuilder.Entity<User>()
+            //    .HasCheckConstraint("CK_CreateTime", "CreateTime>='2000/1/1'")//自定义约束
+            //    //.ToTable("Register")//修改表名
+            //    .Property(m => m.Name).HasMaxLength(256).HasColumnName("UserName")//修改属性类型
+            //    ;
             base.OnModelCreating(modelBuilder);
         }
     }
