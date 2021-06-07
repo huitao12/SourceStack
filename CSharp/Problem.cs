@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSharp
 {
-  public  class Problem:Content
+    public class Problem : Content
     {
         //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
         public string Title { get; set; }

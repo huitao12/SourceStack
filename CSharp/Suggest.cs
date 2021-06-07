@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CSharp
 {
-   public class Suggest:Content
+    public class Suggest : Content
     {
         public Suggest()
         {

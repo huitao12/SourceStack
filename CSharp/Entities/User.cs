@@ -44,11 +44,6 @@ namespace CSharp.Entities
          public int EmailId { get; set; }
         public Email Email { get; set; }
 
-        //public void Register()
-        //{
-        //    Invitedby.BCredit += 10;
-        //}
-
 
 
 
