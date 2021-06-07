@@ -41,10 +41,10 @@ namespace CSharp
                 .ToTable("Register")//修改表名
                 .Property(m => m.Name).HasMaxLength(256).HasColumnName("UserName")//修改属性类型
                 ;
-            modelBuilder.Entity<User>()
-                .HasOne<Email>(u => u.Email)
-                .WithOne()
-                .HasForeignKey<User>(u => u.EmailId);
+            //modelBuilder.Entity<User>()
+            //    .HasOne<Email>(u => u.Email)
+            //    .WithOne()
+            //    .HasForeignKey<User>(u => u.EmailId);
 
             base.OnModelCreating(modelBuilder);
         }

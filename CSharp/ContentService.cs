@@ -24,15 +24,15 @@ namespace CSharp
         //    Console.WriteLine("存到数据库");
         //}
 
-        public override void Agree()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void Agree()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
-        public override void Disagree()
-        {
-            throw new NotImplementedException();
-        }
+        //public override void Disagree()
+        //{
+        //    throw new NotImplementedException();
+        //}
         //在ContentService中捕获异常
         //如果是“参数为空”异常，Console.WriteLine()输出：内容的作者不能为空，将当前异常封装进新异常的InnerException，再将新异常抛出
         //如果是“”参数越界”异常，Console.WriteLine()输出：求助的Reward为负数（-XX），不再抛出异常
