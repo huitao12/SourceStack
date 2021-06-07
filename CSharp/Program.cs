@@ -65,6 +65,7 @@ namespace CSharp
             ////本身不生成Migrations
             db.Migrate();
 
+            
             db.EnsureDeleted();//Enusure：存在才删除，不存在才创建
            
             db.EnsureCreated(); //Create数据库的同时建立表结构，
