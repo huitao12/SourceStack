@@ -6,12 +6,10 @@ namespace CSharp
 {
     public class Suggest : Content
     {
-        public Suggest()
-        {
+        public string Title { get; set; }
+        public string Kind { get; set; }
 
-        }
 
-    
     }
 }
 

@@ -4,12 +4,12 @@ using System.Text;
 
 namespace CSharp.Entities
 {
-    public class Keyword
+    public class Keyword : Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
 
-        public IList<Article> Article { get; set; }
+        public IList<Article> Articles { get; set; }
+        public IList<Problem> Problems { get; set; }
 
     }
 }

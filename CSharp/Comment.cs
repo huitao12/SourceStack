@@ -5,12 +5,11 @@ using System.Text;
 
 namespace CSharp
 {
-    public class Comment//评论
+    public class Comment : Content //评论
     {
-        internal string name;
 
         //一个评论必须有一个它所评论的文章
         public Article Article { get; set; }
-        public string Title { get;  set; }
+        public string Title { get; set; }
     }
 }

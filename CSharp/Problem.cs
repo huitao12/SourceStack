@@ -9,9 +9,14 @@ namespace CSharp
     {
         public string Title { get; set; }
 
-        private int _Reward;
         public DateTime PublishDateTime { get; set; }
-    
+
+        //一篇求助可以对应多个关键字
+        public IList<Keyword> Keywords { get; set; }
+        //一篇求助可以对应多个评论
+        public IList<Comment> Comments { get; set; }
+
+        private int _Reward;
         public int Reward
         {
             get { return _Reward; }

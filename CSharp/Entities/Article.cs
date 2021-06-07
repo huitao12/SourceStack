@@ -17,11 +17,11 @@ namespace CSharp.Entities
         [Required(ErrorMessage = "*关键字不能为空")]
         public Keyword Keyword { get; set; }
 
-        //public IList<Comment> Comments { get; set; }
+        public IList<Comment> Comments { get; set; }
 
-        //public IList<Appraise> Appraises { get; set; }
+        public IList<Appraise> Appraises { get; set; }
 
-        //public IList<Keyword> keywords { get; set; }
+        public IList<Keyword> keywords { get; set; }
 
 
     }
