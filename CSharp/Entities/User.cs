@@ -41,6 +41,8 @@ namespace CSharp.Entities
 
         [NotMapped]//不映射到数据库
         public int BCredit { get; set; }
+         public int EmailId { get; set; }
+        public Email Email { get; set; }
 
         //public void Register()
         //{
@@ -55,7 +57,7 @@ namespace CSharp.Entities
 
 
 
-      
+
 
     }
 }
