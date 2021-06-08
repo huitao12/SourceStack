@@ -9,6 +9,11 @@ namespace CSharp
     class SqlDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Problem> Problems { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Suggest> Suggests { get; set; }
+        public DbSet<Content> Contents { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -45,6 +50,8 @@ namespace CSharp
                 .HasOne<Email>(u => u.Email)
                 .WithOne()
                 .HasForeignKey<User>(u => u.EmailId);
+
+       
 
             base.OnModelCreating(modelBuilder);
         }

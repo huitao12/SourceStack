@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CSharp
 {
-    public abstract class Content : Entity
+    public  class Content : Entity
     {
         public User Author { get; set; }
         public string Body { get; set; }
