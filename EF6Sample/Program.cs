@@ -10,6 +10,9 @@ namespace EF6Sample
     {
         static void Main(string[] args)
         {
+            SqlDbContext context = new SqlDbContext();
+            context.Users.Add(new User { Name = "lx", Password = "1111" });
+            context.SaveChanges();
         }
     }
 }

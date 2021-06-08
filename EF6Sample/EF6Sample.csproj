@@ -53,12 +53,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity.cs" />
+    <Compile Include="Migrations\202106080321450_InitialCreate.cs" />
+    <Compile Include="Migrations\202106080321450_InitialCreate.designer.cs">
+      <DependentUpon>202106080321450_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106080623013_addIsmale.cs" />
+    <Compile Include="Migrations\202106080623013_addIsmale.designer.cs">
+      <DependentUpon>202106080623013_addIsmale.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202106080816330_addmap.cs" />
+    <Compile Include="Migrations\202106080816330_addmap.designer.cs">
+      <DependentUpon>202106080816330_addmap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlDbContext.cs" />
+    <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202106080321450_InitialCreate.resx">
+      <DependentUpon>202106080321450_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106080623013_addIsmale.resx">
+      <DependentUpon>202106080623013_addIsmale.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202106080816330_addmap.resx">
+      <DependentUpon>202106080816330_addmap.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
