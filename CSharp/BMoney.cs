@@ -13,5 +13,7 @@ namespace CSharp
         public string Kind { get; set; }//种类
         public int Change { get; set; }//变化
         public string Reason { get; set; }//理由
+        public User Owner { get; set; }
     }
+   
 }

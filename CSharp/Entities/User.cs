@@ -20,13 +20,10 @@ namespace CSharp.Entities
         [NotMapped]//不映射到数据库
         public string Introduction { get; set; }
 
-
         public string Password { get; set; }
         public bool IsMale { get; set; }
 
         public User InvitedBy { get; set; }
-
-
         public string InviteCode { get; set; }
 
         [NotMapped]//不映射到数据库
@@ -39,7 +36,7 @@ namespace CSharp.Entities
         public int EmailId { get; set; }
         public Email Email { get; set; }
 
-
+        public int Wallet { get; set; }
 
 
 
