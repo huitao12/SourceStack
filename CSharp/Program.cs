@@ -20,9 +20,7 @@ namespace CSharp
             SqlDbContext context = new SqlDbContext();
 
 
-            User lz = new User { Name = "lx", Password = "1111" };
-            Email email = new Email { subject = "123123" };
-            context.SaveChanges();//保存改动，存到数据库
+       
 
 
             ////利用EF，插入3个User对象
