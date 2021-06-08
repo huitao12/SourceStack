@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CSharp.Migrations
 {
     [DbContext(typeof(SqlDbContext))]
-    [Migration("20210607123151_AddtableContents")]
-    partial class AddtableContents
+    [Migration("20210608004259_TableContents")]
+    partial class TableContents
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -72,9 +72,6 @@ namespace CSharp.Migrations
                     b.Property<int>("EmailId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("EmailId1")
-                        .HasColumnType("int");
-
                     b.Property<string>("InviteCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -101,10 +98,6 @@ namespace CSharp.Migrations
                     b.HasIndex("EmailId")
                         .IsUnique();
 
-                    b.HasIndex("EmailId1")
-                        .IsUnique()
-                        .HasFilter("[EmailId1] IS NOT NULL");
-
                     b.HasIndex("InvitedById");
 
                     b.ToTable("Register");
@@ -124,14 +117,10 @@ namespace CSharp.Migrations
             modelBuilder.Entity("CSharp.Entities.User", b =>
                 {
                     b.HasOne("CSharp.Entities.Email", "Email")
-                        .WithOne()
+                        .WithOne("Owner")
                         .HasForeignKey("CSharp.Entities.User", "EmailId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("CSharp.Entities.Email", null)
-                        .WithOne("Owner")
-                        .HasForeignKey("CSharp.Entities.User", "EmailId1");
 
                     b.HasOne("CSharp.Entities.User", "InvitedBy")
                         .WithMany()

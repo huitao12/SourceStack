@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CSharp.Migrations
 {
-    public partial class AddtableContents : Migration
+    public partial class TableContents : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

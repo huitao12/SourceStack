@@ -32,8 +32,7 @@ namespace CSharp.Migrations
                     InvitedById = table.Column<int>(type: "int", nullable: true),
                     InviteCode = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     CreateTime = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    EmailId = table.Column<int>(type: "int", nullable: false),
-                    EmailId1 = table.Column<int>(type: "int", nullable: true)
+                    EmailId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -45,12 +44,6 @@ namespace CSharp.Migrations
                         principalTable: "Email",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Register_Email_EmailId1",
-                        column: x => x.EmailId1,
-                        principalTable: "Email",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Register_Register_InvitedById",
                         column: x => x.InvitedById,
@@ -71,13 +64,6 @@ namespace CSharp.Migrations
                 table: "Register",
                 column: "EmailId",
                 unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Register_EmailId1",
-                table: "Register",
-                column: "EmailId1",
-                unique: true,
-                filter: "[EmailId1] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Register_InvitedById",

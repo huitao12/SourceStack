@@ -19,6 +19,12 @@ namespace CSharp
             #region EF
             SqlDbContext context = new SqlDbContext();
 
+
+            User lz = new User { Name = "lx", Password = "1111" };
+            Email email = new Email { subject = "123123" };
+            context.SaveChanges();//保存改动，存到数据库
+
+
             ////利用EF，插入3个User对象
             //User user = new User
             //{
@@ -65,9 +71,9 @@ namespace CSharp
             //////本身不生成Migrations
             //db.Migrate();
 
-            
+
             //db.EnsureDeleted();//Enusure：存在才删除，不存在才创建
-           
+
             //db.EnsureCreated(); //Create数据库的同时建立表结构，
 
 
